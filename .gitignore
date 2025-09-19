@@ -46,3 +46,8 @@ Thumbs.db
 # AppleScript and shell scripts (local tools)
 kill-port-1000.applescript
 build-kill-port-app.sh
+
+# Screenshots
+*.png
+screenshot*.jpg
+screencapture*.jpg

@@ -324,7 +324,7 @@ export default function Home() {
 
   useEffect(() => {
     if (!isLoading && !user) {
-      router.push('/login')
+      router.replace('/login')
     }
   }, [user, isLoading, router])
 
@@ -489,19 +489,7 @@ export default function Home() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center space-x-2">
-                        <h3 className="font-medium">{app.fullName}</h3>
-                        {app.ticker && (
-                          <span className="text-xs font-mono bg-black/50 px-2 py-0.5 rounded text-[#0094FF]">
-                            {app.ticker}
-                          </span>
-                        )}
-                        {app.isPoc && (
-                          <span className="text-xs font-bold bg-gradient-to-r from-green-500 to-emerald-500 text-white px-2 py-0.5 rounded">
-                            PoC
-                          </span>
-                        )}
-                      </div>
+                      <h3 className="font-medium">{app.fullName}</h3>
                       <p className="text-sm text-gray-400">{app.description}</p>
                     </div>
                   </div>
@@ -540,20 +528,10 @@ export default function Home() {
                             Subscribe
                           </button>
                           <button 
-                            className="px-3 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg text-sm transition-all">
-                            Trade
+                            className="px-3 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg text-sm font-medium transition-all">
+                            {app.ticker || 'Trade'}
                           </button>
                         </>
-                      )}
-                      {app.status === 'update' && (
-                        <button className="px-4 py-2 bg-[#0094FF] hover:bg-[#0084e6] rounded-lg text-sm transition-colors">
-                          Update
-                        </button>
-                      )}
-                      {app.status === 'available' && (
-                        <button className="px-4 py-2 bg-[#00C896] hover:bg-[#00b586] rounded-lg text-sm transition-colors">
-                          Install
-                        </button>
                       )}
                       {app.status === 'coming' && (
                         <>
@@ -567,7 +545,7 @@ export default function Home() {
                             Subscribe
                           </button>
                           <button disabled className="px-3 py-1.5 bg-[#333] rounded-lg text-sm text-gray-600 cursor-not-allowed">
-                            Trade
+                            {app.ticker || 'Trade'}
                           </button>
                         </>
                       )}

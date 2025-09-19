@@ -26,10 +26,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const router = useRouter()
 
   useEffect(() => {
-    // Check for existing session
-    const savedUser = localStorage.getItem('user')
-    if (savedUser) {
-      setUser(JSON.parse(savedUser))
+    // Check for existing session - only run on client side
+    try {
+      if (typeof window !== 'undefined') {
+        const savedUser = localStorage.getItem('user')
+        if (savedUser) {
+          setUser(JSON.parse(savedUser))
+        }
+      }
+    } catch (error) {
+      console.error('Error reading from localStorage:', error)
     }
     setIsLoading(false)
   }, [])
@@ -50,13 +56,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
     
     setUser(mockUser)
-    localStorage.setItem('user', JSON.stringify(mockUser))
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('user', JSON.stringify(mockUser))
+    }
     router.push('/')
   }
 
   const logout = () => {
     setUser(null)
-    localStorage.removeItem('user')
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('user')
+    }
     router.push('/login')
   }
 

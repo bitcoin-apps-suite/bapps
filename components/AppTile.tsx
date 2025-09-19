@@ -13,7 +13,7 @@ interface App {
   color: string
   description: string
   category: string
-  status: 'installed' | 'update' | 'available' | 'coming'
+  status: 'installed' | 'coming'
   isPoc?: boolean
   version: string | null
   size: string | null
@@ -44,13 +44,6 @@ export default function AppTile({ app }: AppTileProps) {
         bg-[#2a2a2a] rounded-xl p-4 transition-all duration-200
         ${isHovered ? 'transform scale-105 shadow-2xl' : ''}
       `}>
-        {/* Ticker Badge */}
-        {app.ticker && (
-          <div className="absolute top-6 left-6 z-20 bg-black/80 backdrop-blur-sm px-2 py-1 rounded-md">
-            <span className="text-xs font-mono font-bold text-white">{app.ticker}</span>
-          </div>
-        )}
-        
         {/* App Icon */}
         <div 
           className="w-full aspect-square rounded-xl flex items-center justify-center text-white text-3xl font-bold mb-3 relative overflow-hidden"
@@ -73,9 +66,6 @@ export default function AppTile({ app }: AppTileProps) {
           )}
           
           {/* Status Indicator */}
-          {app.status === 'update' && (
-            <div className="absolute top-2 right-2 w-3 h-3 bg-yellow-500 rounded-full animate-pulse z-20"></div>
-          )}
           {app.status === 'installed' && !app.isPoc && (
             <div className="absolute top-2 right-2 z-20">
               <svg className="w-5 h-5 text-white drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
@@ -137,22 +127,12 @@ export default function AppTile({ app }: AppTileProps) {
                 Subscribe
               </button>
               <button 
-                className="py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] rounded-lg text-xs text-white transition-all"
+                className="py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] rounded-lg text-xs text-white font-medium transition-all"
                 title={`Trade ${app.ticker || app.name}`}
               >
-                Trade
+                {app.ticker || 'Trade'}
               </button>
             </div>
-          )}
-          {app.status === 'update' && (
-            <button className="w-full py-1.5 bg-[#0094FF] hover:bg-[#0084e6] rounded-lg text-xs text-white transition-colors">
-              Update
-            </button>
-          )}
-          {app.status === 'available' && (
-            <button className="w-full py-1.5 bg-[#00C896] hover:bg-[#00b586] rounded-lg text-xs text-white transition-colors">
-              Install
-            </button>
           )}
           {app.status === 'coming' && (
             <div className="grid grid-cols-2 gap-1.5">
@@ -182,7 +162,7 @@ export default function AppTile({ app }: AppTileProps) {
                 className="py-1.5 bg-[#333] rounded-lg text-xs text-gray-600 cursor-not-allowed"
                 title="Coming soon"
               >
-                Trade
+                {app.ticker || 'Trade'}
               </button>
             </div>
           )}

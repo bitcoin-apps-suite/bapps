@@ -1,19 +1,44 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import { useAuth } from '@/components/AuthContext'
 
 export default function LoginPage() {
-  const { login } = useAuth()
+  const { login, user, isLoading: authLoading } = useAuth()
+  const router = useRouter()
   const [isLoading, setIsLoading] = useState<string | null>(null)
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+
+  useEffect(() => {
+    if (!authLoading && user) {
+      router.replace('/')
+    }
+  }, [user, authLoading, router])
 
   const handleLogin = async (provider: string) => {
     setIsLoading(provider)
     await login(provider, provider === 'email' ? email : undefined)
     setIsLoading(null)
+  }
+
+  // Show loading while checking auth
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-[#1e1e1e] flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-[#0094FF] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-gray-400">Loading...</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Redirect to home if already authenticated
+  if (user) {
+    return null
   }
 
   const providers = [
