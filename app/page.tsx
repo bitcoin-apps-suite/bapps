@@ -399,8 +399,8 @@ export default function Home() {
       
       {/* Main container with sidebar and content */}
       <div className="flex flex-1 overflow-hidden">
-        {/* Desktop Sidebar */}
-        <div className="hidden lg:block">
+        {/* Desktop Sidebar - completely hidden on mobile */}
+        <div className="hidden lg:flex lg:flex-shrink-0">
           <Sidebar 
             categories={categories}
             selectedCategory={selectedCategory}
@@ -411,13 +411,13 @@ export default function Home() {
         {/* Mobile Menu Overlay */}
         {mobileMenuOpen && (
           <div 
-            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+            className="lg:hidden fixed top-12 bottom-0 left-0 right-0 bg-black bg-opacity-50 z-40"
             onClick={() => setMobileMenuOpen(false)}
           />
         )}
         
         {/* Mobile Sidebar */}
-        <div className={`lg:hidden fixed inset-y-0 left-0 z-50 transform transition-transform duration-200 ${
+        <div className={`lg:hidden fixed top-12 bottom-0 left-0 z-50 w-64 transform transition-transform duration-200 ${
           mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
         }`}>
           <Sidebar 
@@ -430,7 +430,7 @@ export default function Home() {
           />
         </div>
         
-        <main className="flex-1 flex flex-col">
+        <main className="flex-1 flex flex-col w-full">
           {/* Header */}
         <header className="bg-[#252525] border-b border-[#3a3a3a] px-4 lg:px-8 py-4">
           <div className="flex items-center justify-between">
