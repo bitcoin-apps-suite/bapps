@@ -525,7 +525,6 @@ export default function Home() {
                   </svg>
                 </button>
               </div>
-              </div>
             </div>
           </div>
         </header>
