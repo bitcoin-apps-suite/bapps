@@ -1,0 +1,31 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="20" fill="#B3D9F2"/>
+  
+  <!-- Browser window -->
+  <rect x="30" y="50" width="110" height="80" rx="8" fill="white" stroke="#2C3E50" stroke-width="3"/>
+  <rect x="30" y="50" width="110" height="20" rx="8" fill="#4A90E2" stroke="#2C3E50" stroke-width="3"/>
+  
+  <!-- Browser controls -->
+  <rect x="38" y="57" width="15" height="6" rx="2" fill="white"/>
+  <rect x="57" y="57" width="6" height="6" rx="2" fill="white"/>
+  
+  <!-- Spreadsheet grid -->
+  <rect x="40" y="80" width="35" height="10" fill="#4A90E2"/>
+  <line x1="40" y1="90" x2="130" y2="90" stroke="#B3D9F2" stroke-width="2"/>
+  <line x1="40" y1="100" x2="130" y2="100" stroke="#B3D9F2" stroke-width="2"/>
+  <line x1="40" y1="110" x2="130" y2="110" stroke="#B3D9F2" stroke-width="2"/>
+  <line x1="40" y1="120" x2="130" y2="120" stroke="#B3D9F2" stroke-width="2"/>
+  
+  <line x1="75" y1="80" x2="75" y2="120" stroke="#B3D9F2" stroke-width="2"/>
+  <line x1="105" y1="80" x2="105" y2="120" stroke="#B3D9F2" stroke-width="2"/>
+  
+  <!-- Checkboxes -->
+  <rect x="45" y="93" width="8" height="8" rx="1" fill="white" stroke="#2C3E50" stroke-width="2"/>
+  <rect x="45" y="103" width="8" height="8" rx="1" fill="white" stroke="#2C3E50" stroke-width="2"/>
+  <path d="M47 106 L48.5 107.5 L51 104.5" stroke="#2C3E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="45" y="113" width="8" height="8" rx="1" fill="white" stroke="#2C3E50" stroke-width="2"/>
+  
+  <!-- Bitcoin coin -->
+  <circle cx="130" cy="130" r="35" fill="#4A90E2" stroke="#2C3E50" stroke-width="4"/>
+  <text x="130" y="145" font-family="Arial, sans-serif" font-size="40" font-weight="bold" text-anchor="middle" fill="white">₿</text>
+</svg>
