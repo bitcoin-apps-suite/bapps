@@ -57,7 +57,7 @@ const apps = [
     fullName: 'Bitcoin Spreadsheets',
     ticker: '$BSheets',
     icon: 'Sh',
-    image: '/bitcoin-sheets-icon.png',
+    image: '/app-images/bitcoin-spreadsheets.png',
     color: '#3b82f6',
     description: 'Blockchain-based spreadsheet on Bitcoin',
     category: 'Bitcoin Office',
@@ -329,6 +329,7 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('All Apps')
   const [searchQuery, setSearchQuery] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { user, logout, isLoading } = useAuth()
   const router = useRouter()
 
@@ -364,16 +365,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex h-screen bg-[#1e1e1e] text-white overflow-hidden">
-      <Sidebar 
-        categories={categories}
-        selectedCategory={selectedCategory}
-        onCategorySelect={setSelectedCategory}
-      />
-      
-      <main className="flex-1 flex flex-col">
-        {/* Developer Taskbar - not sticky, disappears on scroll */}
-        <div className="bg-[#1a1a1a] border-b border-[#3a3a3a] px-8 py-2">
+    <div className="flex flex-col h-screen bg-[#1e1e1e] text-white overflow-hidden">
+      {/* Developer Taskbar - Full width, above everything */}
+      <div className="bg-[#1a1a1a] border-b border-[#3a3a3a] px-4 lg:px-8 py-2">
           <div className="flex items-center justify-center space-x-8 text-sm">
             <a 
               href="https://github.com/bitcoin-apps-suite/bapps"
@@ -401,12 +395,56 @@ export default function Home() {
               <span className="text-[#0094FF] font-bold">$BAPPS</span> Token
             </a>
           </div>
+      </div>
+      
+      {/* Main container with sidebar and content */}
+      <div className="flex flex-1 overflow-hidden">
+        {/* Desktop Sidebar */}
+        <div className="hidden lg:block">
+          <Sidebar 
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onCategorySelect={setSelectedCategory}
+          />
         </div>
 
-        {/* Header */}
-        <header className="bg-[#252525] border-b border-[#3a3a3a] px-8 py-4">
+        {/* Mobile Menu Overlay */}
+        {mobileMenuOpen && (
+          <div 
+            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+        )}
+        
+        {/* Mobile Sidebar */}
+        <div className={`lg:hidden fixed inset-y-0 left-0 z-50 transform transition-transform duration-200 ${
+          mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        }`}>
+          <Sidebar 
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onCategorySelect={(category) => {
+              setSelectedCategory(category)
+              setMobileMenuOpen(false)
+            }}
+          />
+        </div>
+        
+        <main className="flex-1 flex flex-col">
+          {/* Header */}
+        <header className="bg-[#252525] border-b border-[#3a3a3a] px-4 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
+            <div className="flex items-center space-x-3 lg:space-x-6">
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="lg:hidden p-2 hover:bg-[#2a2a2a] rounded-lg transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+                </svg>
+              </button>
+              
               <div className="flex items-center space-x-3">
                 <div className="relative w-10 h-10">
                   <Image
@@ -424,27 +462,9 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="flex items-center space-x-4">
-              {/* User Info and Search */}
-              <div className="flex items-center space-x-4">
-                {user && (
-                  <div className="flex items-center space-x-3">
-                    <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
-                      <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
-                        {user.name.charAt(0).toUpperCase()}
-                      </div>
-                      <span className="text-sm text-gray-300">{user.name}</span>
-                      <span className="text-xs text-gray-500">({user.provider})</span>
-                    </div>
-                    <button
-                      onClick={logout}
-                      className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
-                    >
-                      Logout
-                    </button>
-                  </div>
-                )}
-                <div className="relative">
+            <div className="flex items-center space-x-2 lg:space-x-4">
+              {/* Search - Hidden on mobile, shown on desktop */}
+              <div className="hidden lg:block relative">
                 <input
                   type="text"
                   placeholder="Search apps..."
@@ -457,7 +477,37 @@ export default function Home() {
                 </svg>
               </div>
               
-              <div className="flex items-center bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
+              {/* User Info - Simplified on mobile */}
+              {user && (
+                <div className="hidden lg:flex items-center space-x-3">
+                  <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="text-sm text-gray-300">{user.name}</span>
+                    <span className="text-xs text-gray-500">({user.provider})</span>
+                  </div>
+                  <button
+                    onClick={logout}
+                    className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
+                  >
+                    Logout
+                  </button>
+                </div>
+              )}
+              
+              {/* Mobile User Avatar */}
+              {user && (
+                <button
+                  onClick={logout}
+                  className="lg:hidden w-8 h-8 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-sm font-bold"
+                >
+                  {user.name.charAt(0).toUpperCase()}
+                </button>
+              )}
+              
+              {/* View Mode Toggle - Hidden on mobile */}
+              <div className="hidden lg:flex items-center bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-2 ${viewMode === 'grid' ? 'bg-[#0094FF] text-white' : 'text-gray-400'} transition-colors rounded-l-lg`}
@@ -480,9 +530,25 @@ export default function Home() {
           </div>
         </header>
 
+        {/* Mobile Search Bar */}
+        <div className="lg:hidden bg-[#252525] px-4 py-3 border-b border-[#3a3a3a]">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search apps..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-4 py-2 pl-10 w-full text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
+            />
+            <svg className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </div>
+        </div>
+
         {/* Status Bar */}
-        <div className="bg-[#2a2a2a] px-8 py-3 border-b border-[#3a3a3a]">
-          <div className="flex items-center justify-between text-sm">
+        <div className="bg-[#2a2a2a] px-4 lg:px-8 py-3 border-b border-[#3a3a3a]">
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between text-sm space-y-2 lg:space-y-0">
             <div className="flex items-center space-x-6">
               <span className="text-gray-400">{filteredApps.length} apps</span>
               <div className="flex items-center space-x-2">
@@ -505,9 +571,9 @@ export default function Home() {
         </div>
 
         {/* Apps Grid/List */}
-        <div className="flex-1 overflow-auto p-8">
+        <div className="flex-1 overflow-auto p-4 lg:p-8">
           {viewMode === 'grid' ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
               {filteredApps.map((app) => (
                 <AppTile key={app.id} app={app} />
               ))}
@@ -601,7 +667,8 @@ export default function Home() {
             </div>
           )}
         </div>
-      </main>
+        </main>
+      </div>
     </div>
   )
 }

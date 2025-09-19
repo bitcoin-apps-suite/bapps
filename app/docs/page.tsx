@@ -2,10 +2,43 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+interface Contributor {
+  login: string
+  avatar_url: string
+  html_url: string
+  contributions: number
+  merged_prs: number
+  estimated_tokens: number
+}
 
 export default function DocsPage() {
   const [activeSection, setActiveSection] = useState('overview')
+  const [contributors, setContributors] = useState<Contributor[]>([])
+  const [loadingContributors, setLoadingContributors] = useState(true)
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
+
+  useEffect(() => {
+    fetchContributors()
+    // Refresh contributors data every 5 minutes
+    const interval = setInterval(fetchContributors, 5 * 60 * 1000)
+    return () => clearInterval(interval)
+  }, [])
+
+  const fetchContributors = async () => {
+    try {
+      const response = await fetch('/api/contributors')
+      if (response.ok) {
+        const data = await response.json()
+        setContributors(data)
+      }
+    } catch (error) {
+      console.error('Failed to fetch contributors:', error)
+    } finally {
+      setLoadingContributors(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#1a1a1a] text-white">
@@ -28,28 +61,139 @@ export default function DocsPage() {
 
       {/* Header */}
       <header className="bg-[#252525] border-b border-[#3a3a3a]">
-        <div className="max-w-7xl mx-auto px-8 py-6">
-          <Link href="/" className="flex items-center space-x-3 mb-6">
-            <div className="relative w-10 h-10">
-              <Image
-                src="/bitcoin-apps-logo.jpg"
-                alt="Bitcoin Apps"
-                fill
-                className="object-cover rounded-lg"
-              />
-            </div>
-            <div>
-              <h1 className="text-xl font-semibold">Bitcoin Apps Suite</h1>
-              <p className="text-xs text-gray-400">Developer Documentation</p>
-            </div>
-          </Link>
+        <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4 lg:py-6">
+          <div className="flex items-center justify-between">
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+              className="lg:hidden p-2 hover:bg-[#2a2a2a] rounded-lg transition-colors"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileSidebarOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
+            
+            <Link href="/" className="flex items-center space-x-3">
+              <div className="relative w-10 h-10">
+                <Image
+                  src="/bitcoin-apps-logo.jpg"
+                  alt="Bitcoin Apps"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <div className="hidden sm:block">
+                <h1 className="text-xl font-semibold">Bitcoin Apps Suite</h1>
+                <p className="text-xs text-gray-400">Developer Documentation</p>
+              </div>
+            </Link>
+            
+            {/* Placeholder for mobile */}
+            <div className="w-10 lg:hidden"></div>
+          </div>
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto px-8 py-12">
-        <div className="grid grid-cols-4 gap-8">
-          {/* Sidebar Navigation */}
-          <aside className="col-span-1">
+      <div className="max-w-7xl mx-auto px-4 lg:px-8 py-6 lg:py-12">
+        {/* Mobile Sidebar Overlay */}
+        {mobileSidebarOpen && (
+          <div 
+            className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+            onClick={() => setMobileSidebarOpen(false)}
+          />
+        )}
+        
+        <div className="lg:grid lg:grid-cols-4 lg:gap-8">
+          {/* Sidebar Navigation - Mobile */}
+          <aside className={`lg:hidden fixed inset-y-0 left-0 z-50 w-64 bg-[#1a1a1a] transform transition-transform duration-200 ${
+            mobileSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          }`}>
+            <div className="p-4 border-b border-[#3a3a3a]">
+              <h2 className="text-lg font-semibold">Documentation</h2>
+            </div>
+            <nav className="p-4 space-y-1">
+              <button
+                onClick={() => {
+                  setActiveSection('overview')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'overview' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                Overview
+              </button>
+              <button
+                onClick={() => {
+                  setActiveSection('rewards')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'rewards' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                $BAPPS Rewards
+              </button>
+              <button
+                onClick={() => {
+                  setActiveSection('contributing')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'contributing' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                How to Contribute
+              </button>
+              <button
+                onClick={() => {
+                  setActiveSection('guidelines')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'guidelines' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                Code Guidelines
+              </button>
+              <button
+                onClick={() => {
+                  setActiveSection('allocation')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'allocation' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                Token Allocation
+              </button>
+              <button
+                onClick={() => {
+                  setActiveSection('faq')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'faq' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                FAQ
+              </button>
+              <button
+                onClick={() => {
+                  setActiveSection('contributors')
+                  setMobileSidebarOpen(false)
+                }}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'contributors' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                Top Contributors
+              </button>
+            </nav>
+          </aside>
+          
+          {/* Desktop Sidebar */}
+          <aside className="hidden lg:block lg:col-span-1">
             <nav className="sticky top-8 space-y-1">
               <button
                 onClick={() => setActiveSection('overview')}
@@ -99,11 +243,19 @@ export default function DocsPage() {
               >
                 FAQ
               </button>
+              <button
+                onClick={() => setActiveSection('contributors')}
+                className={`w-full text-left px-4 py-2 rounded-lg transition-colors ${
+                  activeSection === 'contributors' ? 'bg-[#0094FF] text-white' : 'text-gray-400 hover:text-white hover:bg-[#252525]'
+                }`}
+              >
+                Top Contributors
+              </button>
             </nav>
           </aside>
 
           {/* Main Content */}
-          <main className="col-span-3 space-y-12">
+          <main className="lg:col-span-3 space-y-12">
             {activeSection === 'overview' && (
               <section>
                 <h1 className="text-4xl font-bold mb-6">Developer Documentation</h1>
@@ -139,7 +291,7 @@ export default function DocsPage() {
                   </ul>
                 </div>
 
-                <div className="grid grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   <div className="bg-[#252525] rounded-lg p-6 border border-[#3a3a3a]">
                     <h3 className="text-[#0094FF] font-bold mb-2">Open Source</h3>
                     <p className="text-sm text-gray-400">MIT licensed code, welcoming all contributions</p>
@@ -207,7 +359,7 @@ export default function DocsPage() {
 
                   <div className="bg-[#252525] rounded-lg p-6">
                     <h3 className="text-2xl font-semibold mb-4">Token Benefits</h3>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="border border-[#3a3a3a] rounded-lg p-4">
                         <h4 className="text-[#0094FF] font-semibold mb-2">Universal Access</h4>
                         <p className="text-sm text-gray-400">Unlock premium features across all Bitcoin Apps</p>
@@ -308,7 +460,7 @@ export default function DocsPage() {
                 <div className="bg-[#252525] rounded-lg p-6">
                   <h2 className="text-2xl font-semibold mb-4">What We're Looking For</h2>
                   
-                  <div className="grid grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <h3 className="text-[#0094FF] font-semibold mb-3">High Priority</h3>
                       <ul className="space-y-2 text-gray-300">
@@ -372,7 +524,7 @@ export default function DocsPage() {
                 <div className="space-y-6">
                   <div className="bg-[#252525] rounded-lg p-6">
                     <h2 className="text-2xl font-semibold mb-4">Technology Stack</h2>
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <h3 className="text-[#0094FF] font-semibold mb-2">Frontend</h3>
                         <ul className="space-y-1 text-gray-400">
@@ -485,7 +637,7 @@ export default function DocsPage() {
                   </p>
                 </div>
 
-                <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                   <div className="bg-[#252525] rounded-lg p-6 border-2 border-[#0094FF]">
                     <h3 className="text-2xl font-bold text-[#0094FF] mb-2">Major Features</h3>
                     <p className="text-3xl font-bold mb-2">250,000 - 500,000</p>
@@ -651,6 +803,184 @@ export default function DocsPage() {
                         </svg>
                         Fork on GitHub
                       </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {activeSection === 'contributors' && (
+              <section>
+                <h1 className="text-4xl font-bold mb-6">Top Contributors</h1>
+                <p className="text-lg text-gray-300 mb-8">
+                  Recognizing the developers who are building the Bitcoin Apps ecosystem. Contributors earn{' '}
+                  <span className="text-[#0094FF] font-bold">$BAPPS</span> tokens for successfully merged pull requests.
+                </p>
+
+                <div className="bg-gradient-to-r from-[#0094FF] to-[#00C896] p-1 rounded-lg mb-8">
+                  <div className="bg-[#1a1a1a] p-6 rounded-lg">
+                    <div className="flex items-center justify-between mb-4">
+                      <h2 className="text-2xl font-semibold">Live Contributor Leaderboard</h2>
+                      <div className="flex items-center space-x-2">
+                        <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span className="text-sm text-gray-400">Auto-updates every 5 minutes</span>
+                      </div>
+                    </div>
+                    
+                    {loadingContributors ? (
+                      <div className="text-center py-8">
+                        <div className="w-8 h-8 border-2 border-[#0094FF] border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                        <p className="text-gray-400">Loading contributors...</p>
+                      </div>
+                    ) : contributors.length > 0 ? (
+                      <div className="overflow-x-auto">
+                        <table className="w-full">
+                          <thead>
+                            <tr className="border-b border-[#3a3a3a]">
+                              <th className="text-left py-3 px-4">Rank</th>
+                              <th className="text-left py-3 px-4">Contributor</th>
+                              <th className="text-center py-3 px-4">Commits</th>
+                              <th className="text-center py-3 px-4">Merged PRs</th>
+                              <th className="text-right py-3 px-4">Est. $BAPPS Earned</th>
+                              <th className="text-center py-3 px-4">Profile</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {contributors.slice(0, 20).map((contributor, index) => (
+                              <tr key={contributor.login} className="border-b border-[#2a2a2a] hover:bg-[#252525] transition-colors">
+                                <td className="py-4 px-4">
+                                  <div className={`flex items-center justify-center w-8 h-8 rounded-full ${
+                                    index === 0 ? 'bg-yellow-500 text-black' :
+                                    index === 1 ? 'bg-gray-300 text-black' :
+                                    index === 2 ? 'bg-orange-600 text-white' :
+                                    'bg-[#3a3a3a] text-gray-400'
+                                  } font-bold`}>
+                                    {index + 1}
+                                  </div>
+                                </td>
+                                <td className="py-4 px-4">
+                                  <div className="flex items-center space-x-3">
+                                    <img
+                                      src={contributor.avatar_url}
+                                      alt={contributor.login}
+                                      className="w-10 h-10 rounded-full"
+                                    />
+                                    <div>
+                                      <p className="font-semibold">{contributor.login}</p>
+                                      {index < 3 && (
+                                        <p className="text-xs text-[#0094FF]">
+                                          {index === 0 ? '🏆 Top Contributor' :
+                                           index === 1 ? '🥈 Silver Contributor' :
+                                           '🥉 Bronze Contributor'}
+                                        </p>
+                                      )}
+                                    </div>
+                                  </div>
+                                </td>
+                                <td className="py-4 px-4 text-center">
+                                  <span className="bg-[#252525] px-3 py-1 rounded-full text-sm">
+                                    {contributor.contributions}
+                                  </span>
+                                </td>
+                                <td className="py-4 px-4 text-center">
+                                  <span className="bg-[#252525] px-3 py-1 rounded-full text-sm">
+                                    {contributor.merged_prs}
+                                  </span>
+                                </td>
+                                <td className="py-4 px-4 text-right">
+                                  <span className="text-[#0094FF] font-bold">
+                                    {contributor.estimated_tokens.toLocaleString()}
+                                  </span>
+                                </td>
+                                <td className="py-4 px-4 text-center">
+                                  <a
+                                    href={contributor.html_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-[#0094FF] hover:text-[#00C896] transition-colors"
+                                  >
+                                    <svg className="w-5 h-5 inline" fill="currentColor" viewBox="0 0 24 24">
+                                      <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                  </a>
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    ) : (
+                      <div className="text-center py-8">
+                        <p className="text-gray-400 mb-4">No contributors yet. Be the first!</p>
+                        <Link
+                          href="https://github.com/bitcoin-apps-suite/bapps"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center px-4 py-2 bg-[#0094FF] hover:bg-[#0084e5] rounded-lg transition-colors"
+                        >
+                          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                          </svg>
+                          Start Contributing
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-6">
+                  <div className="bg-[#252525] rounded-lg p-6">
+                    <h3 className="text-xl font-semibold mb-4">How Rankings Work</h3>
+                    <ul className="space-y-2 text-gray-400">
+                      <li className="flex items-start">
+                        <span className="text-[#0094FF] mr-2">•</span>
+                        <span>Rankings based on total commits to main branch</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0094FF] mr-2">•</span>
+                        <span>Merged PRs count toward your contributor score</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0094FF] mr-2">•</span>
+                        <span>Token estimates shown are indicative only</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-[#0094FF] mr-2">•</span>
+                        <span>Actual allocations determined after PR review</span>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-[#252525] rounded-lg p-6">
+                    <h3 className="text-xl font-semibold mb-4">Join the Leaderboard</h3>
+                    <p className="text-gray-400 mb-4">
+                      Start contributing to climb the rankings and earn $BAPPS tokens:
+                    </p>
+                    <div className="space-y-2">
+                      <Link
+                        href="https://github.com/bitcoin-apps-suite/bapps/fork"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-[#0094FF] hover:text-[#00C896] transition-colors"
+                      >
+                        → Fork the repository
+                      </Link>
+                      <Link
+                        href="https://github.com/bitcoin-apps-suite/bapps/issues"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-[#0094FF] hover:text-[#00C896] transition-colors"
+                      >
+                        → Browse open issues
+                      </Link>
+                      <Link
+                        href="https://github.com/bitcoin-apps-suite/bapps/pulls"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block text-[#0094FF] hover:text-[#00C896] transition-colors"
+                      >
+                        → View pull requests
+                      </Link>
                     </div>
                   </div>
                 </div>
