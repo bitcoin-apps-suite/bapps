@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 interface SidebarProps {
   categories: string[]
   selectedCategory: string
@@ -11,12 +13,18 @@ export default function Sidebar({ categories, selectedCategory, onCategorySelect
     <aside className="w-64 bg-[#252525] border-r border-[#3a3a3a] flex flex-col">
       <div className="p-6 border-b border-[#3a3a3a]">
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-[#FF6B00] to-[#FF9500] rounded-lg flex items-center justify-center">
-            <span className="text-white font-bold text-xl">₿</span>
+          <div className="relative w-10 h-10">
+            <Image
+              src="/bitcoin-apps-logo.jpg"
+              alt="Bitcoin Apps"
+              fill
+              className="object-cover rounded-lg"
+              sizes="40px"
+            />
           </div>
           <div>
-            <h2 className="text-white font-semibold">Bitcoin Suite</h2>
-            <p className="text-xs text-gray-400">Creative Cloud</p>
+            <h2 className="text-white font-semibold">Bitcoin Apps</h2>
+            <p className="text-xs text-gray-400">Blockchain Cloud</p>
           </div>
         </div>
       </div>

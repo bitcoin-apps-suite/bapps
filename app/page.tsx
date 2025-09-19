@@ -18,7 +18,7 @@ const apps = [
     image: '/bitcoin-writer_03 copy.png',
     color: '#FF6B00',
     description: 'Write, encrypt, and store documents on Bitcoin',
-    category: 'Productivity',
+    category: 'Bitcoin Office',
     status: 'installed' as const,
     isPoc: true,
     version: '2.4.1',
@@ -39,7 +39,7 @@ const apps = [
     image: '/app-images/bitcoin-drive.jpg',
     color: '#22c55e',
     description: 'Decentralized cloud storage on Bitcoin blockchain',
-    category: 'Storage',
+    category: 'Bitcoin Storage',
     status: 'installed' as const,
     isPoc: true,
     version: '1.2.0',
@@ -57,16 +57,16 @@ const apps = [
     fullName: 'Bitcoin Spreadsheets',
     ticker: '$BSheets',
     icon: 'Sh',
-    image: '/app-images/bitcoin-sheets-icon.svg',
+    image: '/bitcoin-sheets-icon.png',
     color: '#3b82f6',
     description: 'Blockchain-based spreadsheet on Bitcoin',
-    category: 'Productivity',
+    category: 'Bitcoin Office',
     status: 'installed' as const,
     isPoc: true,
     version: '1.8.3',
     size: '156 MB',
     lastUpdated: '2024-11-28',
-    url: 'https://bitcoin-sheets.vercel.app',
+    url: 'https://bitcoin-spreadsheet.vercel.app',
     price: 0.28,
     change24h: 8.9,
     marketCap: '$1.2M',
@@ -81,7 +81,7 @@ const apps = [
     image: '/bitcoin-email.jpg',
     color: '#9333EA',
     description: 'Encrypted email service with Bitcoin-powered features',
-    category: 'Communication',
+    category: 'Bitcoin Communication',
     status: 'installed' as const,
     isPoc: true,
     version: '1.0.0',
@@ -102,7 +102,7 @@ const apps = [
     icon: 'Au',
     color: '#DC2626',
     description: 'Decentralized authentication system on Bitcoin',
-    category: 'Security',
+    category: 'Bitcoin Utilities',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -120,7 +120,7 @@ const apps = [
     icon: 'Ch',
     color: '#059669',
     description: 'Decentralized messaging platform on Bitcoin',
-    category: 'Communication',
+    category: 'Bitcoin Communication',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -138,7 +138,7 @@ const apps = [
     icon: 'Do',
     color: '#6366F1',
     description: 'Bitcoin blockchain domain name system',
-    category: 'Infrastructure',
+    category: 'Bitcoin Infrastructure',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -156,7 +156,7 @@ const apps = [
     icon: 'Dw',
     color: '#8B5CF6',
     description: 'Vector graphics and design tools on Bitcoin',
-    category: 'Creative',
+    category: 'Bitcoin Creative',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -174,7 +174,7 @@ const apps = [
     icon: 'Ex',
     color: '#10B981',
     description: 'Central exchange for all Bitcoin app tokens',
-    category: 'Finance',
+    category: 'Bitcoin Finance',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -193,7 +193,7 @@ const apps = [
     icon: 'Mu',
     color: '#EC4899',
     description: 'Decentralized music streaming on Bitcoin',
-    category: 'Media',
+    category: 'Bitcoin Media',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -211,7 +211,7 @@ const apps = [
     icon: 'Pa',
     color: '#F59E0B',
     description: 'Digital art creation platform on Bitcoin',
-    category: 'Creative',
+    category: 'Bitcoin Creative',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -229,7 +229,7 @@ const apps = [
     icon: 'Pi',
     color: '#06B6D4',
     description: 'Image storage and sharing on Bitcoin',
-    category: 'Media',
+    category: 'Bitcoin Media',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -247,7 +247,7 @@ const apps = [
     icon: 'Re',
     color: '#84CC16',
     description: 'Decentralized asset registry on Bitcoin',
-    category: 'Infrastructure',
+    category: 'Bitcoin Infrastructure',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -265,7 +265,7 @@ const apps = [
     icon: 'Sr',
     color: '#A855F7',
     description: 'Digital equity platform on Bitcoin',
-    category: 'Finance',
+    category: 'Bitcoin Finance',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -283,7 +283,7 @@ const apps = [
     icon: 'Vi',
     color: '#7C3AED',
     description: 'Video streaming and storage on Bitcoin',
-    category: 'Media',
+    category: 'Bitcoin Media',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -301,7 +301,7 @@ const apps = [
     icon: 'Wa',
     color: '#F97316',
     description: 'Secure Bitcoin wallet',
-    category: 'Finance',
+    category: 'Bitcoin Finance',
     status: 'coming' as const,
     version: null,
     size: null,
@@ -313,7 +313,17 @@ const apps = [
   },
 ]
 
-const categories = ['All Apps', 'Productivity', 'Storage', 'Communication', 'Security', 'Media', 'Creative', 'Finance', 'Infrastructure']
+const categories = [
+  'All Apps', 
+  'Bitcoin Office', 
+  'Bitcoin Finance', 
+  'Bitcoin Media', 
+  'Bitcoin Communication', 
+  'Bitcoin Storage', 
+  'Bitcoin Creative', 
+  'Bitcoin Utilities', 
+  'Bitcoin Infrastructure'
+]
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('All Apps')
@@ -362,6 +372,37 @@ export default function Home() {
       />
       
       <main className="flex-1 flex flex-col">
+        {/* Developer Taskbar - not sticky, disappears on scroll */}
+        <div className="bg-[#1a1a1a] border-b border-[#3a3a3a] px-8 py-2">
+          <div className="flex items-center justify-center space-x-8 text-sm">
+            <a 
+              href="https://github.com/bitcoin-apps-suite/bapps"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white flex items-center space-x-1 transition-colors"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <span className="text-gray-600">|</span>
+            <a 
+              href="/docs"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              Developer Docs
+            </a>
+            <span className="text-gray-600">|</span>
+            <a 
+              href="/token"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <span className="text-[#0094FF] font-bold">$BAPPS</span> Token
+            </a>
+          </div>
+        </div>
+
         {/* Header */}
         <header className="bg-[#252525] border-b border-[#3a3a3a] px-8 py-4">
           <div className="flex items-center justify-between">
@@ -376,31 +417,34 @@ export default function Home() {
                     sizes="40px"
                   />
                 </div>
-                <h1 className="text-2xl font-light">Bitcoin Apps</h1>
+                <div>
+                  <h1 className="text-2xl font-light">Bitcoin Apps</h1>
+                  <p className="text-xs text-gray-500">Blockchain Cloud</p>
+                </div>
               </div>
-              <span className="text-sm text-gray-400">Suite v1.0.0</span>
             </div>
             
             <div className="flex items-center space-x-4">
-              {/* User Info */}
-              {user && (
-                <div className="flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
-                    <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
-                      {user.name.charAt(0).toUpperCase()}
+              {/* User Info and Search */}
+              <div className="flex items-center space-x-4">
+                {user && (
+                  <div className="flex items-center space-x-3">
+                    <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
+                      <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                        {user.name.charAt(0).toUpperCase()}
+                      </div>
+                      <span className="text-sm text-gray-300">{user.name}</span>
+                      <span className="text-xs text-gray-500">({user.provider})</span>
                     </div>
-                    <span className="text-sm text-gray-300">{user.name}</span>
-                    <span className="text-xs text-gray-500">({user.provider})</span>
+                    <button
+                      onClick={logout}
+                      className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
+                    >
+                      Logout
+                    </button>
                   </div>
-                  <button
-                    onClick={logout}
-                    className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
-                  >
-                    Logout
-                  </button>
-                </div>
-              )}
-              <div className="relative">
+                )}
+                <div className="relative">
                 <input
                   type="text"
                   placeholder="Search apps..."
@@ -430,6 +474,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 </button>
+              </div>
               </div>
             </div>
           </div>
