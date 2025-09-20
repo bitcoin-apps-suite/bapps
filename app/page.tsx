@@ -57,7 +57,7 @@ const apps = [
     fullName: 'Bitcoin Spreadsheets',
     ticker: '$BSheets',
     icon: 'Sh',
-    image: '/app-images/bitcoin-spreadsheets.png',
+    image: '/bitcoin-sheets-icon.png',
     color: '#3b82f6',
     description: 'Blockchain-based spreadsheet on Bitcoin',
     category: 'Bitcoin Office',
@@ -92,6 +92,46 @@ const apps = [
     change24h: 5.7,
     marketCap: '$1.1M',
     volume24h: '$54K'
+  },
+  {
+    id: 'senseii',
+    name: 'Senseii',
+    fullName: 'Senseii Bitcoin Education',
+    ticker: '$SENSEII',
+    icon: '先',
+    color: '#000000',
+    description: 'Learn Bitcoin fundamentals and advanced concepts',
+    category: 'Bitcoin Education',
+    status: 'installed' as const,
+    isPoc: true,
+    version: '1.0.0',
+    size: '82 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://senseii-zeta.vercel.app',
+    price: 0.19,
+    change24h: 15.3,
+    marketCap: '$900K',
+    volume24h: '$42K'
+  },
+  {
+    id: 'cashboard',
+    name: 'Cashboard',
+    fullName: 'Cashboard',
+    ticker: '$CASH',
+    icon: 'Cb',
+    color: '#059669',
+    description: 'Bitcoin infrastructure dashboard and analytics',
+    category: 'Bitcoin Infrastructure',
+    status: 'installed' as const,
+    isPoc: true,
+    version: '2.1.0',
+    size: '95 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://cashboard.website',
+    price: 0.38,
+    change24h: 7.2,
+    marketCap: '$1.5M',
+    volume24h: '$78K'
   },
   // Coming Soon Apps
   {
@@ -322,7 +362,8 @@ const categories = [
   'Bitcoin Storage', 
   'Bitcoin Creative', 
   'Bitcoin Utilities', 
-  'Bitcoin Infrastructure'
+  'Bitcoin Infrastructure',
+  'Bitcoin Education'
 ]
 
 export default function Home() {
