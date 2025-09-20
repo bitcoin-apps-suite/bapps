@@ -1,10 +1,10 @@
-# Bitcoin Apps Suite - Blockchain Cloud
+# Bitcoin Apps - Blockchain Cloud Suite
 
 ![Bitcoin Apps Logo](/public/bitcoin-apps-logo.jpg)
 
 ## 🚀 Overview
 
-Bitcoin Apps Suite is a comprehensive ecosystem of decentralized applications built on Bitcoin blockchain technology. Our mission is to create a "Blockchain Cloud" - a unified platform where every app has its own token, creating a sustainable economic model for developers and users alike.
+Bitcoin Apps - Blockchain Cloud Suite is a comprehensive ecosystem of decentralized applications built on Bitcoin blockchain technology. Our mission is to create a "Blockchain Cloud" - a unified platform where every app has its own token, creating a sustainable economic model for developers and users alike.
 
 ## 🌟 Features
 

@@ -489,7 +489,7 @@ export default function Home() {
                 <div className="relative w-10 h-10">
                   <Image
                     src="/bitcoin-apps-logo.jpg"
-                    alt="Bitcoin Apps Suite"
+                    alt="Blockchain Cloud Suite"
                     fill
                     className="object-cover rounded-lg"
                     sizes="40px"
@@ -497,7 +497,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-light">Bitcoin Apps</h1>
-                  <p className="text-xs text-gray-500">Blockchain Cloud</p>
+                  <p className="text-xs text-gray-500">Blockchain Cloud Suite</p>
                 </div>
               </div>
             </div>
