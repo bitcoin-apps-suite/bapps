@@ -475,34 +475,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col h-screen bg-[#1e1e1e] text-white overflow-hidden">
-      {/* Developer Taskbar - Full width, above everything */}
-      <div className="bg-[#1a1a1a] border-b border-[#3a3a3a] px-4 lg:px-8 py-2">
-          <div className="flex items-center justify-end space-x-6 text-sm">
-            <a 
-              href="https://github.com/bitcoin-apps-suite/bapps"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              GitHub
-            </a>
-            <span className="text-gray-600">|</span>
-            <a 
-              href="/docs"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              Dev
-            </a>
-            <span className="text-gray-600">|</span>
-            <a 
-              href="/token"
-              className="text-gray-400 hover:text-white transition-colors"
-            >
-              <span className="text-[#0094FF] font-bold">$BAPPS</span>
-            </a>
-          </div>
-      </div>
-      
       {/* Main container with sidebar and content */}
       <div className="flex flex-1 overflow-hidden">
         {/* Desktop Sidebar - completely hidden on mobile */}
@@ -555,7 +527,7 @@ export default function Home() {
                 <div className="relative w-10 h-10">
                   <Image
                     src="/bitcoin-apps-logo.jpg"
-                    alt="Blockchain Cloud Suite"
+                    alt="Bitcoin Software Co."
                     fill
                     className="object-cover rounded-lg"
                     sizes="40px"
@@ -563,12 +535,36 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-light">Bitcoin Apps</h1>
-                  <p className="text-xs text-gray-500">Blockchain Cloud Suite</p>
+                  <p className="text-xs text-gray-500">Bitcoin Software Co.</p>
                 </div>
               </div>
             </div>
             
             <div className="flex items-center space-x-2 lg:space-x-4">
+              {/* Quick Links - Hidden on mobile */}
+              <div className="hidden lg:flex items-center space-x-4">
+                <a 
+                  href="https://github.com/bitcoin-apps-suite/bapps"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  GitHub
+                </a>
+                <a 
+                  href="/docs"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Docs
+                </a>
+                <a 
+                  href="/token"
+                  className="text-[#0094FF] hover:text-[#0084e6] transition-colors text-sm font-medium"
+                >
+                  $BAPPS
+                </a>
+              </div>
+              
               {/* Search - Hidden on mobile, shown on desktop */}
               <div className="hidden lg:block relative">
                 <input
