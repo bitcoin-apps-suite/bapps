@@ -133,6 +133,26 @@ const apps = [
     marketCap: '$1.5M',
     volume24h: '$78K'
   },
+  {
+    id: 'ninjapunkgirls',
+    name: 'NinjaPunkGirls',
+    fullName: 'NinjaPunkGirls',
+    ticker: '$NPG',
+    icon: '忍',
+    color: '#E11D48',
+    description: 'Collectible NFT game with ninja punk girl characters',
+    category: 'Bitcoin Games',
+    status: 'installed' as const,
+    isPoc: true,
+    version: '1.5.0',
+    size: '178 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://ninjapunkgirls.website',
+    price: 0.52,
+    change24h: 18.7,
+    marketCap: '$2.1M',
+    volume24h: '$126K'
+  },
   // Coming Soon Apps
   {
     id: 'bitcoin-auth',
