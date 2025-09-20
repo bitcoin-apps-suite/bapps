@@ -8,7 +8,7 @@ import Sidebar from '@/components/Sidebar'
 import { useAuth } from '@/components/AuthContext'
 
 const apps = [
-  // Featured Canonical Apps
+  // Featured Canonical Apps - Ordered by release
   {
     id: 'bitcoin-writer',
     name: 'Writer',
@@ -30,50 +30,6 @@ const apps = [
     change24h: 12.5,
     marketCap: '$2.4M',
     volume24h: '$142K'
-  },
-  {
-    id: 'bitcoin-music',
-    name: 'Music',
-    fullName: 'Bitcoin Music',
-    ticker: '$BMusic',
-    icon: 'Mu',
-    image: '/app-images/bitcoin-music-icon.jpg',
-    color: '#EC4899',
-    description: 'Decentralized music streaming on Bitcoin',
-    category: 'Featured Apps',
-    status: 'installed' as const,
-    isPoc: true,
-    isCanonical: true,
-    version: '1.0.0',
-    size: '87 MB',
-    lastUpdated: '2024-12-20',
-    url: 'https://bitcoin-music.vercel.app',
-    price: 0.37,
-    change24h: 12.8,
-    marketCap: '$1.4M',
-    volume24h: '$68K'
-  },
-  {
-    id: 'bitcoin-drive',
-    name: 'Drive',
-    fullName: 'Bitcoin Drive',
-    ticker: '$BDrive', 
-    icon: 'Dr',
-    image: '/app-images/bitcoin-drive.jpg',
-    color: '#22c55e',
-    description: 'Decentralized cloud storage on Bitcoin blockchain',
-    category: 'Bitcoin Storage',
-    status: 'installed' as const,
-    isPoc: true,
-    isCanonical: true,
-    version: '1.2.0',
-    size: '98 MB',
-    lastUpdated: '2024-12-08',
-    url: 'https://bitcoin-drive.vercel.app',
-    price: 0.31,
-    change24h: -3.2,
-    marketCap: '$1.8M',
-    volume24h: '$89K'
   },
   {
     id: 'bitcoin-sheets',
@@ -98,6 +54,28 @@ const apps = [
     volume24h: '$67K'
   },
   {
+    id: 'bitcoin-drive',
+    name: 'Drive',
+    fullName: 'Bitcoin Drive',
+    ticker: '$BDrive', 
+    icon: 'Dr',
+    image: '/app-images/bitcoin-drive.jpg',
+    color: '#22c55e',
+    description: 'Decentralized cloud storage on Bitcoin blockchain',
+    category: 'Bitcoin Storage',
+    status: 'installed' as const,
+    isPoc: true,
+    isCanonical: true,
+    version: '1.2.0',
+    size: '98 MB',
+    lastUpdated: '2024-12-08',
+    url: 'https://bitcoin-drive.vercel.app',
+    price: 0.31,
+    change24h: -3.2,
+    marketCap: '$1.8M',
+    volume24h: '$89K'
+  },
+  {
     id: 'bitcoin-email',
     name: 'Email',
     fullName: 'Bitcoin Email',
@@ -109,6 +87,7 @@ const apps = [
     category: 'Bitcoin Communication',
     status: 'installed' as const,
     isPoc: true,
+    isCanonical: true,
     version: '1.0.0',
     size: '124 MB',
     lastUpdated: '2024-12-15',
@@ -117,6 +96,28 @@ const apps = [
     change24h: 5.7,
     marketCap: '$1.1M',
     volume24h: '$54K'
+  },
+  {
+    id: 'bitcoin-music',
+    name: 'Music',
+    fullName: 'Bitcoin Music',
+    ticker: '$BMusic',
+    icon: 'Mu',
+    image: '/bitcoin-music-3d.png',
+    color: '#EC4899',
+    description: 'Decentralized music streaming on Bitcoin',
+    category: 'Featured Apps',
+    status: 'installed' as const,
+    isPoc: true,
+    isCanonical: true,
+    version: '1.0.0',
+    size: '87 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://bitcoin-music.vercel.app',
+    price: 0.37,
+    change24h: 12.8,
+    marketCap: '$1.4M',
+    volume24h: '$68K'
   },
   {
     id: 'senseii',
@@ -464,7 +465,7 @@ export default function Home() {
   // Show loading while checking auth
   if (isLoading) {
     return (
-      <div className="flex h-screen bg-[#1e1e1e] items-center justify-center">
+      <div className="flex h-screen bg-black items-center justify-center">
         <div className="text-center">
           <div className="w-16 h-16 border-4 border-[#0094FF] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
           <p className="text-gray-400">Loading...</p>
@@ -474,7 +475,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-[#1e1e1e] text-white overflow-hidden">
+    <div className="flex flex-col h-screen bg-black text-white overflow-hidden">
       {/* Main container with sidebar and content */}
       <div className="flex flex-1 overflow-hidden">
         {/* Desktop Sidebar - completely hidden on mobile */}
@@ -510,7 +511,7 @@ export default function Home() {
         
         <main className="flex-1 flex flex-col w-full">
           {/* Header */}
-        <header className="bg-[#252525] border-b border-[#3a3a3a] px-4 lg:px-8 py-4">
+        <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3 lg:space-x-6">
               {/* Mobile Menu Button */}
@@ -557,6 +558,20 @@ export default function Home() {
                 >
                   Docs
                 </a>
+                <a 
+                  href="https://x.com/bitcoinapps_X"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Twitter
+                </a>
+                <button
+                  onClick={() => alert('Discord coming soon™')}
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Discord
+                </button>
                 <a 
                   href="/token"
                   className="text-[#0094FF] hover:text-[#0084e6] transition-colors text-sm font-medium"
@@ -632,7 +647,7 @@ export default function Home() {
         </header>
 
         {/* Mobile Search Bar */}
-        <div className="lg:hidden bg-[#252525] px-4 py-3 border-b border-[#3a3a3a]">
+        <div className="lg:hidden bg-black px-4 py-3 border-b border-[#2a2a2a]">
           <div className="relative">
             <input
               type="text"
@@ -648,7 +663,7 @@ export default function Home() {
         </div>
 
         {/* Status Bar */}
-        <div className="bg-[#2a2a2a] px-4 lg:px-8 py-3 border-b border-[#3a3a3a]">
+        <div className="bg-black px-4 lg:px-8 py-3 border-b border-[#2a2a2a]">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between text-sm space-y-2 lg:space-y-0">
             <div className="flex items-center space-x-6">
               <span className="text-gray-400">{filteredApps.length} apps</span>
@@ -783,7 +798,7 @@ export default function Home() {
       {/* Login Modal */}
       {loginModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-[#252525] border border-[#3a3a3a] rounded-lg p-6 w-full max-w-md">
+          <div className="bg-[#0a0a0a] border border-[#1a1a1a] rounded-lg p-6 w-full max-w-md">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold">Connect Your Account</h2>
               <button

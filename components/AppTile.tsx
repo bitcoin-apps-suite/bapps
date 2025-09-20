@@ -51,9 +51,9 @@ export default function AppTile({ app }: AppTileProps) {
     >
       <div className={`
         rounded-xl p-4 transition-all duration-200 relative
-        ${app.isCanonical ? 'bg-gradient-to-br from-[#2a2a2a] to-[#1e1e1e] ring-1 ring-[#0094FF]/20' : 
-          app.isThirdParty ? 'bg-[#252525] border border-dashed border-[#4a4a4a]' : 
-          'bg-[#2a2a2a]'}
+        ${app.isCanonical ? 'bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] ring-1 ring-[#0094FF]/20' : 
+          app.isThirdParty ? 'bg-[#0f0f0f] border border-dashed border-[#2a2a2a]' : 
+          'bg-[#1a1a1a]'}
         ${isHovered ? 'transform scale-105 shadow-2xl' : ''}
       `}>
         {/* App Icon */}

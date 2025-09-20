@@ -51,3 +51,10 @@ build-kill-port-app.sh
 *.png
 screenshot*.jpg
 screencapture*.jpg
+
+# Management & Private Documentation
+MANAGEMENT.md
+COMPANY-STRUCTURE.md
+management-docs/
+private-docs/
+.management/
