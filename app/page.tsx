@@ -140,6 +140,26 @@ const apps = [
     volume24h: '$42K'
   },
   {
+    id: 'future-of-blockchain',
+    name: 'Future of Blockchain',
+    fullName: 'Future of Blockchain',
+    ticker: '$FOB',
+    icon: 'FoB',
+    color: '#6366F1',
+    description: 'Explore the future potential and innovations of blockchain technology',
+    category: 'Bitcoin Education',
+    status: 'installed' as const,
+    isPoc: true,
+    version: '1.0.0',
+    size: '65 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://future-of-blockchain.vercel.app',
+    price: 0.15,
+    change24h: 8.2,
+    marketCap: '$750K',
+    volume24h: '$32K'
+  },
+  {
     id: 'cashboard',
     name: 'Cashboard',
     fullName: 'Cashboard',
