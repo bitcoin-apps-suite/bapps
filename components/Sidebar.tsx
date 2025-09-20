@@ -24,7 +24,7 @@ export default function Sidebar({ categories, selectedCategory, onCategorySelect
           </div>
           <div>
             <h2 className="text-white font-semibold">Bitcoin Apps</h2>
-            <p className="text-xs text-gray-400">Blockchain Cloud Suite</p>
+            <p className="text-[10px] text-gray-400">Bitcoin Software Co.</p>
           </div>
         </div>
       </div>

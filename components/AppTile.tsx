@@ -98,6 +98,26 @@ export default function AppTile({ app }: AppTileProps) {
               <div className="w-2 h-2 bg-[#6B7280] rounded-full"></div>
             </div>
           )}
+          
+          {/* Hover Overlay Info */}
+          {isHovered && app.status !== 'coming' && (
+            <div className="absolute inset-0 bottom-0 h-full bg-gradient-to-t from-black/95 via-black/80 to-transparent backdrop-blur-sm p-3 flex flex-col justify-end transition-all duration-200 z-30 rounded-xl">
+              <div className="space-y-1 pb-2">
+                <p className="text-white text-xs font-medium truncate">{app.fullName}</p>
+                <p className="text-gray-300 text-[10px] line-clamp-2">{app.description}</p>
+                <div className="flex justify-between items-center pt-1">
+                  <span className="text-[10px] text-gray-400">{app.category}</span>
+                  {app.version && <span className="text-[10px] text-gray-400">v{app.version}</span>}
+                </div>
+                {app.marketCap && (
+                  <div className="flex justify-between items-center">
+                    <span className="text-[10px] text-gray-400">Market Cap</span>
+                    <span className="text-[10px] text-white font-mono">{app.marketCap}</span>
+                  </div>
+                )}
+              </div>
+            </div>
+          )}
         </div>
         
         {/* App Info */}
@@ -204,39 +224,6 @@ export default function AppTile({ app }: AppTileProps) {
           )}
         </div>
       </div>
-      
-      {/* Hover Card */}
-      {isHovered && app.status !== 'coming' && (
-        <div className="absolute z-20 left-0 right-0 top-full mt-2 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg p-4 shadow-2xl pointer-events-none">
-          <h4 className="text-white font-medium text-sm mb-2">{app.fullName}</h4>
-          <p className="text-gray-400 text-xs mb-3">{app.description}</p>
-          
-          <div className="space-y-1 text-xs">
-            <div className="flex justify-between">
-              <span className="text-gray-500">Category:</span>
-              <span className="text-gray-300">{app.category}</span>
-            </div>
-            {app.version && (
-              <div className="flex justify-between">
-                <span className="text-gray-500">Version:</span>
-                <span className="text-gray-300">v{app.version}</span>
-              </div>
-            )}
-            {app.size && (
-              <div className="flex justify-between">
-                <span className="text-gray-500">Size:</span>
-                <span className="text-gray-300">{app.size}</span>
-              </div>
-            )}
-            {app.lastUpdated && (
-              <div className="flex justify-between">
-                <span className="text-gray-500">Updated:</span>
-                <span className="text-gray-300">{app.lastUpdated}</span>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
     </div>
   )
 }

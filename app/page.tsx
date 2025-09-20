@@ -535,7 +535,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-light">Bitcoin Apps</h1>
-                  <p className="text-xs text-gray-500">Bitcoin Software Co.</p>
+                  <p className="text-xs text-gray-500">Blockchain Cloud Suite</p>
                 </div>
               </div>
             </div>
