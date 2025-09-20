@@ -363,7 +363,9 @@ const categories = [
   'Bitcoin Creative', 
   'Bitcoin Utilities', 
   'Bitcoin Infrastructure',
-  'Bitcoin Education'
+  'Bitcoin Education',
+  'Bitcoin Entertainment',
+  'Bitcoin Games'
 ]
 
 export default function Home() {

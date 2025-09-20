@@ -65,6 +65,14 @@ export default function AppTile({ app }: AppTileProps) {
               onError={() => setImageError(true)}
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
             />
+          ) : app.id === 'senseii' ? (
+            <>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+              <div className="relative z-10 flex items-center justify-center w-full h-full">
+                <span className="absolute text-white text-5xl font-bold transform rotate-12 translate-x-10 translate-y-8 opacity-90">₿</span>
+                <span className="text-white text-6xl font-bold">先</span>
+              </div>
+            </>
           ) : (
             <>
               <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
