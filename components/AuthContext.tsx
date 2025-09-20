@@ -59,7 +59,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (typeof window !== 'undefined') {
       localStorage.setItem('user', JSON.stringify(mockUser))
     }
-    router.push('/')
+    // Stay on current page after login instead of redirecting
   }
 
   const logout = () => {
@@ -67,7 +67,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (typeof window !== 'undefined') {
       localStorage.removeItem('user')
     }
-    router.push('/login')
+    // Stay on current page instead of redirecting to login
   }
 
   return (

@@ -1,0 +1,37 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../bitcoin-drive"
+		},
+		{
+			"path": "../../../../Volumes/Extreme SSD/Projects/bitcoin-writer"
+		},
+		{
+			"path": "../../blockchain-spreadsheet"
+		},
+		{
+			"path": "../../../../Volumes/Extreme SSD/Projects/bitcoin-email"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"titleBar.activeBackground": "#1e3a8a",
+			"titleBar.activeForeground": "#ffffff",
+			"statusBar.background": "#1e3a8a",
+			"statusBar.foreground": "#ffffff",
+			"activityBar.background": "#2563eb",
+			"activityBar.foreground": "#ffffff",
+			"sideBar.background": "#1e293b",
+			"sideBar.foreground": "#cbd5e1",
+			"sideBarTitle.foreground": "#ffffff",
+			"panel.background": "#0f172a",
+			"panel.foreground": "#cbd5e1",
+			"tab.activeBackground": "#1e3a8a",
+			"tab.activeForeground": "#ffffff",
+			"editorGroupHeader.tabsBackground": "#0f172a"
+		}
+	}
+}
