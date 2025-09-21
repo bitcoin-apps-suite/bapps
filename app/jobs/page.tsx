@@ -195,7 +195,7 @@ export default function JobsPage() {
     activeContractors: new Set(jobs.filter(j => j.claimedBy).map(j => j.claimedBy)).size
   }
 
-  const apps = [...new Set(jobs.map(j => j.app))]
+  const apps = Array.from(new Set(jobs.map(j => j.app)))
 
   return (
     <div className="min-h-screen bg-black text-white">
