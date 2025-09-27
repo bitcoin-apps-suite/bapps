@@ -1,0 +1,59 @@
+/* VS Code Blue Theme for Chrome */
+:root {
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --vscode-blue: #4169e1;
+  --vscode-light-blue: #6495ed;
+  --vscode-text: #cccccc;
+  --vscode-border: #3c3c3c;
+}
+
+/* Override default scrollbars to match VS Code */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vscode-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4f4f4f;
+}
+
+/* Style selection to match VS Code */
+::selection {
+  background: var(--vscode-light-blue);
+  color: white;
+}
+
+/* Focus outlines */
+:focus {
+  outline: 1px solid var(--vscode-light-blue) !important;
+  outline-offset: -1px !important;
+}
+
+/* Input styling */
+input, textarea, select {
+  background: var(--vscode-sidebar) !important;
+  border: 1px solid var(--vscode-border) !important;
+  color: var(--vscode-text) !important;
+}
+
+/* Button styling */
+button {
+  background: var(--vscode-blue) !important;
+  border: none !important;
+  color: white !important;
+  padding: 6px 12px !important;
+}
+
+button:hover {
+  background: var(--vscode-light-blue) !important;
+}

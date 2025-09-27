@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "VS Code Blue Theme",
+  "version": "1.0.0",
+  "description": "A blue theme extension matching VS Code's appearance",
+  
+  "theme": {
+    "colors": {
+      "toolbar": [30, 30, 30],
+      "toolbar_text": [204, 204, 204],
+      "frame": [23, 23, 23],
+      "tab_text": [204, 204, 204],
+      "tab_background_text": [153, 153, 153],
+      "bookmark_text": [204, 204, 204],
+      "ntp_background": [30, 30, 30],
+      "ntp_text": [204, 204, 204],
+      "button_background": [65, 105, 225]
+    },
+    "tints": {
+      "buttons": [0.0, 0.6, 0.4]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["theme.css"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "permissions": [
+    "activeTab"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Royal Blue VS Code Theme",
+  "version": "1.0.0",
+  "description": "A royal blue theme extension matching VS Code with enhanced blue colors",
+  
+  "theme": {
+    "colors": {
+      "frame": [65, 105, 225],
+      "frame_inactive": [50, 90, 200],
+      "toolbar": [65, 105, 225],
+      "tab_text": [255, 255, 255],
+      "tab_background_text": [255, 255, 255],
+      "bookmark_text": [255, 255, 255],
+      "ntp_background": [65, 105, 225],
+      "ntp_text": [255, 255, 255],
+      "button_background": [100, 149, 237],
+      "omnibox": [100, 149, 237],
+      "omnibox_text": [255, 255, 255]
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": ["theme.css"],
+      "run_at": "document_start"
+    }
+  ],
+
+  "permissions": [
+    "activeTab"
+  ]
+}

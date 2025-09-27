@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitcoin Email - Pages Library</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .page-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .page-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .page-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .page-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .page-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .page-path {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            background: #f5f5f5;
+            padding: 8px;
+            border-radius: 5px;
+            word-break: break-all;
+        }
+        
+        .page-description {
+            color: #777;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: fadeIn 0.8s ease;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .category-section {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            color: white;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-left: 10px;
+            border-left: 4px solid white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .page-card:nth-child(1) { animation-delay: 0.1s; }
+        .page-card:nth-child(2) { animation-delay: 0.2s; }
+        .page-card:nth-child(3) { animation-delay: 0.3s; }
+        .page-card:nth-child(4) { animation-delay: 0.4s; }
+        .page-card:nth-child(5) { animation-delay: 0.5s; }
+        .page-card:nth-child(6) { animation-delay: 0.6s; }
+        .page-card:nth-child(7) { animation-delay: 0.7s; }
+        .page-card:nth-child(8) { animation-delay: 0.8s; }
+        .page-card:nth-child(9) { animation-delay: 0.9s; }
+        .page-card:nth-child(10) { animation-delay: 1.0s; }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Bitcoin Email</h1>
+            <p class="subtitle">Pages & Components Library</p>
+        </header>
+        
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">15</div>
+                <div class="stat-label">Total Pages</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">Next.js</div>
+                <div class="stat-label">Framework</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">TypeScript</div>
+                <div class="stat-label">Language</div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">📦 Core Pages</h2>
+            <div class="pages-grid">
+                <div class="page-card">
+                    <div class="page-icon">🏠</div>
+                    <h3 class="page-title">Homepage</h3>
+                    <div class="page-path">/app/page.tsx</div>
+                    <p class="page-description">Main landing page for Bitcoin Email application</p>
+                    <span class="badge">Main Entry</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">📧</div>
+                    <h3 class="page-title">Bitcoin Email</h3>
+                    <div class="page-path">/app/bitcoin-email/page.tsx</div>
+                    <p class="page-description">Core email interface with blockchain integration</p>
+                    <span class="badge">Featured</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">🌙</div>
+                    <h3 class="page-title">Dark Mode Email</h3>
+                    <div class="page-path">/app/bitcoin-email/dark/page.tsx</div>
+                    <p class="page-description">Dark theme variant of the email interface</p>
+                    <span class="badge">Theme Variant</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">📨</div>
+                    <h3 class="page-title">Inbox</h3>
+                    <div class="page-path">/app/inbox/page.tsx</div>
+                    <p class="page-description">Email inbox with message management</p>
+                    <span class="badge">Core Feature</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">✏️ Communication</h2>
+            <div class="pages-grid">
+                <div class="page-card">
+                    <div class="page-icon">✍️</div>
+                    <h3 class="page-title">Compose</h3>
+                    <div class="page-path">/app/compose/page.tsx</div>
+                    <p class="page-description">Create and send new emails on the blockchain</p>
+                    <span class="badge">Interactive</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">📝</div>
+                    <h3 class="page-title">Drafts</h3>
+                    <div class="page-path">/app/drafts/page.tsx</div>
+                    <p class="page-description">Manage saved email drafts</p>
+                    <span class="badge">Storage</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">💰 Financial</h2>
+            <div class="pages-grid">
+                <div class="page-card">
+                    <div class="page-icon">🪙</div>
+                    <h3 class="page-title">Token</h3>
+                    <div class="page-path">/app/token/page.tsx</div>
+                    <p class="page-description">$BEMAIL token information and utilities</p>
+                    <span class="badge">DeFi</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">💱</div>
+                    <h3 class="page-title">Exchange</h3>
+                    <div class="page-path">/app/exchange/page.tsx</div>
+                    <p class="page-description">Trade email tokens and NFTs</p>
+                    <span class="badge">Marketplace</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">🎫</div>
+                    <h3 class="page-title">Tokenize</h3>
+                    <div class="page-path">/app/tokenize/page.tsx</div>
+                    <p class="page-description">Convert emails to NFTs or tokens</p>
+                    <span class="badge">NFT Creation</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">🔧 Utilities</h2>
+            <div class="pages-grid">
+                <div class="page-card">
+                    <div class="page-icon">💼</div>
+                    <h3 class="page-title">Jobs</h3>
+                    <div class="page-path">/app/jobs/page.tsx</div>
+                    <p class="page-description">Background tasks and job management</p>
+                    <span class="badge">System</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">⚙️</div>
+                    <h3 class="page-title">Settings</h3>
+                    <div class="page-path">/app/settings/page.tsx</div>
+                    <p class="page-description">Configure email and blockchain settings</p>
+                    <span class="badge">Configuration</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">🔑</div>
+                    <h3 class="page-title">Auth Google</h3>
+                    <div class="page-path">/app/auth/callback/google/page.tsx</div>
+                    <p class="page-description">Google OAuth authentication callback</p>
+                    <span class="badge">Authentication</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="category-section">
+            <h2 class="category-title">🎨 Layouts</h2>
+            <div class="pages-grid">
+                <div class="page-card">
+                    <div class="page-icon">📐</div>
+                    <h3 class="page-title">Root Layout</h3>
+                    <div class="page-path">/app/layout.tsx</div>
+                    <p class="page-description">Main application layout wrapper</p>
+                    <span class="badge">Layout</span>
+                </div>
+                
+                <div class="page-card">
+                    <div class="page-icon">📋</div>
+                    <h3 class="page-title">Inbox Layout</h3>
+                    <div class="page-path">/app/inbox/layout.tsx</div>
+                    <p class="page-description">Specific layout for inbox pages</p>
+                    <span class="badge">Layout</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Add click handlers to open file paths (you can customize this)
+        document.querySelectorAll('.page-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const path = this.querySelector('.page-path').textContent;
+                console.log('Clicked on:', path);
+                // You could copy the path to clipboard or open in editor
+                navigator.clipboard.writeText('/Volumes/Extreme SSD/Projects/bitcoin-email' + path);
+                
+                // Visual feedback
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>

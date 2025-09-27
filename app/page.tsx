@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import AppTile from '@/components/AppTile'
 import Sidebar from '@/components/Sidebar'
+import Footer from '@/components/Footer'
 import { useAuth } from '@/components/AuthContext'
 
 const apps = [
@@ -874,6 +875,9 @@ export default function Home() {
         </div>
         </main>
       </div>
+
+      {/* Footer */}
+      <Footer />
 
       {/* Login Modal */}
       {loginModalOpen && (

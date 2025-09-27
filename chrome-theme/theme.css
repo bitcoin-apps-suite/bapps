@@ -1,0 +1,74 @@
+/* Royal Blue VS Code Theme for Chrome */
+:root {
+  --vscode-bg: #1e1e1e;
+  --vscode-sidebar: #252526;
+  --royal-blue: #4169e1;
+  --light-royal-blue: #6495ed;
+  --vscode-text: #cccccc;
+  --vscode-border: #3c3c3c;
+}
+
+/* Override default scrollbars to match VS Code */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--vscode-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--royal-blue);
+}
+
+/* Style selection to match VS Code with royal blue */
+::selection {
+  background: var(--royal-blue);
+  color: white;
+}
+
+/* Focus outlines */
+:focus {
+  outline: 2px solid var(--royal-blue) !important;
+  outline-offset: -1px !important;
+}
+
+/* Input styling */
+input, textarea, select {
+  background: var(--vscode-sidebar) !important;
+  border: 1px solid var(--vscode-border) !important;
+  color: var(--vscode-text) !important;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--royal-blue) !important;
+  box-shadow: 0 0 0 1px var(--royal-blue) !important;
+}
+
+/* Button styling */
+button {
+  background: var(--royal-blue) !important;
+  border: none !important;
+  color: white !important;
+  padding: 6px 12px !important;
+  border-radius: 3px !important;
+}
+
+button:hover {
+  background: var(--light-royal-blue) !important;
+}
+
+/* Link styling */
+a {
+  color: var(--light-royal-blue) !important;
+}
+
+a:hover {
+  color: var(--royal-blue) !important;
+}
