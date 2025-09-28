@@ -826,7 +826,7 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] via-[#00FF88] to-[#0094FF] bg-clip-text text-transparent animate-gradient bg-300">
                   Bitcoin
                 </span>
-                <span className="text-white"> Apps Suite</span>
+                <span className="text-white"> Apps Store</span>
               </h1>
               <p className="text-lg font-light text-gray-300 mb-2">
                 Professional tools meet decentralized technology
@@ -904,7 +904,11 @@ export default function Home() {
                 <div>
                   <div className="mb-4 flex items-start justify-between">
                     <div>
-                      <h2 className="text-xl font-semibold text-white mb-1">Bitcoin Apps Suite</h2>
+                      <h2 className="text-xl font-semibold text-white mb-1">
+                        <a href="/suite" className="hover:text-[#0094FF] transition-colors">
+                          Bitcoin Apps Suite →
+                        </a>
+                      </h2>
                       <p className="text-sm text-gray-400">Official canonical apps from Bitcoin Corp. LTD.</p>
                     </div>
                     <div className="bg-gradient-to-r from-[#0094FF] to-[#0084e6] px-4 py-2 rounded-lg">
