@@ -223,7 +223,7 @@ const apps = [
     fullName: 'Bitcoin Calendar',
     ticker: '$bCalendar',
     icon: 'Ca',
-    image: '/bitcoin-calendar.png',
+    image: '/bitcoin-calendar.jpg',
     color: '#8B5CF6',
     description: 'Decentralized scheduling and events on Bitcoin',
     category: 'Bitcoin Office',
