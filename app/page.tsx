@@ -836,12 +836,11 @@ export default function Home() {
             <div className="space-y-8">
               {/* Core Bitcoin Apps Suite - Highlighted Section */}
               {filteredApps.filter(app => app.isSuite).length > 0 && (
-                <div className="bg-gradient-to-br from-[#0094FF]/10 to-transparent p-6 rounded-xl border border-[#0094FF]/30">
+                <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/20 to-orange-900/20 p-6 rounded-xl border border-purple-500/30">
                   <div className="mb-4 flex items-start justify-between">
                     <div>
-                      <h2 className="text-2xl font-bold text-white mb-1 flex items-center gap-2">
+                      <h2 className="text-2xl font-bold text-white mb-1">
                         Bitcoin Apps Suite
-                        <span className="text-xs bg-[#0094FF] px-2 py-1 rounded-full">CORE</span>
                       </h2>
                       <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music & Jobs</p>
                     </div>
