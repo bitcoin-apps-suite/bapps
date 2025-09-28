@@ -15,21 +15,8 @@ const apps = [
     name: 'Writer',
     fullName: 'Bitcoin Writer',
     ticker: '$bWriter',
-    icon: (
-      <div className="relative w-full h-full">
-        <Image
-          src="/bitcoin-writer_03 copy.png"
-          alt="Bitcoin Writer"
-          fill
-          className="object-cover"
-          sizes="80px"
-        />
-        <div className="absolute bottom-0 right-0 w-10 h-10 bg-[#FF6B00] rounded-full flex items-center justify-center transform translate-x-1 translate-y-1 shadow-lg">
-          <span className="text-white font-bold text-lg">₿</span>
-        </div>
-      </div>
-    ),
-    image: '/bitcoin-writer_03 copy.png',
+    icon: 'Wr',
+    image: '/bitcoin-writer-logo.png',
     color: '#FF6B00',
     description: 'Write, encrypt, and store documents on Bitcoin',
     category: 'Featured Apps',
