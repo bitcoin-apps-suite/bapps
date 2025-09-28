@@ -14,8 +14,21 @@ const apps = [
     id: 'bitcoin-writer',
     name: 'Writer',
     fullName: 'Bitcoin Writer',
-    ticker: '$BWriter',
-    icon: 'Wr',
+    ticker: '$bWriter',
+    icon: (
+      <div className="relative w-full h-full">
+        <Image
+          src="/bitcoin-writer_03 copy.png"
+          alt="Bitcoin Writer"
+          fill
+          className="object-cover"
+          sizes="80px"
+        />
+        <div className="absolute bottom-0 right-0 w-10 h-10 bg-[#FF6B00] rounded-full flex items-center justify-center transform translate-x-1 translate-y-1 shadow-lg">
+          <span className="text-white font-bold text-lg">₿</span>
+        </div>
+      </div>
+    ),
     image: '/bitcoin-writer_03 copy.png',
     color: '#FF6B00',
     description: 'Write, encrypt, and store documents on Bitcoin',
@@ -23,6 +36,7 @@ const apps = [
     status: 'installed' as const,
     isPoc: true,
     isCanonical: true,
+    isSuite: true,
     version: '2.4.1',
     size: '142 MB',
     lastUpdated: '2024-12-10',
@@ -36,7 +50,7 @@ const apps = [
     id: 'bitcoin-sheets',
     name: 'Spreadsheets',
     fullName: 'Bitcoin Spreadsheets',
-    ticker: '$BSheets',
+    ticker: '$bSheets',
     icon: 'Sh',
     image: '/bitcoin-sheets-icon.png',
     color: '#3b82f6',
@@ -45,6 +59,7 @@ const apps = [
     status: 'installed' as const,
     isPoc: true,
     isCanonical: true,
+    isSuite: true,
     version: '1.8.3',
     size: '156 MB',
     lastUpdated: '2024-11-28',
@@ -58,7 +73,7 @@ const apps = [
     id: 'bitcoin-drive',
     name: 'Drive',
     fullName: 'Bitcoin Drive',
-    ticker: '$BDrive', 
+    ticker: '$bDrive', 
     icon: 'Dr',
     image: '/app-images/bitcoin-drive.jpg',
     color: '#22c55e',
@@ -67,6 +82,7 @@ const apps = [
     status: 'installed' as const,
     isPoc: true,
     isCanonical: true,
+    isSuite: true,
     version: '1.2.0',
     size: '98 MB',
     lastUpdated: '2024-12-08',
@@ -80,7 +96,7 @@ const apps = [
     id: 'bitcoin-email',
     name: 'Email',
     fullName: 'Bitcoin Email',
-    ticker: '$BEmail',
+    ticker: '$bMail',
     icon: 'Em',
     image: '/bitcoin-email.jpg',
     color: '#9333EA',
@@ -89,6 +105,7 @@ const apps = [
     status: 'installed' as const,
     isPoc: true,
     isCanonical: true,
+    isSuite: true,
     version: '1.0.0',
     size: '124 MB',
     lastUpdated: '2024-12-15',
@@ -102,15 +119,16 @@ const apps = [
     id: 'bitcoin-music',
     name: 'Music',
     fullName: 'Bitcoin Music',
-    ticker: '$BMusic',
+    ticker: '$bMusic',
     icon: 'Mu',
-    image: '/bitcoin-music-3d.png',
+    image: '/bitcoin-music.png',
     color: '#EC4899',
     description: 'Decentralized music streaming on Bitcoin',
     category: 'Featured Apps',
     status: 'installed' as const,
     isPoc: true,
     isCanonical: true,
+    isSuite: true,
     version: '1.0.0',
     size: '87 MB',
     lastUpdated: '2024-12-20',
@@ -146,7 +164,15 @@ const apps = [
     name: 'Future of Blockchain',
     fullName: 'Future of Blockchain',
     ticker: '$FOB',
-    icon: 'FoB',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6">
+        <path d="M12 2L2 7V12C2 16.5 4.23 20.68 7.62 23.15L12 26L16.38 23.15C19.77 20.68 22 16.5 22 12V7L12 2Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+        <path d="M12 2V26" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <path d="M2 7H22" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+        <circle cx="12" cy="12" r="3" fill="currentColor" opacity="0.9"/>
+        <path d="M12 9L15 12L12 15L9 12L12 9Z" fill="currentColor" opacity="0.6"/>
+      </svg>
+    ),
     color: '#6366F1',
     description: 'Explore the future potential and innovations of blockchain technology',
     category: 'Bitcoin Education',
@@ -204,12 +230,35 @@ const apps = [
     marketCap: '$2.1M',
     volume24h: '$126K'
   },
+  {
+    id: 'bitcoin-calendar',
+    name: 'Calendar',
+    fullName: 'Bitcoin Calendar',
+    ticker: '$bCalendar',
+    icon: 'Ca',
+    image: '/bitcoin-calendar.png',
+    color: '#8B5CF6',
+    description: 'Decentralized scheduling and events on Bitcoin',
+    category: 'Bitcoin Office',
+    status: 'coming' as const,
+    isPoc: true,
+    isCanonical: true,
+    isSuite: true,
+    version: null,
+    size: null,
+    lastUpdated: null,
+    url: 'https://calendar.bitcoinapps.store',
+    price: 0.33,
+    change24h: 0,
+    marketCap: '$TBA',
+    volume24h: '$0'
+  },
   // Coming Soon Apps
   {
     id: 'bitcoin-jobs',
     name: 'Jobs',
     fullName: 'Bitcoin Jobs',
-    ticker: '$BJobs',
+    ticker: '$bJobs',
     icon: 'Jo',
     color: '#10B981',
     description: 'Decentralized work marketplace with smart contract payments',
@@ -217,6 +266,7 @@ const apps = [
     status: 'installed' as const,
     isPoc: true,
     isCanonical: true,
+    isSuite: true,
     version: '1.0.0',
     size: '112 MB',
     lastUpdated: '2024-12-20',
@@ -230,7 +280,7 @@ const apps = [
     id: 'bitcoin-contracts',
     name: 'Contracts',
     fullName: 'Bitcoin Contracts',
-    ticker: '$BContracts',
+    ticker: '$bContracts',
     icon: 'Co',
     color: '#6366F1',
     description: 'Smart contract creation and management platform',
@@ -248,7 +298,7 @@ const apps = [
     id: 'bitcoin-legal',
     name: 'Legal',
     fullName: 'Bitcoin Legal',
-    ticker: '$BLegal',
+    ticker: '$bLegal',
     icon: 'Le',
     color: '#7C3AED',
     description: 'Blockchain-verified legal documents and dispute resolution',
@@ -266,7 +316,7 @@ const apps = [
     id: 'bitcoin-auth',
     name: 'Auth',
     fullName: 'Bitcoin Auth',
-    ticker: '$BAuth',
+    ticker: '$bAuth',
     icon: 'Au',
     color: '#DC2626',
     description: 'Decentralized authentication system on Bitcoin',
@@ -284,7 +334,7 @@ const apps = [
     id: 'bitcoin-chat',
     name: 'Chat',
     fullName: 'Bitcoin Chat',
-    ticker: '$BChat',
+    ticker: '$bChat',
     icon: 'Ch',
     color: '#059669',
     description: 'Decentralized messaging platform on Bitcoin',
@@ -302,7 +352,7 @@ const apps = [
     id: 'bitcoin-domains',
     name: 'Domains',
     fullName: 'Bitcoin Domains',
-    ticker: '$BDomains',
+    ticker: '$bDomains',
     icon: 'Do',
     color: '#6366F1',
     description: 'Bitcoin blockchain domain name system',
@@ -320,7 +370,7 @@ const apps = [
     id: 'bitcoin-draw',
     name: 'Draw',
     fullName: 'Bitcoin Draw',
-    ticker: '$BDraw',
+    ticker: '$bDraw',
     icon: 'Dw',
     color: '#8B5CF6',
     description: 'Vector graphics and design tools on Bitcoin',
@@ -338,7 +388,7 @@ const apps = [
     id: 'bitcoin-exchange',
     name: 'Exchange',
     fullName: 'Bitcoin Exchange',
-    ticker: '$BExchange',
+    ticker: '$bExchange',
     icon: 'Ex',
     color: '#10B981',
     description: 'Central exchange for all Bitcoin app tokens',
@@ -357,7 +407,7 @@ const apps = [
     id: 'bitcoin-paint',
     name: 'Paint',
     fullName: 'Bitcoin Paint',
-    ticker: '$BPaint',
+    ticker: '$bPaint',
     icon: 'Pa',
     color: '#F59E0B',
     description: 'Digital art creation platform on Bitcoin',
@@ -375,7 +425,7 @@ const apps = [
     id: 'bitcoin-pics',
     name: 'Pics',
     fullName: 'Bitcoin Pics',
-    ticker: '$BPics',
+    ticker: '$bPics',
     icon: 'Pi',
     color: '#06B6D4',
     description: 'Image storage and sharing on Bitcoin',
@@ -393,7 +443,7 @@ const apps = [
     id: 'bitcoin-registry',
     name: 'Registry',
     fullName: 'Bitcoin Registry',
-    ticker: '$BRegistry',
+    ticker: '$bRegistry',
     icon: 'Re',
     color: '#84CC16',
     description: 'Decentralized asset registry on Bitcoin',
@@ -411,7 +461,7 @@ const apps = [
     id: 'bitcoin-shares',
     name: 'Shares',
     fullName: 'Bitcoin Shares',
-    ticker: '$BShares',
+    ticker: '$bShares',
     icon: 'Sr',
     color: '#A855F7',
     description: 'Digital equity platform on Bitcoin',
@@ -429,7 +479,7 @@ const apps = [
     id: 'bitcoin-video',
     name: 'Video',
     fullName: 'Bitcoin Video',
-    ticker: '$BVideo',
+    ticker: '$bVideo',
     icon: 'Vi',
     color: '#7C3AED',
     description: 'Video streaming and storage on Bitcoin',
@@ -447,7 +497,7 @@ const apps = [
     id: 'bitcoin-wallet',
     name: 'Wallet',
     fullName: 'Bitcoin Wallet',
-    ticker: '$BWallet',
+    ticker: '$bWallet',
     icon: 'Wa',
     image: '/bitcoin-wallet.png',
     color: '#F97316',
@@ -508,7 +558,11 @@ const apps = [
 const categories = [
   'All Apps',
   'Featured Apps',
-  'Bitcoin Office', 
+  'Bitcoin Office',
+  'Bitcoin Art',
+  'Bitcoin Library',
+  'Bitcoin Social',
+  'Bitcoin Money',
   'Bitcoin Business',
   'Bitcoin Finance', 
   'Bitcoin Media', 
@@ -617,7 +671,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h1 className="text-2xl font-light">Bitcoin Apps</h1>
-                  <p className="text-xs text-gray-500">Blockchain Cloud Suite</p>
+                  <p className="text-xs text-gray-500">Think ₿ifferent™</p>
                 </div>
               </div>
             </div>
@@ -779,14 +833,88 @@ export default function Home() {
         {/* Apps Grid/List */}
         <div className="flex-1 overflow-auto p-4 lg:p-8">
           {viewMode === 'grid' ? (
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
-              {filteredApps.map((app) => (
-                <AppTile key={app.id} app={app} />
-              ))}
+            <div className="space-y-8">
+              {/* Core Bitcoin Apps Suite - Highlighted Section */}
+              {filteredApps.filter(app => app.isSuite).length > 0 && (
+                <div className="bg-gradient-to-br from-[#0094FF]/10 to-transparent p-6 rounded-xl border border-[#0094FF]/30">
+                  <div className="mb-4 flex items-start justify-between">
+                    <div>
+                      <h2 className="text-2xl font-bold text-white mb-1 flex items-center gap-2">
+                        Bitcoin Apps Suite
+                        <span className="text-xs bg-[#0094FF] px-2 py-1 rounded-full">CORE</span>
+                      </h2>
+                      <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music & Jobs</p>
+                    </div>
+                    <div className="bg-gradient-to-r from-[#0094FF] to-[#0084e6] px-4 py-2 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-mono font-bold text-lg">$BAPPS</span>
+                        <div className="text-right">
+                          <div className="text-white font-mono text-sm">$1.28</div>
+                          <div className="text-green-300 font-mono text-xs">+18.5%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-4">
+                    {filteredApps.filter(app => app.isSuite).map((app) => (
+                      <AppTile key={app.id} app={app} />
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {/* Other Official Apps */}
+              {filteredApps.filter(app => !app.isThirdParty && !app.isSuite).length > 0 && (
+                <div>
+                  <div className="mb-4">
+                    <h2 className="text-xl font-semibold text-white mb-1">Other Bitcoin Apps</h2>
+                    <p className="text-sm text-gray-400">Additional apps and services from Bitcoin Corp. LTD.</p>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
+                    {filteredApps.filter(app => !app.isThirdParty && !app.isSuite).map((app) => (
+                      <AppTile key={app.id} app={app} />
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {/* Third Party Apps */}
+              {filteredApps.filter(app => app.isThirdParty).length > 0 && (
+                <div>
+                  <div className="mb-4">
+                    <h2 className="text-xl font-semibold text-white mb-1">Third Party Apps</h2>
+                    <p className="text-sm text-gray-400">Community-submitted applications</p>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
+                    {filteredApps.filter(app => app.isThirdParty).map((app) => (
+                      <AppTile key={app.id} app={app} />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           ) : (
-            <div className="space-y-2">
-              {filteredApps.map((app) => (
+            <div className="space-y-8">
+              {/* Official Bitcoin Apps Suite - List View */}
+              {filteredApps.filter(app => !app.isThirdParty).length > 0 && (
+                <div>
+                  <div className="mb-4 flex items-start justify-between">
+                    <div>
+                      <h2 className="text-xl font-semibold text-white mb-1">Bitcoin Apps Suite</h2>
+                      <p className="text-sm text-gray-400">Official canonical apps from Bitcoin Corp. LTD.</p>
+                    </div>
+                    <div className="bg-gradient-to-r from-[#0094FF] to-[#0084e6] px-4 py-2 rounded-lg">
+                      <div className="flex items-center gap-2">
+                        <span className="text-white font-mono font-bold text-lg">$BAPPS</span>
+                        <div className="text-right">
+                          <div className="text-white font-mono text-sm">$1.28</div>
+                          <div className="text-green-300 font-mono text-xs">+18.5%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    {filteredApps.filter(app => !app.isThirdParty).map((app) => (
                 <div key={app.id} className="bg-[#252525] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-4 flex items-center justify-between transition-colors">
                   <div className="flex items-center space-x-4">
                     <div 
@@ -806,7 +934,12 @@ export default function Home() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-medium">{app.fullName}</h3>
+                      <div className="flex items-center gap-2">
+                        <h3 className="font-medium">{app.fullName}</h3>
+                        {app.ticker && (
+                          <span className="text-[#0094FF] text-sm font-mono" title={app.ticker}>{app.ticker.replace('$b', '$₿')}</span>
+                        )}
+                      </div>
                       <p className="text-sm text-gray-400">{app.description}</p>
                     </div>
                   </div>
@@ -846,7 +979,7 @@ export default function Home() {
                           </button>
                           <button 
                             className="px-3 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg text-sm font-medium transition-all">
-                            {app.ticker || 'Trade'}
+                            {app.ticker ? app.ticker.replace('$b', '$₿') : 'Trade'}
                           </button>
                         </>
                       )}
@@ -862,14 +995,118 @@ export default function Home() {
                             Subscribe
                           </button>
                           <button disabled className="px-3 py-1.5 bg-[#333] rounded-lg text-sm text-gray-600 cursor-not-allowed">
-                            {app.ticker || 'Trade'}
+                            {app.ticker ? app.ticker.replace('$b', '$₿') : 'Trade'}
                           </button>
                         </>
                       )}
                     </div>
                   </div>
                 </div>
-              ))}
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {/* Third Party Apps - List View */}
+              {filteredApps.filter(app => app.isThirdParty).length > 0 && (
+                <div>
+                  <div className="mb-4">
+                    <h2 className="text-xl font-semibold text-white mb-1">Third Party Apps</h2>
+                    <p className="text-sm text-gray-400">Community-submitted applications</p>
+                  </div>
+                  <div className="space-y-2">
+                    {filteredApps.filter(app => app.isThirdParty).map((app) => (
+                      <div key={app.id} className="bg-[#252525] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg p-4 flex items-center justify-between transition-colors">
+                        <div className="flex items-center space-x-4">
+                          <div 
+                            className="w-12 h-12 rounded-xl flex items-center justify-center text-white font-bold relative overflow-hidden"
+                            style={{ backgroundColor: app.image ? undefined : app.color }}
+                          >
+                            {app.image ? (
+                              <Image
+                                src={app.image}
+                                alt={app.fullName}
+                                fill
+                                className="object-cover"
+                                sizes="48px"
+                              />
+                            ) : (
+                              app.icon
+                            )}
+                          </div>
+                          <div className="flex-1">
+                            <div className="flex items-center gap-2">
+                              <h3 className="font-medium">{app.fullName}</h3>
+                              {app.ticker && (
+                                <span className="text-[#0094FF] text-sm font-mono" title={app.ticker}>{app.ticker.replace('$b', '$₿')}</span>
+                              )}
+                            </div>
+                            <p className="text-sm text-gray-400">{app.description}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-4">
+                          {app.price !== undefined && (
+                            <div className="text-right">
+                              <div className="text-sm font-mono text-white">${app.price.toFixed(2)}</div>
+                              {app.change24h !== undefined && (
+                                <div className={`text-xs font-mono ${
+                                  app.change24h > 0 ? 'text-green-500' : 
+                                  app.change24h < 0 ? 'text-red-500' : 
+                                  'text-gray-500'
+                                }`}>
+                                  {app.change24h > 0 ? '+' : ''}{app.change24h}%
+                                </div>
+                              )}
+                            </div>
+                          )}
+                          {app.version && (
+                            <span className="text-sm text-gray-400">v{app.version}</span>
+                          )}
+                          <div className="flex items-center space-x-2">
+                            {app.status === 'installed' && (
+                              <>
+                                <button 
+                                  onClick={() => app.url && window.open(app.url, '_blank')}
+                                  className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm transition-colors">
+                                  Open
+                                </button>
+                                <button 
+                                  className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm transition-colors">
+                                  Download
+                                </button>
+                                <button 
+                                  className="px-3 py-1.5 bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white rounded-lg text-sm transition-all">
+                                  Subscribe
+                                </button>
+                                <button 
+                                  className="px-3 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg text-sm font-medium transition-all">
+                                  {app.ticker ? app.ticker.replace('$b', '$₿') : 'Trade'}
+                                </button>
+                              </>
+                            )}
+                            {app.status === 'coming' && (
+                              <>
+                                <button disabled className="px-3 py-1.5 bg-[#333] rounded-lg text-sm text-gray-600 cursor-not-allowed">
+                                  Open
+                                </button>
+                                <button disabled className="px-3 py-1.5 bg-[#333] rounded-lg text-sm text-gray-600 cursor-not-allowed">
+                                  Download
+                                </button>
+                                <button disabled className="px-3 py-1.5 bg-[#333] rounded-lg text-sm text-gray-600 cursor-not-allowed">
+                                  Subscribe
+                                </button>
+                                <button disabled className="px-3 py-1.5 bg-[#333] rounded-lg text-sm text-gray-600 cursor-not-allowed">
+                                  {app.ticker ? app.ticker.replace('$b', '$₿') : 'Trade'}
+                                </button>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           )}
         </div>

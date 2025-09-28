@@ -8,7 +8,7 @@ interface App {
   name: string
   fullName: string
   ticker?: string
-  icon: string
+  icon: string | React.ReactNode
   image?: string
   color: string
   description: string
@@ -17,6 +17,7 @@ interface App {
   isPoc?: boolean
   isCanonical?: boolean
   isThirdParty?: boolean
+  isSuite?: boolean
   version: string | null
   size: string | null
   lastUpdated: string | null
@@ -122,10 +123,17 @@ export default function AppTile({ app }: AppTileProps) {
         
         {/* App Info */}
         <div>
-          <div className="flex items-center gap-1.5">
-            <h3 className="text-white font-medium text-sm truncate">{app.name}</h3>
-            {app.isCanonical && (
-              <div className="w-1 h-1 bg-[#0094FF] rounded-full"></div>
+          <div className="flex items-center justify-between gap-1.5">
+            <div className="flex items-center gap-1.5">
+              <h3 className="text-white font-medium text-sm truncate">{app.name}</h3>
+              {app.isCanonical && (
+                <div className="w-1 h-1 bg-[#0094FF] rounded-full"></div>
+              )}
+            </div>
+            {app.ticker && (
+              <span className="text-[#0094FF] text-xs font-mono font-medium" title={app.ticker}>
+                {app.ticker.replace('$b', '$₿')}
+              </span>
             )}
           </div>
           <p className="text-gray-400 text-xs mt-0.5 truncate">{app.description}</p>
@@ -186,7 +194,7 @@ export default function AppTile({ app }: AppTileProps) {
                 className="py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] rounded-lg text-xs text-white font-medium transition-all"
                 title={`Trade ${app.ticker || app.name}`}
               >
-                {app.ticker || 'Trade'}
+                {app.ticker ? app.ticker.replace('$b', '$₿') : 'Trade'}
               </button>
             </div>
           )}
@@ -218,7 +226,7 @@ export default function AppTile({ app }: AppTileProps) {
                 className="py-1.5 bg-[#333] rounded-lg text-xs text-gray-600 cursor-not-allowed"
                 title="Coming soon"
               >
-                {app.ticker || 'Trade'}
+                {app.ticker ? app.ticker.replace('$b', '$₿') : 'Trade'}
               </button>
             </div>
           )}
