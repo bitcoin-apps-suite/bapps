@@ -174,11 +174,6 @@ export default function SuitePage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* POC Bar */}
-      <div className="bg-gradient-to-r from-purple-900/50 via-pink-900/50 to-orange-900/50 text-white py-2 px-4 text-center text-sm">
-        ⚠️ PROOF OF CONCEPT - This is a demonstration of Bitcoin Apps Suite ⚠️
-      </div>
-
       {/* Navigation */}
       <nav className="bg-black border-b border-[#2a2a2a] px-8 py-4">
         <div className="flex items-center justify-between">
