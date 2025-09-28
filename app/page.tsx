@@ -108,7 +108,7 @@ const apps = [
     fullName: 'Bitcoin Music',
     ticker: '$bMusic',
     icon: 'Mu',
-    image: '/bitcoin-music.png',
+    image: '/bitcoin-music-icon.jpg',
     color: '#EC4899',
     description: 'Decentralized music streaming on Bitcoin',
     category: 'Featured Apps',
