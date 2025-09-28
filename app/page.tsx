@@ -840,11 +840,8 @@ export default function Home() {
                 </span>
                 <span className="text-white"> Apps Store</span>
               </h1>
-              <p className="text-lg font-light text-gray-300 mb-2">
-                Professional tools meet decentralized technology
-              </p>
-              <p className="text-sm font-light text-gray-500">
-                The future of productivity on the blockchain
+              <p className="text-2xl font-light text-gray-300">
+                Think <span className="bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] bg-clip-text text-transparent">₿</span>ifferent
               </p>
             </div>
           </div>
