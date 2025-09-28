@@ -835,13 +835,13 @@ export default function Home() {
           {/* Bitcoin Apps Suite Header */}
           <div className="mb-8 text-center">
             <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-3 bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] to-[#0094FF] bg-clip-text text-transparent">
+              <h1 className="text-5xl lg:text-6xl font-thin text-white mb-3 bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] via-[#00FF88] to-[#0094FF] bg-clip-text text-transparent animate-gradient bg-300">
                 Bitcoin Apps Suite
               </h1>
-              <p className="text-lg text-gray-300 mb-2">
+              <p className="text-lg font-light text-gray-300 mb-2">
                 Professional tools meet decentralized technology
               </p>
-              <p className="text-sm text-gray-500">
+              <p className="text-sm font-light text-gray-500">
                 The future of productivity on the blockchain
               </p>
             </div>
