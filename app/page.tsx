@@ -701,6 +701,12 @@ export default function Home() {
                   Discord
                 </button>
                 <a 
+                  href="/rankings"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  Rankings
+                </a>
+                <a 
                   href="/token"
                   className="text-[#0094FF] hover:text-[#0084e6] transition-colors text-sm font-medium"
                 >

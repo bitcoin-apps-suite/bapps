@@ -72,9 +72,9 @@ export default function BitcoinAppsStorePage() {
 
             <div className="bg-[#1a1a1a] border border-[#3a3a3a] rounded-xl p-8 hover:border-[#0094FF]/50 transition-colors">
               <div className="text-4xl mb-4">🪙</div>
-              <h3 className="text-xl font-semibold mb-3">Create App Tokens</h3>
+              <h3 className="text-xl font-semibold mb-3">Revenue Share Tokens</h3>
               <p className="text-gray-400">
-                Every app can have its own tradeable token, creating instant liquidity and community ownership
+                App tokens are actual shares in revenue - holders receive proportional distribution of all app earnings
               </p>
             </div>
 
@@ -241,10 +241,15 @@ export default function BitcoinAppsStorePage() {
             <ul className="text-sm text-gray-400 space-y-2 text-left">
               <li>• Bitcoin-powered functionality (payments, storage, or authentication)</li>
               <li>• Working prototype or beta version</li>
-              <li>• Token economics plan (optional but recommended)</li>
+              <li>• Token creation with revenue sharing mechanism</li>
+              <li>• <span className="text-[#FF6B00] font-semibold">1% token allocation to Bitcoin Apps Store</span> for listing</li>
               <li>• Basic documentation and support</li>
-              <li>• One-time listing fee: 0.001 BTC</li>
             </ul>
+            <div className="mt-4 p-3 bg-[#0094FF]/10 rounded border border-[#0094FF]/30">
+              <p className="text-xs text-[#0094FF]">
+                The 1% token share aligns our incentives - we succeed when your app succeeds!
+              </p>
+            </div>
           </div>
         </div>
       </section>
