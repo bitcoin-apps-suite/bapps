@@ -675,6 +675,12 @@ export default function Home() {
                   GitHub
                 </a>
                 <a 
+                  href="/bitcoin-apps-store"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
+                >
+                  About
+                </a>
+                <a 
                   href="/docs"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
