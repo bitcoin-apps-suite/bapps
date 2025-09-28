@@ -103,10 +103,10 @@ export default function BitcoinAppsStorePage() {
             </div>
 
             <div className="bg-[#1a1a1a] border border-[#3a3a3a] rounded-xl p-8 hover:border-[#0094FF]/50 transition-colors">
-              <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-semibold mb-3">Instant Payments</h3>
+              <div className="text-4xl mb-4">💸</div>
+              <h3 className="text-xl font-semibold mb-3">Direct Payments</h3>
               <p className="text-gray-400">
-                Lightning-fast Bitcoin transactions with minimal fees, settled instantly on the blockchain
+                Native Bitcoin transactions with smart contract capabilities, settled directly on the blockchain
               </p>
             </div>
           </div>
