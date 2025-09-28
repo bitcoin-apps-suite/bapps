@@ -16,7 +16,7 @@ const apps = [
     fullName: 'Bitcoin Writer',
     ticker: '$bWriter',
     icon: 'Wr',
-    image: '/bitcoin-writer-logo.png',
+    image: '/bitcoin-writer-logo.jpg',
     color: '#FF6B00',
     description: 'Write, encrypt, and store documents on Bitcoin',
     category: 'Featured Apps',
