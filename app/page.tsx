@@ -240,29 +240,6 @@ const apps = [
     marketCap: '$2.1M',
     volume24h: '$126K'
   },
-  {
-    id: 'bitcoin-calendar',
-    name: 'Calendar',
-    fullName: 'Bitcoin Calendar',
-    ticker: '$bCalendar',
-    icon: 'Ca',
-    image: '/bitcoin-calendar.jpg',
-    color: '#8B5CF6',
-    description: 'Decentralized scheduling and events on Bitcoin',
-    category: 'Bitcoin Office',
-    status: 'coming' as const,
-    isPoc: true,
-    isCanonical: true,
-    isSuite: true,
-    version: null,
-    size: null,
-    lastUpdated: null,
-    url: 'https://calendar.bitcoinapps.store',
-    price: 0.33,
-    change24h: 0,
-    marketCap: '$TBA',
-    volume24h: '$0'
-  },
   // Coming Soon Apps
   {
     id: 'bitcoin-jobs',
