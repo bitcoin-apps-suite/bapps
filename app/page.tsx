@@ -828,12 +828,17 @@ export default function Home() {
                       </h2>
                       <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music & Jobs</p>
                     </div>
-                    <div className="bg-gradient-to-r from-[#0094FF] to-[#0084e6] px-4 py-2 rounded-lg">
-                      <div className="flex items-center gap-2">
-                        <span className="text-white font-mono font-bold text-lg">$BAPPS</span>
-                        <div className="text-right">
-                          <div className="text-white font-mono text-sm">$1.28</div>
-                          <div className="text-green-300 font-mono text-xs">+18.5%</div>
+                    <div className="relative group">
+                      {/* Glow effect */}
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0094FF] via-[#00BFFF] to-[#0084e6] rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                      {/* Glassmorphism badge */}
+                      <div className="relative px-6 py-2 bg-gradient-to-r from-[#0094FF]/20 to-[#0084e6]/20 backdrop-blur-xl rounded-xl border border-[#0094FF]/30">
+                        <div className="flex items-center gap-4">
+                          <span className="text-white font-medium text-sm opacity-90">$BAPPS</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-white font-mono text-sm">$1.28</span>
+                            <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -890,12 +895,17 @@ export default function Home() {
                       </h2>
                       <p className="text-sm text-gray-400">Official canonical apps from Bitcoin Corp. LTD.</p>
                     </div>
-                    <div className="bg-gradient-to-r from-[#0094FF] to-[#0084e6] px-4 py-2 rounded-lg">
-                      <div className="flex items-center gap-2">
-                        <span className="text-white font-mono font-bold text-lg">$BAPPS</span>
-                        <div className="text-right">
-                          <div className="text-white font-mono text-sm">$1.28</div>
-                          <div className="text-green-300 font-mono text-xs">+18.5%</div>
+                    <div className="relative group">
+                      {/* Glow effect */}
+                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0094FF] via-[#00BFFF] to-[#0084e6] rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+                      {/* Glassmorphism badge */}
+                      <div className="relative px-6 py-2 bg-gradient-to-r from-[#0094FF]/20 to-[#0084e6]/20 backdrop-blur-xl rounded-xl border border-[#0094FF]/30">
+                        <div className="flex items-center gap-4">
+                          <span className="text-white font-medium text-sm opacity-90">$BAPPS</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-white font-mono text-sm">$1.28</span>
+                            <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
+                          </div>
                         </div>
                       </div>
                     </div>
