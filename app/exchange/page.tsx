@@ -41,7 +41,7 @@ const tokens: Token[] = [
     change24h: 8.9,
     volume24h: '$67K',
     marketCap: '$1.2M',
-    icon: 'Sh',
+    image: '/bitcoin-sheets-icon.png',
     color: '#3b82f6'
   },
   {
@@ -53,7 +53,7 @@ const tokens: Token[] = [
     change24h: -3.2,
     volume24h: '$89K',
     marketCap: '$1.8M',
-    icon: 'Dr',
+    image: '/app-images/bitcoin-drive.jpg',
     color: '#22c55e'
   },
   {
@@ -65,7 +65,7 @@ const tokens: Token[] = [
     change24h: 5.7,
     volume24h: '$54K',
     marketCap: '$1.1M',
-    icon: 'Em',
+    image: '/bitcoin-email.jpg',
     color: '#9333EA'
   },
   {
@@ -101,7 +101,7 @@ const tokens: Token[] = [
     change24h: 15.3,
     volume24h: '$42K',
     marketCap: '$900K',
-    icon: '先',
+    image: '/senseii.png',
     color: '#000000'
   },
   {
@@ -113,7 +113,7 @@ const tokens: Token[] = [
     change24h: 7.2,
     volume24h: '$78K',
     marketCap: '$1.5M',
-    icon: 'Cb',
+    image: '/cashboard-app-store.png',
     color: '#059669'
   }
 ]
