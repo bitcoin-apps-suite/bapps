@@ -681,7 +681,7 @@ export default function Home() {
                   Rankings
                 </a>
                 <a 
-                  href="/exchange"
+                  href="/exchange/options"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Exchange
@@ -735,7 +735,7 @@ export default function Home() {
                     <span className="text-sm text-gray-300">{user.name}</span>
                   </div>
                   <button 
-                    onClick={() => router.push('/exchange')}
+                    onClick={() => router.push('/exchange/options')}
                     className="px-4 py-1.5 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all font-medium">
                     Open Exchange
                   </button>
