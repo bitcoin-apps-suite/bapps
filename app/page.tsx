@@ -634,21 +634,63 @@ export default function Home() {
         <main className="flex-1 flex flex-col w-full">
           {/* Header - Organized into 3 sections */}
         <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4 lg:py-6">
-          <div className="flex lg:grid lg:grid-cols-3 items-center justify-between lg:gap-0">
+          {/* Mobile Header */}
+          <div className="lg:hidden flex items-center justify-between">
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="p-1.5 hover:bg-[#2a2a2a] rounded-md transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
+              </svg>
+            </button>
+            
+            <div className="flex items-center space-x-2">
+              <div className="relative w-8 h-8">
+                <Image
+                  src="/bitcoin-apps-logo.jpg"
+                  alt="Bitcoin Apps"
+                  fill
+                  className="object-cover rounded-lg"
+                  sizes="32px"
+                />
+              </div>
+              <div>
+                <h1 className="text-base font-light">Bitcoin Apps</h1>
+              </div>
+            </div>
+            
+            {/* Mobile User/Login */}
+            {user ? (
+              <div className="flex items-center space-x-2">
+                <button 
+                  onClick={() => router.push('/exchange/options')}
+                  className="px-2 py-1.5 bg-gradient-to-r from-[#10B981] to-[#059669] text-white rounded-lg text-sm font-medium">
+                  Ex
+                </button>
+                <button
+                  onClick={logout}
+                  className="w-8 h-8 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold"
+                >
+                  {user.name.charAt(0).toUpperCase()}
+                </button>
+              </div>
+            ) : (
+              <button 
+                onClick={() => setLoginModalOpen(true)}
+                className="px-3 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] text-white rounded-lg text-sm font-medium"
+              >
+                Login
+              </button>
+            )}
+          </div>
+          
+          {/* Desktop Header */}
+          <div className="hidden lg:grid lg:grid-cols-3 items-center">
             {/* Left Section: Logo & Branding */}
             <div className="flex items-center space-x-3">
-              {/* Mobile Menu Button */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-1.5 hover:bg-[#2a2a2a] rounded-md transition-colors"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-                </svg>
-              </button>
-              
               <div className="flex items-center space-x-2">
-                <div className="relative w-8 h-8 lg:w-10 lg:h-10">
+                <div className="relative w-10 h-10">
                   <Image
                     src="/bitcoin-apps-logo.jpg"
                     alt="Bitcoin Apps"
@@ -659,14 +701,14 @@ export default function Home() {
                   />
                 </div>
                 <div>
-                  <h1 className="text-base lg:text-xl font-light">Bitcoin Apps</h1>
-                  <p className="text-xs text-gray-500 hidden lg:block">Think ₿ifferent™</p>
+                  <h1 className="text-xl font-light">Bitcoin Apps Store</h1>
+                  <p className="text-xs text-gray-500">Think ₿ifferent™</p>
                 </div>
               </div>
             </div>
             
-            {/* Center Section: Navigation & Search - Hidden on mobile */}
-            <div className="hidden lg:flex items-center justify-center space-x-6">
+            {/* Center Section: Navigation & Search */}
+            <div className="flex items-center justify-center space-x-6">
               {/* Quick Links */}
               <div className="flex items-center space-x-6">
                 <a 
@@ -711,9 +753,9 @@ export default function Home() {
             </div>
             
             {/* Right Section: User & Actions */}
-            <div className="flex items-center space-x-2">
-              {/* View Mode Toggle - Hidden on mobile */}
-              <div className="hidden lg:flex items-center bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
+            <div className="flex items-center justify-end space-x-3">
+              {/* View Mode Toggle */}
+              <div className="flex items-center bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-2 ${viewMode === 'grid' ? 'bg-[#0094FF] text-white' : 'text-gray-400'} transition-colors rounded-l-lg`}
@@ -734,26 +776,26 @@ export default function Home() {
               
               {/* User Info & Exchange Button */}
               {user ? (
-                <div className="flex items-center space-x-2">
+                <>
                   <button 
                     onClick={() => router.push('/exchange/options')}
-                    className="hidden sm:block px-2 py-1.5 lg:px-3 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all text-sm font-medium">
-                    Exchange
+                    className="px-3 py-1.5 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all text-sm font-medium">
+                    Open Exchange
                   </button>
                   <button
                     onClick={logout}
-                    className="w-8 h-8 sm:w-auto sm:h-auto flex items-center sm:space-x-2 sm:px-2 sm:py-1.5 lg:px-3 bg-gradient-to-br sm:bg-[#1e1e1e] from-[#0094FF] to-[#0084e6] sm:from-transparent sm:to-transparent hover:sm:bg-[#2a2a2a] sm:border sm:border-[#3a3a3a] rounded-full sm:rounded-lg transition-colors"
+                    className="flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg transition-colors"
                   >
-                    <div className="w-full h-full sm:w-5 sm:h-5 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                    <div className="w-5 h-5 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
                       {user.name.charAt(0).toUpperCase()}
                     </div>
-                    <span className="text-sm text-gray-300 hidden sm:inline">{user.name}</span>
+                    <span className="text-sm text-gray-300">{user.name}</span>
                   </button>
-                </div>
+                </>
               ) : (
                 <button 
                   onClick={() => setLoginModalOpen(true)}
-                  className="px-3 py-1.5 lg:px-4 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium text-sm"
+                  className="px-4 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium text-sm"
                 >
                   Login
                 </button>
