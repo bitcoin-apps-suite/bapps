@@ -126,6 +126,29 @@ const apps = [
     volume24h: '$68K'
   },
   {
+    id: 'bitcoin-calendar',
+    name: 'Calendar',
+    fullName: 'Bitcoin Calendar',
+    ticker: '$bCalendar',
+    icon: 'Ca',
+    image: '/bitcoin-calendar.jpg',
+    color: '#F59E0B',
+    description: 'Blockchain-based calendar and scheduling with smart reminders',
+    category: 'Bitcoin Office',
+    status: 'installed' as const,
+    isPoc: true,
+    isCanonical: true,
+    isSuite: true,
+    version: '1.1.0',
+    size: '76 MB',
+    lastUpdated: '2024-12-18',
+    url: 'https://bitcoin-calendar.vercel.app',
+    price: 0.22,
+    change24h: 6.4,
+    marketCap: '$980K',
+    volume24h: '$45K'
+  },
+  {
     id: 'senseii',
     name: 'Senseii',
     fullName: 'Senseii Bitcoin Education',
@@ -828,17 +851,13 @@ export default function Home() {
                       </h2>
                       <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music & Jobs</p>
                     </div>
-                    <div className="relative group">
-                      {/* Glow effect */}
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0094FF] via-[#00BFFF] to-[#0084e6] rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                      {/* Glassmorphism badge */}
-                      <div className="relative px-6 py-2 bg-gradient-to-r from-[#0094FF]/20 to-[#0084e6]/20 backdrop-blur-xl rounded-xl border border-[#0094FF]/30">
-                        <div className="flex items-center gap-4">
-                          <span className="text-white font-medium text-sm opacity-90">$BAPPS</span>
-                          <div className="flex items-center gap-3">
-                            <span className="text-white font-mono text-sm">$1.28</span>
-                            <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
-                          </div>
+                    {/* Rainbow glassmorphism badge */}
+                    <div className="relative px-6 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20">
+                      <div className="flex items-center gap-4">
+                        <span className="text-white font-medium text-sm">$BAPPS</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-white font-mono text-sm">$1.28</span>
+                          <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
                         </div>
                       </div>
                     </div>
@@ -895,17 +914,13 @@ export default function Home() {
                       </h2>
                       <p className="text-sm text-gray-400">Official canonical apps from Bitcoin Corp. LTD.</p>
                     </div>
-                    <div className="relative group">
-                      {/* Glow effect */}
-                      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#0094FF] via-[#00BFFF] to-[#0084e6] rounded-xl blur opacity-60 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
-                      {/* Glassmorphism badge */}
-                      <div className="relative px-6 py-2 bg-gradient-to-r from-[#0094FF]/20 to-[#0084e6]/20 backdrop-blur-xl rounded-xl border border-[#0094FF]/30">
-                        <div className="flex items-center gap-4">
-                          <span className="text-white font-medium text-sm opacity-90">$BAPPS</span>
-                          <div className="flex items-center gap-3">
-                            <span className="text-white font-mono text-sm">$1.28</span>
-                            <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
-                          </div>
+                    {/* Rainbow glassmorphism badge */}
+                    <div className="relative px-6 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20">
+                      <div className="flex items-center gap-4">
+                        <span className="text-white font-medium text-sm">$BAPPS</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-white font-mono text-sm">$1.28</span>
+                          <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
                         </div>
                       </div>
                     </div>
