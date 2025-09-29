@@ -633,41 +633,42 @@ export default function Home() {
         
         <main className="flex-1 flex flex-col w-full">
           {/* Header - Organized into 3 sections */}
-        <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4">
-          <div className="grid grid-cols-3 items-center">
+        <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4 lg:py-6">
+          <div className="flex lg:grid lg:grid-cols-3 items-center justify-between lg:gap-0">
             {/* Left Section: Logo & Branding */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2">
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="lg:hidden p-2 hover:bg-[#2a2a2a] rounded-lg transition-colors"
+                className="lg:hidden p-1.5 hover:bg-[#2a2a2a] rounded-md transition-colors"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={mobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
                 </svg>
               </button>
               
-              <div className="flex items-center space-x-3">
-                <div className="relative w-10 h-10">
+              <div className="flex items-center space-x-2">
+                <div className="relative w-8 h-8 lg:w-10 lg:h-10">
                   <Image
                     src="/bitcoin-apps-logo.jpg"
-                    alt="Bitcoin Software Co."
+                    alt="Bitcoin Apps"
+                    title="Bitcoin Software Co."
                     fill
                     className="object-cover rounded-lg"
                     sizes="40px"
                   />
                 </div>
-                <div className="hidden lg:block">
-                  <h1 className="text-2xl font-light">Bitcoin Apps</h1>
-                  <p className="text-xs text-gray-500">Think ₿ifferent™</p>
+                <div className="hidden sm:block">
+                  <h1 className="text-base lg:text-xl font-light">Bitcoin Apps</h1>
+                  <p className="text-xs text-gray-500 hidden lg:block">Think ₿ifferent™</p>
                 </div>
               </div>
             </div>
             
-            {/* Center Section: Navigation & Search */}
-            <div className="flex items-center justify-center space-x-4">
-              {/* Quick Links - Hidden on mobile */}
-              <div className="hidden lg:flex items-center space-x-4">
+            {/* Center Section: Navigation & Search - Hidden on mobile */}
+            <div className="hidden lg:flex items-center justify-center space-x-6">
+              {/* Quick Links */}
+              <div className="flex items-center space-x-6">
                 <a 
                   href="/bitcoin-apps-store"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
@@ -688,32 +689,29 @@ export default function Home() {
                 </a>
                 <a 
                   href="/developer/download-button"
-                  className="text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-1"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
-                  </svg>
-                  Download Button
+                  Developer
                 </a>
               </div>
               
-              {/* Search - Hidden on mobile, shown on desktop */}
-              <div className="hidden lg:block relative">
+              {/* Search */}
+              <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search apps..."
+                  placeholder="Search..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-4 py-2 pl-10 w-60 text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
+                  className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-3 py-1.5 pl-9 w-48 text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
                 />
-                <svg className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="absolute left-2.5 top-2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
             </div>
             
             {/* Right Section: User & Actions */}
-            <div className="flex items-center justify-end space-x-3">
+            <div className="flex items-center space-x-2">
               {/* View Mode Toggle - Hidden on mobile */}
               <div className="hidden lg:flex items-center bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
                 <button
@@ -736,35 +734,27 @@ export default function Home() {
               
               {/* User Info & Exchange Button */}
               {user ? (
-                <>
-                  <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
-                    <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
-                      {user.name.charAt(0).toUpperCase()}
-                    </div>
-                    <span className="text-sm text-gray-300">{user.name}</span>
-                  </div>
+                <div className="flex items-center space-x-2">
                   <button 
                     onClick={() => router.push('/exchange/options')}
-                    className="px-4 py-1.5 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all font-medium">
-                    Open Exchange
+                    className="px-2 py-1.5 lg:px-3 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all text-sm font-medium">
+                    <span className="hidden sm:inline">Exchange</span>
+                    <span className="sm:hidden">Ex</span>
                   </button>
                   <button
                     onClick={logout}
-                    className="hidden lg:block px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
+                    className="flex items-center space-x-2 px-2 py-1.5 lg:px-3 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg transition-colors"
                   >
-                    Logout
+                    <div className="w-5 h-5 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="text-sm text-gray-300 hidden lg:inline">{user.name}</span>
                   </button>
-                  <button
-                    onClick={logout}
-                    className="lg:hidden w-8 h-8 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-sm font-bold"
-                  >
-                    {user.name.charAt(0).toUpperCase()}
-                  </button>
-                </>
+                </div>
               ) : (
                 <button 
                   onClick={() => setLoginModalOpen(true)}
-                  className="px-4 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium"
+                  className="px-3 py-1.5 lg:px-4 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium text-sm"
                 >
                   Login
                 </button>
@@ -774,55 +764,46 @@ export default function Home() {
         </header>
 
         {/* Mobile Search Bar */}
-        <div className="lg:hidden bg-black px-4 py-3 border-b border-[#2a2a2a]">
+        <div className="lg:hidden bg-black px-3 py-2 border-b border-[#2a2a2a]">
           <div className="relative">
             <input
               type="text"
               placeholder="Search apps..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-4 py-2 pl-10 w-full text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
+              className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-3 py-2 pl-9 w-full text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
             />
-            <svg className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="absolute left-2.5 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>
           </div>
         </div>
 
         {/* Status Bar - Simplified */}
-        <div className="bg-black px-4 lg:px-8 py-2 border-b border-[#2a2a2a]">
+        <div className="bg-[#0a0a0a] px-4 lg:px-8 py-2 border-b border-[#2a2a2a]">
           <div className="flex items-center justify-center space-x-6 text-xs">
-            <span className="text-gray-500">{filteredApps.length} apps</span>
-            <div className="flex items-center space-x-1">
-              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
-              <span className="text-gray-500">{apps.filter(a => a.status === 'installed').length} live</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
-              <span className="text-gray-500">{apps.filter(a => a.ticker).length} tokenized</span>
-            </div>
-            <div className="flex items-center space-x-1">
-              <div className="w-1.5 h-1.5 bg-[#10B981] rounded-full animate-pulse"></div>
-              <span className="text-gray-500">$BExchange ready</span>
-            </div>
+            <span className="text-gray-400">
+              <span className="text-white font-medium">{filteredApps.length}</span> apps
+            </span>
+            <span className="text-gray-400">
+              <span className="text-green-400 font-medium">{apps.filter(a => a.status === 'installed').length}</span> live
+            </span>
+            <span className="text-gray-400">
+              <span className="text-yellow-400 font-medium">{apps.filter(a => a.ticker).length}</span> tokens
+            </span>
+            <span className="text-gray-400">
+              <span className="text-[#10B981] font-medium animate-pulse">Exchange</span> ready
+            </span>
           </div>
         </div>
 
         {/* Apps Grid/List */}
-        <div className="flex-1 overflow-auto p-4 lg:p-8">
-          {/* Bitcoin Apps Suite Header */}
-          <div className="mb-8 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-5xl lg:text-6xl font-thin text-white mb-3">
-                <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] via-[#00FF88] to-[#0094FF] bg-clip-text text-transparent animate-gradient bg-300">
-                  Bitcoin
-                </span>
-                <span className="text-white"> Apps Store</span>
-              </h1>
-              <p className="text-2xl font-light text-gray-300">
-                Think <span className="bg-gradient-to-r from-[#FF6B00] to-[#FF8C00] bg-clip-text text-transparent">₿</span>ifferent
-              </p>
-            </div>
+        <div className="flex-1 overflow-auto p-3 lg:p-8">
+          {/* Page Title */}
+          <div className="mb-6 lg:mb-8">
+            <h1 className="text-2xl lg:text-3xl font-light text-center">
+              <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] to-[#0094FF] bg-clip-text text-transparent">Discover Apps</span>
+            </h1>
           </div>
           
           {viewMode === 'grid' ? (

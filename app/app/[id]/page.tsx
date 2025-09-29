@@ -101,6 +101,11 @@ Key Features:
       change24h: 8.9,
       marketCap: '$1.2M',
       volume24h: '$67K',
+      screenshots: [
+        '/app-images/sheets-main.png',
+        '/app-images/sheets-formula.png',
+        '/app-images/sheets-chart.png'
+      ],
       features: [
         'Blockchain Computation',
         'Audit Trails',
@@ -122,8 +127,302 @@ Key Features:
         revenueShare: '25%',
         stakingAPY: '10%'
       }
+    },
+    'bitcoin-drive': {
+      id: 'bitcoin-drive',
+      name: 'Bitcoin Drive',
+      ticker: '$bDrive',
+      displayTicker: '$₿Drive',
+      icon: '/bitcoin-drive-logo.jpg',
+      color: '#10B981',
+      shortDescription: 'Decentralized cloud storage on Bitcoin',
+      fullDescription: `Bitcoin Drive offers truly decentralized file storage powered by the Bitcoin blockchain. Store, share, and access your files from anywhere with unparalleled security and permanence. Your data lives forever on the world's most secure network.
+
+Key Features:
+• Permanent file storage on Bitcoin blockchain
+• End-to-end encryption using Bitcoin cryptography
+• Distributed redundancy across global nodes
+• Share files with cryptographic access controls
+• Version control and file history tracking
+• IPFS integration for large file handling
+• Zero-knowledge encryption - only you can decrypt your files
+• Collaborative folders with permission management`,
+      category: 'Bitcoin Office',
+      developer: 'Bitcoin Apps Suite',
+      version: '3.2.0',
+      size: '178 MB',
+      rating: 4.9,
+      reviews: 2156,
+      lastUpdated: '2024-12-08',
+      releaseDate: '2024-01-20',
+      url: 'https://bitcoin-drive.vercel.app',
+      price: 0.58,
+      change24h: 15.3,
+      marketCap: '$3.1M',
+      volume24h: '$234K',
+      screenshots: [
+        '/app-images/drive-main.png',
+        '/app-images/drive-upload.png',
+        '/app-images/drive-share.png'
+      ],
+      features: [
+        'Blockchain Storage',
+        'End-to-End Encryption',
+        'File Sharing',
+        'Version Control',
+        'IPFS Integration',
+        'Zero-Knowledge'
+      ],
+      requirements: [
+        'Bitcoin wallet required',
+        'Minimum 200MB free space',
+        'Internet connection for sync'
+      ],
+      languages: ['English', 'Spanish', 'Chinese', 'Japanese', 'French'],
+      inAppPurchases: true,
+      tokenomics: {
+        totalSupply: '10,000,000',
+        circulating: '5,357,143',
+        revenueShare: '35%',
+        stakingAPY: '14%'
+      }
+    },
+    'bitcoin-email': {
+      id: 'bitcoin-email',
+      name: 'Bitcoin Email',
+      ticker: '$bMail',
+      displayTicker: '$₿Mail',
+      icon: '/bitcoin-email-logo.jpg',
+      color: '#8B5CF6',
+      shortDescription: 'Encrypted email on the Bitcoin blockchain',
+      fullDescription: `Bitcoin Email revolutionizes communication with blockchain-powered encrypted messaging. Send emails that can never be deleted, censored, or intercepted. Every message is cryptographically signed and permanently stored on Bitcoin.
+
+Key Features:
+• Permanent email storage on blockchain
+• PGP-style encryption using Bitcoin keys
+• Spam-proof with proof-of-work requirements
+• Decentralized email routing
+• Attachments stored on IPFS
+• Email threading and conversation view
+• Smart contract integration for automated responses
+• Wallet-to-wallet direct messaging`,
+      category: 'Bitcoin Office',
+      developer: 'Bitcoin Apps Suite',
+      version: '2.1.4',
+      size: '134 MB',
+      rating: 4.6,
+      reviews: 1823,
+      lastUpdated: '2024-12-05',
+      releaseDate: '2024-02-10',
+      url: 'https://bitcoin-email.vercel.app',
+      price: 0.35,
+      change24h: 6.7,
+      marketCap: '$1.8M',
+      volume24h: '$112K',
+      screenshots: [
+        '/app-images/email-inbox.png',
+        '/app-images/email-compose.png',
+        '/app-images/email-encrypted.png'
+      ],
+      features: [
+        'Blockchain Email',
+        'PGP Encryption',
+        'Spam Protection',
+        'IPFS Attachments',
+        'Smart Contracts',
+        'Direct Messaging'
+      ],
+      requirements: [
+        'Bitcoin wallet required',
+        'Minimum 120MB free space',
+        'Email verification required'
+      ],
+      languages: ['English', 'Spanish', 'German', 'French', 'Italian'],
+      inAppPurchases: false,
+      tokenomics: {
+        totalSupply: '10,000,000',
+        circulating: '5,142,857',
+        revenueShare: '28%',
+        stakingAPY: '11%'
+      }
+    },
+    'bitcoin-calendar': {
+      id: 'bitcoin-calendar',
+      name: 'Bitcoin Calendar',
+      ticker: '$bCal',
+      displayTicker: '$₿Calendar',
+      icon: '/bitcoin-calendar.jpg',
+      color: '#EC4899',
+      shortDescription: 'Decentralized scheduling on Bitcoin',
+      fullDescription: `Bitcoin Calendar brings trustless time management to the blockchain. Schedule meetings, set reminders, and coordinate events with cryptographic proof of attendance. Perfect for DAOs, teams, and individuals who value privacy and permanence.
+
+Key Features:
+• Immutable event records on blockchain
+• Smart contract automation for recurring events
+• Cryptographic proof of attendance
+• Decentralized meeting coordination
+• Token-gated event access
+• Integration with Bitcoin Email and Drive
+• Time-locked reminders
+• Multi-signature event approval`,
+      category: 'Bitcoin Office',
+      developer: 'Bitcoin Apps Suite',
+      version: '1.5.2',
+      size: '98 MB',
+      rating: 4.5,
+      reviews: 967,
+      lastUpdated: '2024-11-30',
+      releaseDate: '2024-03-15',
+      url: 'https://bitcoin-calendar.vercel.app',
+      price: 0.22,
+      change24h: 4.2,
+      marketCap: '$980K',
+      volume24h: '$45K',
+      screenshots: [
+        '/app-images/calendar-month.png',
+        '/app-images/calendar-event.png',
+        '/app-images/calendar-schedule.png'
+      ],
+      features: [
+        'Blockchain Events',
+        'Smart Scheduling',
+        'Proof of Attendance',
+        'Token Gating',
+        'Time-locked Reminders',
+        'Multi-sig Approval'
+      ],
+      requirements: [
+        'Bitcoin wallet required',
+        'Minimum 80MB free space',
+        'Calendar sync permissions'
+      ],
+      languages: ['English', 'Spanish', 'Portuguese', 'Dutch'],
+      inAppPurchases: true,
+      tokenomics: {
+        totalSupply: '10,000,000',
+        circulating: '4,464,286',
+        revenueShare: '22%',
+        stakingAPY: '9%'
+      }
+    },
+    'bitcoin-music': {
+      id: 'bitcoin-music',
+      name: 'Bitcoin Music',
+      ticker: '$bMusic',
+      displayTicker: '$₿Music',
+      icon: '/bitcoin-music.png',
+      color: '#EF4444',
+      shortDescription: 'Decentralized music streaming on Bitcoin',
+      fullDescription: `Bitcoin Music revolutionizes the music industry with direct artist-to-fan streaming powered by Bitcoin. Artists earn instantly per play, fans own their playlists forever, and no intermediary takes a cut. True musical freedom on the blockchain.
+
+Key Features:
+• Direct artist payments per stream
+• Immutable playlists on blockchain
+• NFT album releases and collectibles
+• Decentralized music discovery
+• Artist tokens for fan engagement
+• Lossless audio streaming via IPFS
+• Smart contract royalty splits
+• Proof of listening rewards`,
+      category: 'Entertainment',
+      developer: 'Bitcoin Apps Suite',
+      version: '2.0.1',
+      size: '186 MB',
+      rating: 4.7,
+      reviews: 3421,
+      lastUpdated: '2024-12-01',
+      releaseDate: '2024-04-01',
+      url: 'https://bitcoin-music.vercel.app',
+      price: 0.18,
+      change24h: 22.4,
+      marketCap: '$2.1M',
+      volume24h: '$378K',
+      screenshots: [
+        '/app-images/music-player.png',
+        '/app-images/music-artist.png',
+        '/app-images/music-nft.png'
+      ],
+      features: [
+        'Direct Payments',
+        'NFT Releases',
+        'Immutable Playlists',
+        'Artist Tokens',
+        'Lossless Audio',
+        'Listening Rewards'
+      ],
+      requirements: [
+        'Bitcoin wallet required',
+        'Minimum 180MB free space',
+        'Audio output device'
+      ],
+      languages: ['English', 'Spanish', 'Korean', 'Japanese', 'Portuguese'],
+      inAppPurchases: true,
+      tokenomics: {
+        totalSupply: '100,000,000',
+        circulating: '42,857,143',
+        revenueShare: '40%',
+        stakingAPY: '18%'
+      }
+    },
+    'bitcoin-jobs': {
+      id: 'bitcoin-jobs',
+      name: 'Bitcoin Jobs',
+      ticker: '$bJobs',
+      displayTicker: '$₿Jobs',
+      icon: '/bitcoin-jobs.png',
+      color: '#F59E0B',
+      shortDescription: 'Decentralized job marketplace on Bitcoin',
+      fullDescription: `Bitcoin Jobs connects talent with opportunities in the decentralized economy. Post jobs, find work, and get paid instantly in Bitcoin. Smart contracts ensure fair payment, reputation is blockchain-verified, and no platform takes excessive fees.
+
+Key Features:
+• Smart contract escrow for guaranteed payment
+• Blockchain-verified reputation system
+• Instant Bitcoin payments on completion
+• Decentralized dispute resolution
+• Skills NFT certification
+• Anonymous job applications
+• DAO job postings
+• Milestone-based project management`,
+      category: 'Professional',
+      developer: 'Bitcoin Apps Suite',
+      version: '1.3.0',
+      size: '112 MB',
+      rating: 4.4,
+      reviews: 2187,
+      lastUpdated: '2024-11-25',
+      releaseDate: '2024-05-01',
+      url: 'https://bitcoin-jobs.vercel.app',
+      price: 0.14,
+      change24h: 18.9,
+      marketCap: '$1.5M',
+      volume24h: '$198K',
+      screenshots: [
+        '/app-images/jobs-board.png',
+        '/app-images/jobs-profile.png',
+        '/app-images/jobs-contract.png'
+      ],
+      features: [
+        'Smart Escrow',
+        'Reputation System',
+        'Instant Payments',
+        'Skills NFTs',
+        'Anonymous Applications',
+        'Milestone Tracking'
+      ],
+      requirements: [
+        'Bitcoin wallet required',
+        'Profile verification',
+        'Minimum 100MB free space'
+      ],
+      languages: ['English', 'Spanish', 'Hindi', 'Chinese', 'Arabic'],
+      inAppPurchases: false,
+      tokenomics: {
+        totalSupply: '50,000,000',
+        circulating: '21,428,571',
+        revenueShare: '20%',
+        stakingAPY: '15%'
+      }
     }
-    // Add more apps as needed
   }
 
   return apps[id] || null
