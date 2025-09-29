@@ -636,7 +636,7 @@ export default function Home() {
         <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4 lg:py-6">
           <div className="flex lg:grid lg:grid-cols-3 items-center justify-between lg:gap-0">
             {/* Left Section: Logo & Branding */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -658,7 +658,7 @@ export default function Home() {
                     sizes="40px"
                   />
                 </div>
-                <div className="hidden sm:block">
+                <div>
                   <h1 className="text-base lg:text-xl font-light">Bitcoin Apps</h1>
                   <p className="text-xs text-gray-500 hidden lg:block">Think ₿ifferent™</p>
                 </div>
@@ -737,18 +737,17 @@ export default function Home() {
                 <div className="flex items-center space-x-2">
                   <button 
                     onClick={() => router.push('/exchange/options')}
-                    className="px-2 py-1.5 lg:px-3 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all text-sm font-medium">
-                    <span className="hidden sm:inline">Exchange</span>
-                    <span className="sm:hidden">Ex</span>
+                    className="hidden sm:block px-2 py-1.5 lg:px-3 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all text-sm font-medium">
+                    Exchange
                   </button>
                   <button
                     onClick={logout}
-                    className="flex items-center space-x-2 px-2 py-1.5 lg:px-3 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg transition-colors"
+                    className="w-8 h-8 sm:w-auto sm:h-auto flex items-center sm:space-x-2 sm:px-2 sm:py-1.5 lg:px-3 bg-gradient-to-br sm:bg-[#1e1e1e] from-[#0094FF] to-[#0084e6] sm:from-transparent sm:to-transparent hover:sm:bg-[#2a2a2a] sm:border sm:border-[#3a3a3a] rounded-full sm:rounded-lg transition-colors"
                   >
-                    <div className="w-5 h-5 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                    <div className="w-full h-full sm:w-5 sm:h-5 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
                       {user.name.charAt(0).toUpperCase()}
                     </div>
-                    <span className="text-sm text-gray-300 hidden lg:inline">{user.name}</span>
+                    <span className="text-sm text-gray-300 hidden sm:inline">{user.name}</span>
                   </button>
                 </div>
               ) : (
