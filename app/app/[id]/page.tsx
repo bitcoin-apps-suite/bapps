@@ -264,7 +264,7 @@ export default function AppDetailPage() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-xl font-semibold mb-4">Screenshots</h2>
           <div className="flex gap-4 overflow-x-auto pb-4">
-            {app.screenshots?.map((screenshot, i) => (
+            {app.screenshots?.map((screenshot: string, i: number) => (
               <div 
                 key={i} 
                 className="flex-shrink-0 relative cursor-pointer hover:opacity-90 transition-opacity"
