@@ -41,10 +41,11 @@ Key Features:
       marketCap: '$2.4M',
       volume24h: '$142K',
       screenshots: [
-        '/screenshots/writer-1.png',
-        '/screenshots/writer-2.png',
-        '/screenshots/writer-3.png',
-        '/screenshots/writer-4.png'
+        '/app-publicity-images/bwriter-publicity/bitcoin writer.png',
+        '/app-publicity-images/bwriter-publicity/Bitcoin Writer Exchange.png',
+        '/app-publicity-images/bwriter-publicity/bwriter token.png',
+        '/app-publicity-images/bwriter-publicity/Create your writing offer.png',
+        '/app-publicity-images/bwriter-publicity/find pro writers.png'
       ],
       features: [
         'Blockchain Storage',
@@ -132,7 +133,7 @@ export default function AppDetailPage() {
   const params = useParams()
   const router = useRouter()
   const [activeTab, setActiveTab] = useState<'overview' | 'tokenomics' | 'reviews'>('overview')
-  const [selectedScreenshot, setSelectedScreenshot] = useState(0)
+  const [selectedScreenshot, setSelectedScreenshot] = useState<number | null>(null)
   
   const app = getAppData(params.id as string)
 
@@ -263,11 +264,30 @@ export default function AppDetailPage() {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-xl font-semibold mb-4">Screenshots</h2>
           <div className="flex gap-4 overflow-x-auto pb-4">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="flex-shrink-0 w-64 h-48 bg-[#1a1a1a] rounded-lg border border-[#3a3a3a] flex items-center justify-center">
-                <span className="text-gray-500">Screenshot {i}</span>
+            {app.screenshots?.map((screenshot, i) => (
+              <div 
+                key={i} 
+                className="flex-shrink-0 relative cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => setSelectedScreenshot(i)}
+              >
+                <Image
+                  src={screenshot}
+                  alt={`${app.name} Screenshot ${i + 1}`}
+                  width={400}
+                  height={250}
+                  className="rounded-lg border border-[#3a3a3a]"
+                  style={{ objectFit: 'cover' }}
+                />
               </div>
-            ))}
+            )) || (
+              <div className="flex gap-4">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="flex-shrink-0 w-64 h-48 bg-[#1a1a1a] rounded-lg border border-[#3a3a3a] flex items-center justify-center">
+                    <span className="text-gray-500">Screenshot {i}</span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -401,6 +421,31 @@ export default function AppDetailPage() {
           )}
         </div>
       </section>
+
+      {/* Screenshot Lightbox */}
+      {selectedScreenshot !== null && app.screenshots && (
+        <div 
+          className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedScreenshot(null)}
+        >
+          <div className="relative max-w-6xl max-h-[90vh]">
+            <Image
+              src={app.screenshots[selectedScreenshot]}
+              alt={`${app.name} Screenshot ${selectedScreenshot + 1}`}
+              width={1200}
+              height={750}
+              className="rounded-lg"
+              style={{ objectFit: 'contain', maxHeight: '90vh', width: 'auto' }}
+            />
+            <button
+              onClick={() => setSelectedScreenshot(null)}
+              className="absolute top-4 right-4 w-10 h-10 bg-black/50 hover:bg-black/70 rounded-full flex items-center justify-center text-white transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </div>
