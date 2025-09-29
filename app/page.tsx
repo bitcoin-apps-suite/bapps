@@ -632,10 +632,11 @@ export default function Home() {
         </div>
         
         <main className="flex-1 flex flex-col w-full">
-          {/* Header */}
+          {/* Header - Organized into 3 sections */}
         <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3 lg:space-x-6">
+          <div className="grid grid-cols-3 items-center">
+            {/* Left Section: Logo & Branding */}
+            <div className="flex items-center space-x-3">
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -656,24 +657,17 @@ export default function Home() {
                     sizes="40px"
                   />
                 </div>
-                <div>
+                <div className="hidden lg:block">
                   <h1 className="text-2xl font-light">Bitcoin Apps</h1>
                   <p className="text-xs text-gray-500">Think ₿ifferent™</p>
                 </div>
               </div>
             </div>
             
-            <div className="flex items-center space-x-2 lg:space-x-4">
+            {/* Center Section: Navigation & Search */}
+            <div className="flex items-center justify-center space-x-4">
               {/* Quick Links - Hidden on mobile */}
               <div className="hidden lg:flex items-center space-x-4">
-                <a 
-                  href="https://github.com/bitcoin-apps-suite/bapps"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  GitHub
-                </a>
                 <a 
                   href="/bitcoin-apps-store"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
@@ -681,36 +675,16 @@ export default function Home() {
                   About
                 </a>
                 <a 
-                  href="/docs"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Docs
-                </a>
-                <a 
-                  href="https://x.com/bitcoinapps_X"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Twitter
-                </a>
-                <button
-                  onClick={() => alert('Discord coming soon™')}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  Discord
-                </button>
-                <a 
                   href="/rankings"
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   Rankings
                 </a>
                 <a 
-                  href="/token"
-                  className="text-[#0094FF] hover:text-[#0084e6] transition-colors text-sm font-medium"
+                  href="/exchange"
+                  className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  $BAPPS
+                  Exchange
                 </a>
               </div>
               
@@ -721,49 +695,23 @@ export default function Home() {
                   placeholder="Search apps..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-4 py-2 pl-10 w-80 text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
+                  className="bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg px-4 py-2 pl-10 w-60 text-sm focus:outline-none focus:border-[#0094FF] transition-colors"
                 />
                 <svg className="absolute left-3 top-2.5 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
               </div>
-              
-              {/* User Info - Simplified on mobile */}
-              {user && (
-                <div className="hidden lg:flex items-center space-x-3">
-                  <div className="flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
-                    <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
-                      {user.name.charAt(0).toUpperCase()}
-                    </div>
-                    <span className="text-sm text-gray-300">{user.name}</span>
-                    <span className="text-xs text-gray-500">({user.provider})</span>
-                  </div>
-                  <button
-                    onClick={logout}
-                    className="px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
-                  >
-                    Logout
-                  </button>
-                </div>
-              )}
-              
-              {/* Mobile User Avatar */}
-              {user && (
-                <button
-                  onClick={logout}
-                  className="lg:hidden w-8 h-8 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-sm font-bold"
-                >
-                  {user.name.charAt(0).toUpperCase()}
-                </button>
-              )}
-              
+            </div>
+            
+            {/* Right Section: User & Actions */}
+            <div className="flex items-center justify-end space-x-3">
               {/* View Mode Toggle - Hidden on mobile */}
               <div className="hidden lg:flex items-center bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
                 <button
                   onClick={() => setViewMode('grid')}
                   className={`p-2 ${viewMode === 'grid' ? 'bg-[#0094FF] text-white' : 'text-gray-400'} transition-colors rounded-l-lg`}
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
                 </button>
@@ -771,11 +719,47 @@ export default function Home() {
                   onClick={() => setViewMode('list')}
                   className={`p-2 ${viewMode === 'list' ? 'bg-[#0094FF] text-white' : 'text-gray-400'} transition-colors rounded-r-lg`}
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
                   </svg>
                 </button>
               </div>
+              
+              {/* User Info & Exchange Button */}
+              {user ? (
+                <>
+                  <div className="hidden lg:flex items-center space-x-2 px-3 py-1.5 bg-[#1e1e1e] border border-[#3a3a3a] rounded-lg">
+                    <div className="w-6 h-6 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-xs font-bold">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="text-sm text-gray-300">{user.name}</span>
+                  </div>
+                  <button 
+                    onClick={() => router.push('/exchange')}
+                    className="px-4 py-1.5 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all font-medium">
+                    Open Exchange
+                  </button>
+                  <button
+                    onClick={logout}
+                    className="hidden lg:block px-3 py-1.5 bg-[#1e1e1e] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-lg text-sm text-gray-300 transition-colors"
+                  >
+                    Logout
+                  </button>
+                  <button
+                    onClick={logout}
+                    className="lg:hidden w-8 h-8 bg-gradient-to-br from-[#0094FF] to-[#0084e6] rounded-full flex items-center justify-center text-white text-sm font-bold"
+                  >
+                    {user.name.charAt(0).toUpperCase()}
+                  </button>
+                </>
+              ) : (
+                <button 
+                  onClick={() => setLoginModalOpen(true)}
+                  className="px-4 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium"
+                >
+                  Login
+                </button>
+              )}
             </div>
           </div>
         </header>
@@ -796,36 +780,22 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Status Bar */}
-        <div className="bg-black px-4 lg:px-8 py-3 border-b border-[#2a2a2a]">
-          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between text-sm space-y-2 lg:space-y-0">
-            <div className="flex items-center space-x-6">
-              <span className="text-gray-400">{filteredApps.length} apps</span>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-gray-400">{apps.filter(a => a.status === 'installed').length} live</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-yellow-500 rounded-full"></div>
-                <span className="text-gray-400">{apps.filter(a => a.ticker).length} tokenized</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <div className="w-2 h-2 bg-[#10B981] rounded-full animate-pulse"></div>
-                <span className="text-gray-400">$BExchange Central Hub</span>
-              </div>
+        {/* Status Bar - Simplified */}
+        <div className="bg-black px-4 lg:px-8 py-2 border-b border-[#2a2a2a]">
+          <div className="flex items-center justify-center space-x-6 text-xs">
+            <span className="text-gray-500">{filteredApps.length} apps</span>
+            <div className="flex items-center space-x-1">
+              <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
+              <span className="text-gray-500">{apps.filter(a => a.status === 'installed').length} live</span>
             </div>
-            {user ? (
-              <button className="px-4 py-1.5 bg-gradient-to-r from-[#10B981] to-[#059669] hover:from-[#059669] hover:to-[#047857] text-white rounded-lg transition-all font-medium">
-                Open Exchange
-              </button>
-            ) : (
-              <button 
-                onClick={() => setLoginModalOpen(true)}
-                className="px-4 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium"
-              >
-                Login
-              </button>
-            )}
+            <div className="flex items-center space-x-1">
+              <div className="w-1.5 h-1.5 bg-yellow-500 rounded-full"></div>
+              <span className="text-gray-500">{apps.filter(a => a.ticker).length} tokenized</span>
+            </div>
+            <div className="flex items-center space-x-1">
+              <div className="w-1.5 h-1.5 bg-[#10B981] rounded-full animate-pulse"></div>
+              <span className="text-gray-500">$BExchange ready</span>
+            </div>
           </div>
         </div>
 
