@@ -21,6 +21,18 @@ interface Token {
 
 const tokens: Token[] = [
   {
+    id: 'bapps',
+    name: 'Bitcoin Apps Suite',
+    symbol: '$BAPPS',
+    displaySymbol: '$BAPPS',
+    price: 1.28,
+    change24h: 18.5,
+    volume24h: '$892K',
+    marketCap: '$12.8M',
+    color: '#0094FF',
+    image: '/bitcoin-apps-logo.jpg'
+  },
+  {
     id: 'bwriter',
     name: 'Bitcoin Writer',
     symbol: '$bWriter',
