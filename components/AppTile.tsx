@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 
 interface App {
   id: string
@@ -34,13 +35,13 @@ interface AppTileProps {
 }
 
 export default function AppTile({ app }: AppTileProps) {
+  const router = useRouter()
   const [isHovered, setIsHovered] = useState(false)
   const [imageError, setImageError] = useState(false)
   
   const handleCardClick = () => {
-    if (app.status === 'installed' && app.url) {
-      window.open(app.url, '_blank')
-    }
+    // Navigate to app detail page
+    router.push(`/app/${app.id}`)
   }
 
   return (
