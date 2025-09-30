@@ -854,7 +854,7 @@ export default function Home() {
           {/* Page Title */}
           <div className="mb-6 lg:mb-8">
             <h1 className="text-2xl lg:text-3xl font-light text-center">
-              <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] to-[#0094FF] bg-clip-text text-transparent">Discover Bitcoin Apps</span>
+              <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] to-[#0094FF] bg-clip-text text-transparent">Discover Apps</span>
             </h1>
           </div>
           
