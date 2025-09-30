@@ -247,6 +247,7 @@ const apps = [
     fullName: 'Bitcoin Jobs',
     ticker: '$bJobs',
     icon: 'Jo',
+    image: '/bitcoin-jobs-icon.jpg',
     color: '#10B981',
     description: 'Decentralized work marketplace with smart contract payments',
     category: 'Bitcoin Business',
