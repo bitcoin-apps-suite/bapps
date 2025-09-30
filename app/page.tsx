@@ -678,10 +678,15 @@ export default function Home() {
               </div>
             ) : (
               <button 
-                onClick={() => setLoginModalOpen(true)}
-                className="px-3 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] text-white rounded-lg text-sm font-medium"
+                onClick={() => {
+                  login('handcash')
+                }}
+                className="flex items-center space-x-1 px-2 py-1.5 bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-white rounded-lg text-xs font-medium"
               >
-                Login
+                <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center">
+                  <span className="text-[#22C55E] font-bold text-[10px]">₿</span>
+                </div>
+                <span>HandCash</span>
               </button>
             )}
           </div>
@@ -795,10 +800,15 @@ export default function Home() {
                 </>
               ) : (
                 <button 
-                  onClick={() => setLoginModalOpen(true)}
-                  className="px-4 py-1.5 bg-gradient-to-r from-[#0094FF] to-[#0084e6] hover:from-[#0084e6] hover:to-[#0074d6] text-white rounded-lg transition-all font-medium text-sm"
+                  onClick={() => {
+                    login('handcash')
+                  }}
+                  className="flex items-center space-x-2 px-4 py-1.5 bg-gradient-to-r from-[#22C55E] to-[#16A34A] hover:from-[#16A34A] hover:to-[#15803D] text-white rounded-lg transition-all font-medium text-sm"
                 >
-                  Login
+                  <div className="w-5 h-5 bg-white rounded-full flex items-center justify-center">
+                    <span className="text-[#22C55E] font-bold text-xs">₿</span>
+                  </div>
+                  <span>Login with HandCash</span>
                 </button>
               )}
             </div>
