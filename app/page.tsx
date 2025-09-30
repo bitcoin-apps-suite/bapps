@@ -933,20 +933,39 @@ export default function Home() {
               {/* Core Bitcoin Apps Suite - Highlighted Section */}
               {filteredApps.filter(app => app.isSuite).length > 0 && (
                 <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/20 to-orange-900/20 p-6 rounded-xl border border-purple-500/30">
-                  <div className="mb-4 flex items-start justify-between">
-                    <div>
-                      <h2 className="text-2xl font-bold text-white mb-1">
+                  <div className="mb-4">
+                    {/* Mobile Layout - Stack vertically */}
+                    <div className="lg:hidden">
+                      <h2 className="text-xl font-bold text-white mb-1">
                         Bitcoin Apps Suite
                       </h2>
-                      <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music, Jobs, Search, Art, Education & Video</p>
-                    </div>
-                    {/* Rainbow glassmorphism badge */}
-                    <div className="relative px-6 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20">
-                      <div className="flex items-center gap-4">
-                        <span className="text-white font-medium text-sm">$BAPPS</span>
+                      <p className="text-sm text-gray-300 mb-3">Essential productivity suite featuring 11 core apps</p>
+                      {/* Mobile Badge */}
+                      <div className="relative px-4 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20 w-fit">
                         <div className="flex items-center gap-3">
+                          <span className="text-white font-medium text-sm">$BAPPS</span>
                           <span className="text-white font-mono text-sm">$1.28</span>
                           <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Desktop Layout - Side by side */}
+                    <div className="hidden lg:flex items-start justify-between">
+                      <div>
+                        <h2 className="text-2xl font-bold text-white mb-1">
+                          Bitcoin Apps Suite
+                        </h2>
+                        <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music, Jobs, Search, Art, Education & Video</p>
+                      </div>
+                      {/* Desktop Rainbow glassmorphism badge */}
+                      <div className="relative px-6 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20">
+                        <div className="flex items-center gap-4">
+                          <span className="text-white font-medium text-sm">$BAPPS</span>
+                          <div className="flex items-center gap-3">
+                            <span className="text-white font-mono text-sm">$1.28</span>
+                            <span className="text-green-400 font-mono text-xs px-2 py-0.5 bg-green-500/10 rounded-full">+18.5%</span>
+                          </div>
                         </div>
                       </div>
                     </div>
