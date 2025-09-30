@@ -952,6 +952,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-4">
+                    {/* Bitcoin Apps Suite Grid */}
                     {filteredApps.filter(app => app.isSuite).map((app) => (
                       <AppTile key={app.id} app={app} />
                     ))}
