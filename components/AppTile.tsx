@@ -40,6 +40,14 @@ export default function AppTile({ app }: AppTileProps) {
   const [imageError, setImageError] = useState(false)
   
   const handleCardClick = () => {
+    // Open app directly
+    if (app.url) {
+      window.open(app.url, '_blank')
+    }
+  }
+
+  const handleAboutClick = (e: React.MouseEvent) => {
+    e.stopPropagation()
     // Navigate to app detail page
     router.push(`/app/${app.id}`)
   }
@@ -174,14 +182,11 @@ export default function AppTile({ app }: AppTileProps) {
           {app.status === 'installed' && (
             <div className="grid grid-cols-2 gap-1.5">
               <button 
-                onClick={(e) => {
-                  e.stopPropagation()
-                  app.url && window.open(app.url, '_blank')
-                }}
+                onClick={handleAboutClick}
                 className="py-1.5 bg-[#1e1e1e] hover:bg-[#333] border border-[#3a3a3a] rounded-lg text-xs text-gray-300 transition-colors"
-                title="Open app"
+                title="About app"
               >
-                Open
+                About
               </button>
               <button 
                 onClick={(e) => e.stopPropagation()}
@@ -213,7 +218,7 @@ export default function AppTile({ app }: AppTileProps) {
                 className="py-1.5 bg-[#333] rounded-lg text-xs text-gray-600 cursor-not-allowed"
                 title="Coming soon"
               >
-                Open
+                About
               </button>
               <button 
                 disabled
