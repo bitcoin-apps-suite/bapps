@@ -352,7 +352,7 @@ const apps = [
     version: '1.5.0',
     size: '178 MB',
     lastUpdated: '2024-12-20',
-    url: 'https://ninjapunkgirls.website',
+    url: 'https://www.ninjapunkgirls.website',
     price: 0.52,
     change24h: 18.7,
     marketCap: '$2.1M',

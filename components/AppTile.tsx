@@ -70,14 +70,14 @@ export default function AppTile({ app }: AppTileProps) {
         <div 
           className={`w-full aspect-square rounded-xl flex items-center justify-center text-white text-3xl font-bold mb-3 relative overflow-hidden ${
             !app.image || imageError ? 'bg-[#2a2a2a]' : ''
-          }`}
+          } ${app.id === 'ninjapunkgirls' ? 'bg-[#1a1a1a]' : ''}`}
         >
           {app.image && !imageError ? (
             <Image
               src={app.image}
               alt={app.fullName}
               fill
-              className="object-cover"
+              className={app.id === 'ninjapunkgirls' ? "object-contain p-4" : "object-cover"}
               onError={() => setImageError(true)}
               sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
             />
