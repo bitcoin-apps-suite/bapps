@@ -227,6 +227,7 @@ const apps = [
     fullName: 'Bitcoin Video',
     ticker: '$bVideo',
     icon: <Video size={32} />,
+    image: '/bitcoin-video.jpg',
     color: '#7C3AED',
     description: 'Video streaming and storage on Bitcoin blockchain',
     category: 'Featured Apps',
