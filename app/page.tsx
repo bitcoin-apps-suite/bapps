@@ -237,7 +237,7 @@ const apps = [
     version: '1.0.0',
     size: '145 MB',
     lastUpdated: '2024-12-20',
-    url: 'https://bitcoin-video.vercel.app',
+    url: 'https://bitcoin-video-nine.vercel.app/',
     price: 0.35,
     change24h: 8.4,
     marketCap: '$1.7M',
