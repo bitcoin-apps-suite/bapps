@@ -208,7 +208,7 @@ const apps = [
     version: '1.0.0',
     size: '156 MB',
     lastUpdated: '2024-12-20',
-    url: 'https://bitcoin-education.vercel.app',
+    url: 'https://bitcoin-education-theta.vercel.app',
     price: 0.19,
     change24h: 11.7,
     marketCap: '$890K',
