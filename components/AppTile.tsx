@@ -84,7 +84,13 @@ export default function AppTile({ app }: AppTileProps) {
           ) : (
             <>
               <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-              <span className="relative z-10" style={{ color: app.color }}>{app.icon}</span>
+              <div className="relative z-10" style={{ color: app.color }}>
+                {typeof app.icon === 'string' ? (
+                  <span>{app.icon}</span>
+                ) : (
+                  app.icon
+                )}
+              </div>
             </>
           )}
           

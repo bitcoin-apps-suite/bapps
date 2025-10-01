@@ -7,6 +7,10 @@ import AppTile from '@/components/AppTile'
 import Sidebar from '@/components/Sidebar'
 import Footer from '@/components/Footer'
 import { useAuth } from '@/components/AuthContext'
+import { 
+  PenTool, FileSpreadsheet, HardDrive, Mail, Calendar, Music, 
+  Search, Palette, GraduationCap, Video, Paintbrush
+} from 'lucide-react'
 
 const apps = [
   // Featured Canonical Apps - Ordered by release
@@ -153,7 +157,7 @@ const apps = [
     name: 'Search',
     fullName: 'Bitcoin Search',
     ticker: '$bSearch',
-    icon: 'Se',
+    icon: <Search size={24} />,
     color: '#8B5CF6',
     description: 'Decentralized search engine powered by Bitcoin blockchain',
     category: 'Featured Apps',
@@ -175,7 +179,7 @@ const apps = [
     name: 'Art',
     fullName: 'Bitcoin Art',
     ticker: '$bArt',
-    icon: 'Ar',
+    icon: <Palette size={24} />,
     color: '#F97316',
     description: 'Digital art marketplace and creation tools on Bitcoin',
     category: 'Featured Apps',
@@ -197,7 +201,7 @@ const apps = [
     name: 'Education',
     fullName: 'Bitcoin Education',
     ticker: '$bEducation',
-    icon: 'Ed',
+    icon: <GraduationCap size={24} />,
     color: '#0EA5E9',
     description: 'Comprehensive Bitcoin learning platform with interactive courses',
     category: 'Featured Apps',
@@ -219,7 +223,7 @@ const apps = [
     name: 'Video',
     fullName: 'Bitcoin Video',
     ticker: '$bVideo',
-    icon: 'Vi',
+    icon: <Video size={24} />,
     color: '#7C3AED',
     description: 'Video streaming and storage on Bitcoin blockchain',
     category: 'Featured Apps',
@@ -241,7 +245,7 @@ const apps = [
     name: 'Paint',
     fullName: 'Bitcoin Paint',
     ticker: '$bPaint',
-    icon: 'Pa',
+    icon: <Paintbrush size={24} />,
     color: '#F59E0B',
     description: 'Digital art creation platform on Bitcoin blockchain',
     category: 'Featured Apps',
