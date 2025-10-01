@@ -343,7 +343,7 @@ const apps = [
     fullName: 'NinjaPunkGirls',
     ticker: '$NPG',
     icon: '忍',
-    image: '/ninjapunkgirls.png',
+    image: '/ninja-punk-girls-logo.png',
     color: '#E11D48',
     description: 'Collectible NFT game with ninja punk girl characters',
     category: 'Bitcoin Games',
