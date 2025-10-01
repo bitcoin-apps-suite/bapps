@@ -60,8 +60,9 @@ export default function AppTile({ app }: AppTileProps) {
       `}>
         {/* App Icon */}
         <div 
-          className="w-full aspect-square rounded-xl flex items-center justify-center text-white text-3xl font-bold mb-3 relative overflow-hidden"
-          style={{ backgroundColor: !app.image || imageError ? app.color : undefined }}
+          className={`w-full aspect-square rounded-xl flex items-center justify-center text-white text-3xl font-bold mb-3 relative overflow-hidden ${
+            !app.image || imageError ? 'bg-[#2a2a2a]' : ''
+          }`}
         >
           {app.image && !imageError ? (
             <Image
@@ -82,8 +83,8 @@ export default function AppTile({ app }: AppTileProps) {
             </>
           ) : (
             <>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-              <span className="relative z-10">{app.icon}</span>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
+              <span className="relative z-10" style={{ color: app.color }}>{app.icon}</span>
             </>
           )}
           
