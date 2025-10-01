@@ -182,6 +182,7 @@ const apps = [
     fullName: 'Bitcoin Art',
     ticker: '$bArt',
     icon: <Palette size={32} />,
+    image: '/bitcoin-art-colorful.png',
     color: '#F97316',
     description: 'Digital art marketplace and creation tools on Bitcoin',
     category: 'Featured Apps',
