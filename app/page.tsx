@@ -237,6 +237,28 @@ const apps = [
     volume24h: '$84K'
   },
   {
+    id: 'bitcoin-paint',
+    name: 'Paint',
+    fullName: 'Bitcoin Paint',
+    ticker: '$bPaint',
+    icon: 'Pa',
+    color: '#F59E0B',
+    description: 'Digital art creation platform on Bitcoin blockchain',
+    category: 'Bitcoin Creative',
+    status: 'installed' as const,
+    isPoc: true,
+    isCanonical: true,
+    isSuite: true,
+    version: '1.0.0',
+    size: '98 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://bitcoin-paint.vercel.app',
+    price: 0.14,
+    change24h: 7.9,
+    marketCap: '$750K',
+    volume24h: '$32K'
+  },
+  {
     id: 'senseii',
     name: 'Senseii',
     fullName: 'Senseii Bitcoin Education',
@@ -478,24 +500,6 @@ const apps = [
     marketCap: '$TBA',
     volume24h: '$0',
     isMainExchange: true
-  },
-  {
-    id: 'bitcoin-paint',
-    name: 'Paint',
-    fullName: 'Bitcoin Paint',
-    ticker: '$bPaint',
-    icon: 'Pa',
-    color: '#F59E0B',
-    description: 'Digital art creation platform on Bitcoin',
-    category: 'Bitcoin Creative',
-    status: 'coming' as const,
-    version: null,
-    size: null,
-    lastUpdated: null,
-    price: 0.14,
-    change24h: 0,
-    marketCap: '$TBA',
-    volume24h: '$0'
   },
   {
     id: 'bitcoin-pics',
@@ -939,7 +943,7 @@ export default function Home() {
                       <h2 className="text-xl font-bold text-white mb-1">
                         Bitcoin Apps Suite
                       </h2>
-                      <p className="text-sm text-gray-300 mb-3">Essential productivity suite featuring 11 core apps</p>
+                      <p className="text-sm text-gray-300 mb-3">Essential productivity suite featuring 12 core apps</p>
                       {/* Mobile Badge */}
                       <div className="relative px-4 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20 w-fit">
                         <div className="flex items-center gap-3">
@@ -956,7 +960,7 @@ export default function Home() {
                         <h2 className="text-2xl font-bold text-white mb-1">
                           Bitcoin Apps Suite
                         </h2>
-                        <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music, Jobs, Search, Art, Education & Video</p>
+                        <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music, Jobs, Search, Art, Education, Video & Paint</p>
                       </div>
                       {/* Desktop Rainbow glassmorphism badge */}
                       <div className="relative px-6 py-2 bg-gradient-to-r from-[#FF6B00]/10 via-[#FF00FF]/10 via-[#00FF88]/10 to-[#0094FF]/10 backdrop-blur-xl rounded-xl border border-white/20">
