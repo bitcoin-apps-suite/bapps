@@ -274,7 +274,7 @@ const apps = [
     fullName: 'Bitcoin Wallet',
     ticker: '$bWallet',
     icon: <Wallet size={32} />,
-    image: '/bitcoin-wallet-logo.jpg',
+    image: '/bitcoin-wallet.jpg',
     color: '#F97316',
     description: 'Secure Bitcoin wallet with advanced features',
     category: 'Featured Apps',
