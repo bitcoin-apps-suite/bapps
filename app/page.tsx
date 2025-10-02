@@ -1026,21 +1026,26 @@ export default function Home() {
 
         {/* Apps Grid/List */}
         <div className="flex-1 overflow-auto p-3 lg:p-8">
-          {/* Hero Section */}
-          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-violet-500 from-0% via-indigo-500 via-7% via-blue-500 via-14% via-cyan-500 via-21% via-teal-500 via-28% via-green-500 via-35% via-lime-500 via-42% via-yellow-500 via-49% via-amber-500 via-56% via-orange-500 via-63% via-red-500 via-70% via-pink-500 via-77% via-fuchsia-500 via-84% via-purple-500 via-91% to-violet-500 to-100% p-[2px]">
-            <div className="relative bg-gradient-to-br from-black via-gray-900 to-black backdrop-blur-xl rounded-xl p-4 lg:p-6 text-center border border-white/10">
+          {/* Hero Section - MAXIMUM RAINBOW EDITION */}
+          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-red-600 via-red-500 via-red-400 via-orange-600 via-orange-500 via-orange-400 via-amber-600 via-amber-500 via-amber-400 via-yellow-600 via-yellow-500 via-yellow-400 via-yellow-300 via-lime-600 via-lime-500 via-lime-400 via-green-600 via-green-500 via-green-400 via-emerald-600 via-emerald-500 via-emerald-400 via-teal-600 via-teal-500 via-teal-400 via-cyan-600 via-cyan-500 via-cyan-400 via-sky-600 via-sky-500 via-sky-400 via-blue-600 via-blue-500 via-blue-400 via-indigo-600 via-indigo-500 via-indigo-400 via-violet-600 via-violet-500 via-violet-400 via-purple-600 via-purple-500 via-purple-400 via-fuchsia-600 via-fuchsia-500 via-fuchsia-400 via-pink-600 via-pink-500 via-pink-400 via-rose-600 via-rose-500 via-rose-400 to-red-600 p-[3px] animate-pulse">
+            <div className="relative bg-gradient-to-br from-black via-gray-900 via-black via-purple-900/20 via-blue-900/20 via-green-900/20 via-yellow-900/20 via-red-900/20 to-black backdrop-blur-xl rounded-xl p-4 lg:p-6 text-center border-2 border-transparent bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 via-purple-400 to-pink-400 bg-clip-border">
               <h1 className="text-5xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight">
-                <span className="bg-gradient-to-r from-violet-300 from-0% via-indigo-300 via-7% via-blue-300 via-14% via-cyan-300 via-21% via-teal-300 via-28% via-green-300 via-35% via-lime-300 via-42% via-yellow-300 via-49% via-amber-300 via-56% via-orange-300 via-63% via-red-300 via-70% via-pink-300 via-77% via-fuchsia-300 via-84% via-purple-300 via-91% to-violet-300 to-100% bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-red-300 via-red-200 via-orange-300 via-orange-200 via-amber-300 via-amber-200 via-yellow-300 via-yellow-200 via-yellow-100 via-lime-300 via-lime-200 via-green-300 via-green-200 via-emerald-300 via-emerald-200 via-teal-300 via-teal-200 via-cyan-300 via-cyan-200 via-sky-300 via-sky-200 via-blue-300 via-blue-200 via-indigo-300 via-indigo-200 via-violet-300 via-violet-200 via-purple-300 via-purple-200 via-fuchsia-300 via-fuchsia-200 via-pink-300 via-pink-200 via-rose-300 via-rose-200 to-red-300 bg-clip-text text-transparent animate-pulse bg-[length:300%_300%]">
+                  Think ₿ifferent:
+                </span>{' '}
+                <span className="bg-gradient-to-l from-violet-300 via-blue-300 via-cyan-300 via-green-300 via-yellow-300 via-orange-300 via-red-300 via-pink-300 to-purple-300 bg-clip-text text-transparent animate-pulse">
                   b
                 </span>
-                <span className="text-white">Apps: Think ₿ifferent</span>
-                <span className="text-gray-400 text-sm align-top ml-1">™</span>
+                <span className="bg-gradient-to-r from-white via-yellow-100 via-pink-100 via-blue-100 via-green-100 to-white bg-clip-text text-transparent animate-pulse">Apps</span>
+                <span className="bg-gradient-to-r from-rainbow-500 via-purple-400 via-blue-400 via-green-400 via-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent text-sm align-top ml-1 animate-pulse">™</span>
               </h1>
-              <div className="flex justify-center gap-4 text-xs font-light text-gray-400">
-                <span>{filteredApps.filter(app => app.status === 'installed').length} apps</span>
-                <span>•</span>
-                <span>{filteredApps.filter(app => app.isSuite).length} featured</span>
+              <div className="flex justify-center gap-4 text-xs font-light">
+                <span className="bg-gradient-to-r from-purple-400 via-blue-400 via-green-400 via-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent animate-pulse">{filteredApps.filter(app => app.status === 'installed').length} apps</span>
+                <span className="bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-pulse">•</span>
+                <span className="bg-gradient-to-l from-purple-400 via-blue-400 via-green-400 via-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent animate-pulse">{filteredApps.filter(app => app.isSuite).length} featured</span>
               </div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/10 via-orange-500/10 via-yellow-500/10 via-green-500/10 via-blue-500/10 via-purple-500/10 to-transparent animate-pulse opacity-60 rounded-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-l from-transparent via-pink-500/5 via-cyan-500/5 via-lime-500/5 to-transparent animate-pulse opacity-40 rounded-xl"></div>
             </div>
           </div>
           
