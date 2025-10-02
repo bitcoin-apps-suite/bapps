@@ -426,7 +426,7 @@ const apps = [
     version: '1.0.0',
     size: '112 MB',
     lastUpdated: '2024-12-20',
-    url: 'https://jobs.bitcoinapps.store',
+    url: 'https://bitcoin-jobs.vercel.app',
     price: 0.45,
     change24h: 22.3,
     marketCap: '$2.8M',
