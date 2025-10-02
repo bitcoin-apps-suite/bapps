@@ -177,28 +177,6 @@ const apps = [
     volume24h: '$52K'
   },
   {
-    id: 'bitcoin-art',
-    name: 'Art',
-    fullName: 'Bitcoin Art',
-    ticker: '$bArt',
-    icon: <Palette size={32} />,
-    image: '/bitcoin-art-colorful.png',
-    color: '#F97316',
-    description: 'Digital art marketplace and creation tools on Bitcoin',
-    category: 'Bitcoin Art',
-    status: 'installed' as const,
-    isPoc: true,
-    isCanonical: true,
-    version: '1.2.0',
-    size: '134 MB',
-    lastUpdated: '2024-12-20',
-    url: 'https://bitcoin-art.vercel.app',
-    price: 0.33,
-    change24h: 14.2,
-    marketCap: '$1.6M',
-    volume24h: '$78K'
-  },
-  {
     id: 'bitcoin-education',
     name: 'Education',
     fullName: 'Bitcoin Education',
