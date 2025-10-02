@@ -1026,18 +1026,14 @@ export default function Home() {
 
         {/* Apps Grid/List */}
         <div className="flex-1 overflow-auto p-3 lg:p-8">
-          {/* Hero Section - ACTUAL RAINBOW COLORS! */}
-          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 via-purple-500 to-red-500 p-[3px]">
-            <div className="relative bg-black/95 backdrop-blur-xl rounded-xl p-4 lg:p-6 text-center">
+          {/* Hero Section - VIVID RAINBOW LIKE SCREENSHOT! */}
+          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-red-600 from-0% via-orange-500 via-14% via-yellow-500 via-28% via-green-500 via-42% via-cyan-500 via-57% via-blue-600 via-71% via-purple-600 via-85% to-magenta-600 to-100% p-[2px]">
+            <div className="relative bg-black rounded-xl p-8 lg:p-12 text-center">
               <h1 className="text-5xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight">
-                <span className="bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 via-purple-400 to-red-400 bg-clip-text text-transparent">
-                  Think ₿ifferent:
-                </span>{' '}
-                <span className="bg-gradient-to-r from-purple-400 via-blue-400 via-green-400 via-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                  b
+                <span className="bg-gradient-to-r from-orange-400 via-yellow-400 via-green-400 via-cyan-400 via-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  Think ₿ifferent: b
                 </span>
                 <span className="text-white">Apps</span>
-                <span className="text-gray-400 text-sm align-top ml-1">™</span>
               </h1>
               <div className="flex justify-center gap-4 text-xs font-light text-gray-400">
                 <span>{filteredApps.filter(app => app.status === 'installed').length} apps</span>
