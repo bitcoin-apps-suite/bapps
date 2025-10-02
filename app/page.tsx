@@ -1003,12 +1003,25 @@ export default function Home() {
         <div className="flex-1 overflow-auto p-3 lg:p-8">
           {/* Hero Section */}
           <div className="mb-12 lg:mb-16 text-center py-16 lg:py-24">
-            <h1 className="text-6xl lg:text-8xl font-light mb-6 leading-tight tracking-tight">
-              <span className="bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent animate-pulse">
-                Discover Apps
+            <h1 className="text-7xl lg:text-9xl font-thin mb-4 leading-tight tracking-tight">
+              <span className="bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 via-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent animate-pulse">
+                Discover
+              </span>{' '}
+              <span className="bg-gradient-to-r from-purple-400 via-pink-400 via-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
+                b
               </span>
+              <span className="text-white">Apps</span>
             </h1>
-            <p className="text-xl lg:text-2xl font-light text-gray-400 max-w-3xl mx-auto mb-8">
+            <h2 className="text-7xl lg:text-9xl font-thin mb-8 leading-tight tracking-tight">
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-400 via-purple-400 via-pink-400 via-red-400 via-orange-400 via-yellow-400 via-green-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
+                Discover
+              </span>{' '}
+              <span className="bg-gradient-to-r from-green-400 via-blue-400 via-indigo-400 via-purple-400 via-pink-400 via-red-400 via-orange-400 via-yellow-400 to-green-400 bg-clip-text text-transparent animate-pulse">
+                b
+              </span>
+              <span className="text-white">Apps</span>
+            </h2>
+            <p className="text-3xl lg:text-4xl font-thin text-gray-300 max-w-3xl mx-auto mb-8">
               Think ₿ifferent
             </p>
             <div className="flex justify-center gap-6 text-sm font-light text-gray-500">
