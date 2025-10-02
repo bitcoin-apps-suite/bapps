@@ -251,6 +251,7 @@ const apps = [
     fullName: 'Bitcoin Paint',
     ticker: '$bPaint',
     icon: <Paintbrush size={32} />,
+    image: '/bitcoin-paint.jpg',
     color: '#F59E0B',
     description: 'Digital art creation platform on Bitcoin blockchain',
     category: 'Featured Apps',
