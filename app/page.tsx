@@ -1001,11 +1001,34 @@ export default function Home() {
 
         {/* Apps Grid/List */}
         <div className="flex-1 overflow-auto p-3 lg:p-8">
-          {/* Page Title */}
-          <div className="mb-6 lg:mb-8">
-            <h1 className="text-2xl lg:text-3xl font-light text-center">
-              <span className="bg-gradient-to-r from-[#FF6B00] via-[#FF00FF] to-[#0094FF] bg-clip-text text-transparent">Discover Apps</span>
-            </h1>
+          {/* Hero Section */}
+          <div className="mb-8 lg:mb-12 relative overflow-hidden rounded-2xl bg-gradient-to-br from-purple-600 via-pink-600 to-orange-600 p-[2px]">
+            <div className="relative bg-black/90 backdrop-blur-xl rounded-2xl p-8 lg:p-12">
+              <div className="relative z-10 text-center">
+                <h1 className="text-4xl lg:text-6xl font-bold mb-4 animate-pulse">
+                  <span className="bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+                    Discover Amazing Apps
+                  </span>
+                </h1>
+                <p className="text-lg lg:text-xl text-gray-300 max-w-2xl mx-auto">
+                  Explore the future of decentralized applications built on Bitcoin
+                </p>
+                <div className="mt-6 flex justify-center gap-4">
+                  <div className="px-4 py-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-medium">
+                    {filteredApps.filter(app => app.status === 'installed').length} Apps Available
+                  </div>
+                  <div className="px-4 py-2 rounded-full bg-gradient-to-r from-orange-500 to-yellow-500 text-white text-sm font-medium">
+                    {filteredApps.filter(app => app.isSuite).length} Featured Apps
+                  </div>
+                </div>
+              </div>
+              {/* Animated background elements */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500 rounded-full blur-3xl opacity-20 animate-pulse"></div>
+                <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-pink-500 rounded-full blur-3xl opacity-20 animate-pulse delay-75"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-orange-500 rounded-full blur-3xl opacity-10 animate-pulse delay-150"></div>
+              </div>
+            </div>
           </div>
           
           {viewMode === 'grid' ? (
