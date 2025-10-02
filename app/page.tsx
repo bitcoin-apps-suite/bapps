@@ -1033,11 +1033,9 @@ export default function Home() {
                 <span className="bg-gradient-to-r from-violet-300 from-0% via-indigo-300 via-7% via-blue-300 via-14% via-cyan-300 via-21% via-teal-300 via-28% via-green-300 via-35% via-lime-300 via-42% via-yellow-300 via-49% via-amber-300 via-56% via-orange-300 via-63% via-red-300 via-70% via-pink-300 via-77% via-fuchsia-300 via-84% via-purple-300 via-91% to-violet-300 to-100% bg-clip-text text-transparent">
                   b
                 </span>
-                <span className="text-white">Apps</span>
+                <span className="text-white">Apps: Think ₿ifferent</span>
+                <span className="text-gray-400 text-sm align-top ml-1">™</span>
               </h1>
-              <p className="text-xl lg:text-2xl font-thin text-white mb-2">
-                Think ₿ifferent
-              </p>
               <div className="flex justify-center gap-4 text-xs font-light text-gray-400">
                 <span>{filteredApps.filter(app => app.status === 'installed').length} apps</span>
                 <span>•</span>
