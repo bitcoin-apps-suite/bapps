@@ -1009,7 +1009,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="text-xl lg:text-2xl font-light text-gray-400 max-w-3xl mx-auto mb-8">
-              The most powerful Bitcoin applications, beautifully designed
+              Think ₿ifferent
             </p>
             <div className="flex justify-center gap-6 text-sm font-light text-gray-500">
               <span>{filteredApps.filter(app => app.status === 'installed').length} apps available</span>
