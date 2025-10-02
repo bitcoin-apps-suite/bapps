@@ -1027,19 +1027,19 @@ export default function Home() {
         {/* Apps Grid/List */}
         <div className="flex-1 overflow-auto p-3 lg:p-8">
           {/* Hero Section */}
-          <div className="mb-6 lg:mb-8 relative overflow-hidden rounded-2xl bg-gradient-to-r from-red-500 via-orange-500 via-yellow-500 via-green-500 via-blue-500 via-indigo-500 via-purple-500 to-pink-500 p-[1px]">
-            <div className="relative bg-black/95 backdrop-blur-xl rounded-2xl p-8 lg:p-12 text-center">
-              <h1 className="text-7xl lg:text-9xl font-thin mb-4 leading-tight tracking-tight">
-                <span className="bg-gradient-to-r from-red-400 via-orange-400 via-yellow-400 via-green-400 via-blue-400 via-indigo-400 via-purple-400 via-pink-400 to-red-400 bg-clip-text text-transparent animate-pulse">
+          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-violet-500 via-purple-500 via-fuchsia-500 via-pink-500 via-rose-500 via-red-500 via-orange-500 via-amber-500 via-yellow-500 via-lime-500 via-green-500 via-emerald-500 via-teal-500 via-cyan-500 via-sky-500 via-blue-500 via-indigo-500 to-violet-500 p-[1px] animate-pulse">
+            <div className="relative bg-black/95 backdrop-blur-xl rounded-xl p-4 lg:p-6 text-center">
+              <h1 className="text-5xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight">
+                <span className="bg-gradient-to-r from-violet-300 via-purple-300 via-fuchsia-300 via-pink-300 via-rose-300 via-red-300 via-orange-300 via-amber-300 via-yellow-300 via-lime-300 via-green-300 via-emerald-300 via-teal-300 via-cyan-300 via-sky-300 via-blue-300 via-indigo-300 to-violet-300 bg-clip-text text-transparent animate-pulse">
                   Discover b
                 </span>
                 <span className="text-white">Apps</span>
               </h1>
-              <p className="text-3xl lg:text-4xl font-thin text-white max-w-3xl mx-auto mb-4">
+              <p className="text-xl lg:text-2xl font-thin text-white mb-2">
                 Think ₿ifferent
               </p>
-              <div className="flex justify-center gap-6 text-sm font-light text-gray-400">
-                <span>{filteredApps.filter(app => app.status === 'installed').length} apps available</span>
+              <div className="flex justify-center gap-4 text-xs font-light text-gray-400">
+                <span>{filteredApps.filter(app => app.status === 'installed').length} apps</span>
                 <span>•</span>
                 <span>{filteredApps.filter(app => app.isSuite).length} featured</span>
               </div>
