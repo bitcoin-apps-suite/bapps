@@ -205,6 +205,7 @@ const apps = [
     fullName: 'Bitcoin Education',
     ticker: '$bEducation',
     icon: <GraduationCap size={32} />,
+    image: '/bitcoin-education.jpg',
     color: '#0EA5E9',
     description: 'Comprehensive Bitcoin learning platform with interactive courses',
     category: 'Featured Apps',
