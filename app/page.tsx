@@ -1031,7 +1031,7 @@ export default function Home() {
             <div className="relative bg-gradient-to-br from-black via-gray-900 to-black backdrop-blur-xl rounded-xl p-4 lg:p-6 text-center border border-white/10">
               <h1 className="text-5xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight">
                 <span className="bg-gradient-to-r from-violet-300 from-0% via-indigo-300 via-7% via-blue-300 via-14% via-cyan-300 via-21% via-teal-300 via-28% via-green-300 via-35% via-lime-300 via-42% via-yellow-300 via-49% via-amber-300 via-56% via-orange-300 via-63% via-red-300 via-70% via-pink-300 via-77% via-fuchsia-300 via-84% via-purple-300 via-91% to-violet-300 to-100% bg-clip-text text-transparent">
-                  Discover b
+                  b
                 </span>
                 <span className="text-white">Apps</span>
               </h1>
