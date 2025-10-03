@@ -728,6 +728,7 @@ const apps = [
     description: 'Decentralized social media platform with Bitcoin micropayments for posts',
     category: 'Bitcoin Social',
     status: 'coming' as const,
+    isSuite: true,
     version: null,
     size: null,
     lastUpdated: null,
@@ -1018,6 +1019,7 @@ const apps = [
     description: 'E-book platform with Bitcoin author royalties',
     category: 'Bitcoin Library',
     status: 'coming' as const,
+    isSuite: true,
     version: null,
     size: null,
     lastUpdated: null,
@@ -1842,6 +1844,7 @@ const apps = [
     description: 'Gaming platform with Bitcoin purchases and trading',
     category: 'Bitcoin Games',
     status: 'coming' as const,
+    isSuite: true,
     version: null,
     size: null,
     lastUpdated: null,
@@ -2582,6 +2585,7 @@ const apps = [
     description: 'Payment processing with native Bitcoin integration',
     category: 'Bitcoin Finance',
     status: 'coming' as const,
+    isSuite: true,
     version: null,
     size: null,
     lastUpdated: null,
@@ -2910,6 +2914,7 @@ const apps = [
     description: 'Micro-investing with Bitcoin portfolio options',
     category: 'Bitcoin Money',
     status: 'coming' as const,
+    isSuite: true,
     version: null,
     size: null,
     lastUpdated: null,
@@ -2984,6 +2989,7 @@ const apps = [
     description: 'NFT marketplace with Bitcoin transactions',
     category: 'Bitcoin Art',
     status: 'coming' as const,
+    isSuite: true,
     version: null,
     size: null,
     lastUpdated: null,
@@ -3058,6 +3064,17 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Function to get dynamic grid columns based on number of featured apps
+  const getFeaturedGridCols = (featuredAppsCount: number) => {
+    if (featuredAppsCount <= 1) return 'grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1'
+    if (featuredAppsCount <= 2) return 'grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2'
+    if (featuredAppsCount <= 3) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3'
+    if (featuredAppsCount <= 4) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4'
+    if (featuredAppsCount <= 5) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5'
+    if (featuredAppsCount <= 6) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6'
+    return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-7'
+  }
   const [loginModalOpen, setLoginModalOpen] = useState(false)
   const { user, logout, login, isLoading } = useAuth()
   const router = useRouter()
@@ -3397,7 +3414,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-7 gap-4 lg:gap-4">
+                  <div className={`grid ${getFeaturedGridCols(filteredApps.filter(app => app.isSuite).length)} gap-4 lg:gap-4`}>
                     {/* Bitcoin Apps Suite Grid */}
                     {filteredApps.filter(app => app.isSuite).map((app) => (
                       <AppTile key={app.id} app={app} />
