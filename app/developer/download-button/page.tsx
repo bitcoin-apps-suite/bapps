@@ -18,8 +18,15 @@ export default function DownloadButtonKitPage() {
   const htmlCode = `<!-- Bitcoin Apps Store Download Button -->
 <a href="https://www.bitcoinapps.store" style="display: inline-flex; align-items: center; gap: 12px; background: black; color: white; padding: 12px 24px; border-radius: 12px; text-decoration: none; font-family: system-ui; border: 1px solid #333;">
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="10" fill="#FF6B00"/>
+    <circle cx="12" cy="12" r="10" fill="url(#bitcoin-gradient)"/>
     <path d="M12.5 6.5v-2m0 15v-2m-4-11v12m6-12v12m-1-12.5c1.5 0 3 .5 3 2.5s-1.5 2.5-3 2.5m-2 0h2m-2 0c1.5 0 3 .5 3 2.5s-1.5 2.5-3 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+    <defs>
+      <linearGradient id="bitcoin-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#FF6B00" />
+        <stop offset="50%" stop-color="#FF8C00" />
+        <stop offset="100%" stop-color="#FFA500" />
+      </linearGradient>
+    </defs>
   </svg>
   <div>
     <div style="font-size: 10px; color: #999;">Download on the</div>
