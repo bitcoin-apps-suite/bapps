@@ -287,7 +287,7 @@ const apps = [
     version: '3.0.1',
     size: '178 MB',
     lastUpdated: '2024-12-22',
-    url: 'https://bitcoin-exchange-ai-tribes.vercel.app',
+    url: 'https://bitcoin-exchange-iota.vercel.app',
     price: 0.89,
     change24h: 24.7,
     marketCap: '$5.4M',
