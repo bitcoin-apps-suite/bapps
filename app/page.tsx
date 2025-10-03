@@ -3067,14 +3067,14 @@ export default function Home() {
 
   // Function to get dynamic grid columns based on number of featured apps  
   const getFeaturedGridCols = (featuredAppsCount: number) => {
-    // Always use more columns to keep individual apps smaller
-    if (featuredAppsCount <= 1) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-    if (featuredAppsCount <= 2) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-    if (featuredAppsCount <= 3) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-    if (featuredAppsCount <= 4) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-    if (featuredAppsCount <= 5) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-    if (featuredAppsCount <= 6) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6'
-    return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7'
+    // Only shrink the container when there are fewer than 7 apps
+    if (featuredAppsCount <= 1) return 'grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1'
+    if (featuredAppsCount <= 2) return 'grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2'
+    if (featuredAppsCount <= 3) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3'
+    if (featuredAppsCount <= 4) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4'
+    if (featuredAppsCount <= 5) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5'
+    if (featuredAppsCount <= 6) return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-6'
+    return 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-7'
   }
   const [loginModalOpen, setLoginModalOpen] = useState(false)
   const { user, logout, login, isLoading } = useAuth()
@@ -3415,13 +3415,11 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className="max-w-4xl">
-                    <div className={`grid ${getFeaturedGridCols(filteredApps.filter(app => app.isSuite).length)} gap-4 lg:gap-4`}>
-                      {/* Bitcoin Apps Suite Grid */}
-                      {filteredApps.filter(app => app.isSuite).map((app) => (
-                        <AppTile key={app.id} app={app} />
-                      ))}
-                    </div>
+                  <div className={`grid ${getFeaturedGridCols(filteredApps.filter(app => app.isSuite).length)} gap-4 lg:gap-4`}>
+                    {/* Bitcoin Apps Suite Grid */}
+                    {filteredApps.filter(app => app.isSuite).map((app) => (
+                      <AppTile key={app.id} app={app} />
+                    ))}
                   </div>
                 </div>
               )}
