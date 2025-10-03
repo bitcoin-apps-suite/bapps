@@ -18,7 +18,7 @@ const apps = [
   // Featured Canonical Apps - Ordered by release
   {
     id: 'bitcoin-writer',
-    name: 'Writer',
+    name: 'b/Writer',
     fullName: 'Bitcoin Writer',
     ticker: '$bWriter',
     icon: 'Wr',
@@ -41,7 +41,7 @@ const apps = [
   },
   {
     id: 'bitcoin-sheets',
-    name: 'Spreadsheets',
+    name: 'b/Spreadsheets',
     fullName: 'Bitcoin Spreadsheets',
     ticker: '$bSheets',
     icon: 'Sh',
@@ -64,7 +64,7 @@ const apps = [
   },
   {
     id: 'bitcoin-drive',
-    name: 'Drive',
+    name: 'b/Drive',
     fullName: 'Bitcoin Drive',
     ticker: '$bDrive', 
     icon: 'Dr',
@@ -87,7 +87,7 @@ const apps = [
   },
   {
     id: 'bitcoin-email',
-    name: 'Email',
+    name: 'b/Email',
     fullName: 'Bitcoin Email',
     ticker: '$bMail',
     icon: 'Em',
@@ -110,7 +110,7 @@ const apps = [
   },
   {
     id: 'bitcoin-music',
-    name: 'Music',
+    name: 'b/Music',
     fullName: 'Bitcoin Music',
     ticker: '$bMusic',
     icon: 'Mu',
@@ -133,7 +133,7 @@ const apps = [
   },
   {
     id: 'bitcoin-calendar',
-    name: 'Calendar',
+    name: 'b/Calendar',
     fullName: 'Bitcoin Calendar',
     ticker: '$bCalendar',
     icon: 'Ca',
@@ -156,7 +156,7 @@ const apps = [
   },
   {
     id: 'bitcoin-search',
-    name: 'Search',
+    name: 'b/Search',
     fullName: 'Bitcoin Search',
     ticker: '$bSearch',
     icon: <Search size={32} />,
@@ -179,7 +179,7 @@ const apps = [
   },
   {
     id: 'bitcoin-education',
-    name: 'Education',
+    name: 'b/Education',
     fullName: 'Bitcoin Education',
     ticker: '$bEducation',
     icon: <GraduationCap size={32} />,
@@ -202,7 +202,7 @@ const apps = [
   },
   {
     id: 'bitcoin-exchange',
-    name: 'Exchange',
+    name: 'b/Exchange',
     fullName: 'Bitcoin Exchange',
     ticker: '$bExchange',
     icon: <TrendingUp size={32} />,
@@ -226,7 +226,7 @@ const apps = [
   },
   {
     id: 'bitcoin-paint',
-    name: 'Paint',
+    name: 'b/Paint',
     fullName: 'Bitcoin Paint',
     ticker: '$bPaint',
     icon: <Paintbrush size={32} />,
@@ -249,7 +249,7 @@ const apps = [
   },
   {
     id: 'bitcoin-wallet',
-    name: 'Wallet',
+    name: 'b/Wallet',
     fullName: 'Bitcoin Wallet',
     ticker: '$bWallet',
     icon: <Wallet size={32} />,
@@ -272,7 +272,7 @@ const apps = [
   },
   {
     id: 'bitcoin-video',
-    name: 'Video',
+    name: 'b/Video',
     fullName: 'Bitcoin Video',
     ticker: '$bVideo',
     icon: <Video size={32} />,
@@ -295,7 +295,7 @@ const apps = [
   },
   {
     id: 'bitcoin-code',
-    name: 'Code',
+    name: 'b/Code',
     fullName: 'Bitcoin Code',
     ticker: '$bCode',
     icon: 'Co',
@@ -318,7 +318,7 @@ const apps = [
   },
   {
     id: 'senseii',
-    name: 'Senseii',
+    name: 'b/Senseii',
     fullName: 'Senseii Bitcoin Education',
     ticker: '$SENSEII',
     icon: '先',
@@ -339,7 +339,7 @@ const apps = [
   },
   {
     id: 'future-of-blockchain',
-    name: 'Future of Blockchain',
+    name: 'b/Future of Blockchain',
     fullName: 'Future of Blockchain',
     ticker: '$FOB',
     icon: (
@@ -367,7 +367,7 @@ const apps = [
   },
   {
     id: 'cashboard',
-    name: 'Cashboard',
+    name: 'b/Cashboard',
     fullName: 'Cashboard',
     ticker: '$CASH',
     icon: 'Cb',
@@ -389,7 +389,7 @@ const apps = [
   },
   {
     id: 'ninjapunkgirls',
-    name: 'NinjaPunkGirls',
+    name: 'b/NinjaPunkGirls',
     fullName: 'NinjaPunkGirls',
     ticker: '$NPG',
     icon: '忍',
@@ -411,7 +411,7 @@ const apps = [
   // Coming Soon Apps
   {
     id: 'bitcoin-jobs',
-    name: 'Jobs',
+    name: 'b/Jobs',
     fullName: 'Bitcoin Jobs',
     ticker: '$bJobs',
     icon: 'Jo',
@@ -434,7 +434,7 @@ const apps = [
   },
   {
     id: 'bitcoin-contracts',
-    name: 'Contracts',
+    name: 'b/Contracts',
     fullName: 'Bitcoin Contracts',
     ticker: '$bContracts',
     icon: 'Co',
@@ -452,7 +452,7 @@ const apps = [
   },
   {
     id: 'bitcoin-legal',
-    name: 'Legal',
+    name: 'b/Legal',
     fullName: 'Bitcoin Legal',
     ticker: '$bLegal',
     icon: 'Le',
@@ -470,7 +470,7 @@ const apps = [
   },
   {
     id: 'bitcoin-auth',
-    name: 'Auth',
+    name: 'b/Auth',
     fullName: 'Bitcoin Auth',
     ticker: '$bAuth',
     icon: 'Au',
@@ -488,7 +488,7 @@ const apps = [
   },
   {
     id: 'bitcoin-chat',
-    name: 'Chat',
+    name: 'b/Chat',
     fullName: 'Bitcoin Chat',
     ticker: '$bChat',
     icon: 'Ch',
@@ -506,7 +506,7 @@ const apps = [
   },
   {
     id: 'bitcoin-domains',
-    name: 'Domains',
+    name: 'b/Domains',
     fullName: 'Bitcoin Domains',
     ticker: '$bDomains',
     icon: 'Do',
@@ -524,7 +524,7 @@ const apps = [
   },
   {
     id: 'bitcoin-draw',
-    name: 'Draw',
+    name: 'b/Draw',
     fullName: 'Bitcoin Draw',
     ticker: '$bDraw',
     icon: 'Dw',
@@ -542,7 +542,7 @@ const apps = [
   },
   {
     id: 'bitcoin-pics',
-    name: 'Pics',
+    name: 'b/Pics',
     fullName: 'Bitcoin Pics',
     ticker: '$bPics',
     icon: 'Pi',
@@ -560,7 +560,7 @@ const apps = [
   },
   {
     id: 'bitcoin-registry',
-    name: 'Registry',
+    name: 'b/Registry',
     fullName: 'Bitcoin Registry',
     ticker: '$bRegistry',
     icon: 'Re',
@@ -578,7 +578,7 @@ const apps = [
   },
   {
     id: 'bitcoin-shares',
-    name: 'Shares',
+    name: 'b/Shares',
     fullName: 'Bitcoin Shares',
     ticker: '$bShares',
     icon: 'Sr',
@@ -597,7 +597,7 @@ const apps = [
   // Third Party Apps (Submitted by developers)
   {
     id: 'bitcoin-calculator',
-    name: 'Calculator',
+    name: 'b/Calculator',
     fullName: 'Bitcoin Calculator Pro',
     ticker: '$CALC',
     icon: 'Calc',
@@ -617,7 +617,7 @@ const apps = [
   },
   {
     id: 'btc-weather',
-    name: 'Weather',
+    name: 'b/Weather',
     fullName: 'BTC Weather Widget',
     ticker: '$WTHR',
     icon: '☀',
@@ -638,7 +638,7 @@ const apps = [
   // BSV/Metanet Ecosystem Apps
   {
     id: 'metanet-catalog',
-    name: 'Metanet Catalog',
+    name: 'b/Metanet Catalog',
     fullName: 'Metanet App Catalog',
     ticker: '$METANET',
     icon: <ShoppingCart size={24} />,
@@ -658,7 +658,7 @@ const apps = [
   },
   {
     id: 'bsv-browser',
-    name: 'BSV Browser',
+    name: 'b/BSV Browser',
     fullName: 'BSV Blockchain Browser',
     ticker: '$BSVB',
     icon: <Search size={24} />,
@@ -678,7 +678,7 @@ const apps = [
   },
   {
     id: 'handcash',
-    name: 'HandCash',
+    name: 'b/HandCash',
     fullName: 'HandCash Wallet',
     ticker: '$HCH',
     icon: <Zap size={24} />,
@@ -698,7 +698,7 @@ const apps = [
   },
   {
     id: 'centbee',
-    name: 'CentBee',
+    name: 'b/CentBee',
     fullName: 'CentBee Wallet',
     ticker: '$CENT',
     icon: <DollarSign size={24} />,
@@ -720,7 +720,7 @@ const apps = [
   // Social Media bApps
   {
     id: 'bitcoin-twitter',
-    name: 'Twitter',
+    name: 'b/Twitter',
     fullName: 'Bitcoin Twitter',
     ticker: '$bTwitter',
     icon: 'Tw',
@@ -738,7 +738,7 @@ const apps = [
   },
   {
     id: 'bitcoin-facebook',
-    name: 'Facebook',
+    name: 'b/Facebook',
     fullName: 'Bitcoin Facebook',
     ticker: '$bFacebook',
     icon: 'Fb',
@@ -756,7 +756,7 @@ const apps = [
   },
   {
     id: 'bitcoin-instagram',
-    name: 'Instagram',
+    name: 'b/Instagram',
     fullName: 'Bitcoin Instagram',
     ticker: '$bInstagram',
     icon: 'Ig',
@@ -774,7 +774,7 @@ const apps = [
   },
   {
     id: 'bitcoin-linkedin',
-    name: 'LinkedIn',
+    name: 'b/LinkedIn',
     fullName: 'Bitcoin LinkedIn',
     ticker: '$bLinkedIn',
     icon: 'Li',
@@ -792,7 +792,7 @@ const apps = [
   },
   {
     id: 'bitcoin-tiktok',
-    name: 'TikTok',
+    name: 'b/TikTok',
     fullName: 'Bitcoin TikTok',
     ticker: '$bTikTok',
     icon: 'Tk',
@@ -810,7 +810,7 @@ const apps = [
   },
   {
     id: 'bitcoin-snapchat',
-    name: 'Snapchat',
+    name: 'b/Snapchat',
     fullName: 'Bitcoin Snapchat',
     ticker: '$bSnapchat',
     icon: 'Sc',
@@ -828,7 +828,7 @@ const apps = [
   },
   {
     id: 'bitcoin-reddit',
-    name: 'Reddit',
+    name: 'b/Reddit',
     fullName: 'Bitcoin Reddit',
     ticker: '$bReddit',
     icon: 'Rd',
@@ -846,7 +846,7 @@ const apps = [
   },
   {
     id: 'bitcoin-discord',
-    name: 'Discord',
+    name: 'b/Discord',
     fullName: 'Bitcoin Discord',
     ticker: '$bDiscord',
     icon: 'Dc',
@@ -864,7 +864,7 @@ const apps = [
   },
   {
     id: 'bitcoin-whatsapp',
-    name: 'WhatsApp',
+    name: 'b/WhatsApp',
     fullName: 'Bitcoin WhatsApp',
     ticker: '$bWhatsApp',
     icon: 'Wa',
@@ -882,7 +882,7 @@ const apps = [
   },
   {
     id: 'bitcoin-telegram',
-    name: 'Telegram',
+    name: 'b/Telegram',
     fullName: 'Bitcoin Telegram',
     ticker: '$bTelegram',
     icon: 'Tg',
@@ -902,7 +902,7 @@ const apps = [
   // Media & Entertainment bApps
   {
     id: 'bitcoin-netflix',
-    name: 'Netflix',
+    name: 'b/Netflix',
     fullName: 'Bitcoin Netflix',
     ticker: '$bNetflix',
     icon: 'Nf',
@@ -920,7 +920,7 @@ const apps = [
   },
   {
     id: 'bitcoin-spotify',
-    name: 'Spotify',
+    name: 'b/Spotify',
     fullName: 'Bitcoin Spotify',
     ticker: '$bSpotify',
     icon: 'Sp',
@@ -938,7 +938,7 @@ const apps = [
   },
   {
     id: 'bitcoin-youtube',
-    name: 'YouTube',
+    name: 'b/YouTube',
     fullName: 'Bitcoin YouTube',
     ticker: '$bYouTube',
     icon: 'Yt',
@@ -956,7 +956,7 @@ const apps = [
   },
   {
     id: 'bitcoin-twitch',
-    name: 'Twitch',
+    name: 'b/Twitch',
     fullName: 'Bitcoin Twitch',
     ticker: '$bTwitch',
     icon: 'Tw',
@@ -974,7 +974,7 @@ const apps = [
   },
   {
     id: 'bitcoin-podcast',
-    name: 'Podcast',
+    name: 'b/Podcast',
     fullName: 'Bitcoin Podcast',
     ticker: '$bPodcast',
     icon: 'Pc',
@@ -992,7 +992,7 @@ const apps = [
   },
   {
     id: 'bitcoin-audible',
-    name: 'Audible',
+    name: 'b/Audible',
     fullName: 'Bitcoin Audible',
     ticker: '$bAudible',
     icon: 'Au',
@@ -1010,7 +1010,7 @@ const apps = [
   },
   {
     id: 'bitcoin-kindle',
-    name: 'Kindle',
+    name: 'b/Kindle',
     fullName: 'Bitcoin Kindle',
     ticker: '$bKindle',
     icon: 'Kd',
@@ -1030,7 +1030,7 @@ const apps = [
   // Office & Productivity bApps
   {
     id: 'bitcoin-notepad',
-    name: 'Notepad',
+    name: 'b/Notepad',
     fullName: 'Bitcoin Notepad',
     ticker: '$bNotepad',
     icon: 'Np',
@@ -1048,7 +1048,7 @@ const apps = [
   },
   {
     id: 'bitcoin-word',
-    name: 'Word',
+    name: 'b/Word',
     fullName: 'Bitcoin Word',
     ticker: '$bWord',
     icon: 'Wd',
@@ -1066,7 +1066,7 @@ const apps = [
   },
   {
     id: 'bitcoin-powerpoint',
-    name: 'PowerPoint',
+    name: 'b/PowerPoint',
     fullName: 'Bitcoin PowerPoint',
     ticker: '$bPowerPoint',
     icon: 'Pp',
@@ -1084,7 +1084,7 @@ const apps = [
   },
   {
     id: 'bitcoin-photoshop',
-    name: 'Photoshop',
+    name: 'b/Photoshop',
     fullName: 'Bitcoin Photoshop',
     ticker: '$bPhotoshop',
     icon: 'Ps',
@@ -1102,7 +1102,7 @@ const apps = [
   },
   {
     id: 'bitcoin-figma',
-    name: 'Figma',
+    name: 'b/Figma',
     fullName: 'Bitcoin Figma',
     ticker: '$bFigma',
     icon: 'Fg',
@@ -1120,7 +1120,7 @@ const apps = [
   },
   {
     id: 'bitcoin-zoom',
-    name: 'Zoom',
+    name: 'b/Zoom',
     fullName: 'Bitcoin Zoom',
     ticker: '$bZoom',
     icon: 'Zm',
@@ -1138,7 +1138,7 @@ const apps = [
   },
   {
     id: 'bitcoin-notion',
-    name: 'Notion',
+    name: 'b/Notion',
     fullName: 'Bitcoin Notion',
     ticker: '$bNotion',
     icon: 'Nt',
@@ -1158,7 +1158,7 @@ const apps = [
   // Gaming bApps
   {
     id: 'bitcoin-minecraft',
-    name: 'Minecraft',
+    name: 'b/Minecraft',
     fullName: 'Bitcoin Minecraft',
     ticker: '$bMinecraft',
     icon: 'Mc',
@@ -1176,7 +1176,7 @@ const apps = [
   },
   {
     id: 'bitcoin-fortnite',
-    name: 'Fortnite',
+    name: 'b/Fortnite',
     fullName: 'Bitcoin Fortnite',
     ticker: '$bFortnite',
     icon: 'Ft',
@@ -1194,7 +1194,7 @@ const apps = [
   },
   {
     id: 'bitcoin-chess',
-    name: 'Chess',
+    name: 'b/Chess',
     fullName: 'Bitcoin Chess',
     ticker: '$bChess',
     icon: 'Ch',
@@ -1212,7 +1212,7 @@ const apps = [
   },
   {
     id: 'bitcoin-poker',
-    name: 'Poker',
+    name: 'b/Poker',
     fullName: 'Bitcoin Poker',
     ticker: '$bPoker',
     icon: 'Pk',
@@ -1230,7 +1230,7 @@ const apps = [
   },
   {
     id: 'bitcoin-solitaire',
-    name: 'Solitaire',
+    name: 'b/Solitaire',
     fullName: 'Bitcoin Solitaire',
     ticker: '$bSolitaire',
     icon: 'So',
@@ -1248,7 +1248,7 @@ const apps = [
   },
   {
     id: 'bitcoin-candycrush',
-    name: 'Candy Crush',
+    name: 'b/Candy Crush',
     fullName: 'Bitcoin Candy Crush',
     ticker: '$bCandyCrush',
     icon: 'Cc',
@@ -1266,7 +1266,7 @@ const apps = [
   },
   {
     id: 'bitcoin-wordle',
-    name: 'Wordle',
+    name: 'b/Wordle',
     fullName: 'Bitcoin Wordle',
     ticker: '$bWordle',
     icon: 'Wr',
@@ -1286,7 +1286,7 @@ const apps = [
   // Utility & Tool bApps
   {
     id: 'bitcoin-torrent',
-    name: 'Torrent',
+    name: 'b/Torrent',
     fullName: 'Bitcoin Torrent',
     ticker: '$bTorrent',
     icon: 'Bt',
@@ -1304,7 +1304,7 @@ const apps = [
   },
   {
     id: 'bitcoin-vpn',
-    name: 'VPN',
+    name: 'b/VPN',
     fullName: 'Bitcoin VPN',
     ticker: '$bVPN',
     icon: 'Vp',
@@ -1322,7 +1322,7 @@ const apps = [
   },
   {
     id: 'bitcoin-password',
-    name: 'Password Manager',
+    name: 'b/Password Manager',
     fullName: 'Bitcoin Password Manager',
     ticker: '$bPassword',
     icon: 'Pm',
@@ -1340,7 +1340,7 @@ const apps = [
   },
   {
     id: 'bitcoin-maps',
-    name: 'Maps',
+    name: 'b/Maps',
     fullName: 'Bitcoin Maps',
     ticker: '$bMaps',
     icon: 'Mp',
@@ -1358,7 +1358,7 @@ const apps = [
   },
   {
     id: 'bitcoin-weather',
-    name: 'Weather Pro',
+    name: 'b/Weather Pro',
     fullName: 'Bitcoin Weather Pro',
     ticker: '$bWeather',
     icon: 'Wp',
@@ -1376,7 +1376,7 @@ const apps = [
   },
   {
     id: 'bitcoin-translator',
-    name: 'Translator',
+    name: 'b/Translator',
     fullName: 'Bitcoin Translator',
     ticker: '$bTranslator',
     icon: 'Tr',
@@ -1394,7 +1394,7 @@ const apps = [
   },
   {
     id: 'bitcoin-timer',
-    name: 'Timer',
+    name: 'b/Timer',
     fullName: 'Bitcoin Timer',
     ticker: '$bTimer',
     icon: 'Tm',
@@ -1414,7 +1414,7 @@ const apps = [
   // Finance & Business bApps
   {
     id: 'bitcoin-paypal',
-    name: 'PayPal',
+    name: 'b/PayPal',
     fullName: 'Bitcoin PayPal',
     ticker: '$bPayPal',
     icon: 'Pp',
@@ -1432,7 +1432,7 @@ const apps = [
   },
   {
     id: 'bitcoin-venmo',
-    name: 'Venmo',
+    name: 'b/Venmo',
     fullName: 'Bitcoin Venmo',
     ticker: '$bVenmo',
     icon: 'Vm',
@@ -1450,7 +1450,7 @@ const apps = [
   },
   {
     id: 'bitcoin-robinhood',
-    name: 'Robinhood',
+    name: 'b/Robinhood',
     fullName: 'Bitcoin Robinhood',
     ticker: '$bRobinhood',
     icon: 'Rh',
@@ -1468,7 +1468,7 @@ const apps = [
   },
   {
     id: 'bitcoin-quickbooks',
-    name: 'QuickBooks',
+    name: 'b/QuickBooks',
     fullName: 'Bitcoin QuickBooks',
     ticker: '$bQuickBooks',
     icon: 'Qb',
@@ -1486,7 +1486,7 @@ const apps = [
   },
   {
     id: 'bitcoin-salesforce',
-    name: 'Salesforce',
+    name: 'b/Salesforce',
     fullName: 'Bitcoin Salesforce',
     ticker: '$bSalesforce',
     icon: 'Sf',
@@ -1504,7 +1504,7 @@ const apps = [
   },
   {
     id: 'bitcoin-zendesk',
-    name: 'Zendesk',
+    name: 'b/Zendesk',
     fullName: 'Bitcoin Zendesk',
     ticker: '$bZendesk',
     icon: 'Zd',
@@ -1524,7 +1524,7 @@ const apps = [
   // Creative & Design bApps
   {
     id: 'bitcoin-canva',
-    name: 'Canva',
+    name: 'b/Canva',
     fullName: 'Bitcoin Canva',
     ticker: '$bCanva',
     icon: 'Cv',
@@ -1542,7 +1542,7 @@ const apps = [
   },
   {
     id: 'bitcoin-sketch',
-    name: 'Sketch',
+    name: 'b/Sketch',
     fullName: 'Bitcoin Sketch',
     ticker: '$bSketch',
     icon: 'Sk',
@@ -1560,7 +1560,7 @@ const apps = [
   },
   {
     id: 'bitcoin-blender',
-    name: 'Blender',
+    name: 'b/Blender',
     fullName: 'Bitcoin Blender',
     ticker: '$bBlender',
     icon: 'Bl',
@@ -1578,7 +1578,7 @@ const apps = [
   },
   {
     id: 'bitcoin-garageband',
-    name: 'GarageBand',
+    name: 'b/GarageBand',
     fullName: 'Bitcoin GarageBand',
     ticker: '$bGarageBand',
     icon: 'Gb',
@@ -1596,7 +1596,7 @@ const apps = [
   },
   {
     id: 'bitcoin-logicpro',
-    name: 'Logic Pro',
+    name: 'b/Logic Pro',
     fullName: 'Bitcoin Logic Pro',
     ticker: '$bLogicPro',
     icon: 'Lp',
@@ -1616,7 +1616,7 @@ const apps = [
   // Additional Utility Apps
   {
     id: 'bitcoin-dropbox',
-    name: 'Dropbox',
+    name: 'b/Dropbox',
     fullName: 'Bitcoin Dropbox',
     ticker: '$bDropbox',
     icon: 'Db',
@@ -1634,7 +1634,7 @@ const apps = [
   },
   {
     id: 'bitcoin-uber',
-    name: 'Uber',
+    name: 'b/Uber',
     fullName: 'Bitcoin Uber',
     ticker: '$bUber',
     icon: 'Ub',
@@ -1652,7 +1652,7 @@ const apps = [
   },
   {
     id: 'bitcoin-airbnb',
-    name: 'Airbnb',
+    name: 'b/Airbnb',
     fullName: 'Bitcoin Airbnb',
     ticker: '$bAirbnb',
     icon: 'Ab',
@@ -1670,7 +1670,7 @@ const apps = [
   },
   {
     id: 'bitcoin-duolingo',
-    name: 'Duolingo',
+    name: 'b/Duolingo',
     fullName: 'Bitcoin Duolingo',
     ticker: '$bDuolingo',
     icon: 'Du',
@@ -1688,7 +1688,7 @@ const apps = [
   },
   {
     id: 'bitcoin-khan-academy',
-    name: 'Khan Academy',
+    name: 'b/Khan Academy',
     fullName: 'Bitcoin Khan Academy',
     ticker: '$bKhanAcademy',
     icon: 'Ka',
