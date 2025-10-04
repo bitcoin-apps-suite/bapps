@@ -3426,19 +3426,48 @@ export default function Home() {
               )}
               
               {/* Other Official Apps */}
-              {filteredApps.filter(app => !app.isThirdParty && !app.isSuite).length > 0 && (
+              {filteredApps.filter(app => !app.isThirdParty && !app.isSuite && app.id !== 'ninjapunkgirls').length > 0 && (
                 <div>
                   <div className="mb-4">
                     <h2 className="text-xl font-semibold text-white mb-1">Other Bitcoin Apps</h2>
                     <p className="text-sm text-gray-400">Additional apps and services from Bitcoin Corp. LTD.</p>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
-                    {filteredApps.filter(app => !app.isThirdParty && !app.isSuite).map((app) => (
+                    {filteredApps.filter(app => !app.isThirdParty && !app.isSuite && app.id !== 'ninjapunkgirls').map((app) => (
                       <AppTile key={app.id} app={app} />
                     ))}
                   </div>
                 </div>
               )}
+              
+              {/* Block Dojo & Games Section */}
+              <div>
+                <div className="mb-4">
+                  <h2 className="text-xl font-semibold text-white mb-1">Ecosystem Partners</h2>
+                  <p className="text-sm text-gray-400">Incubator programs and community games</p>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
+                  {/* BSV Association Link */}
+                  <div className="bg-[#1a1a1a] hover:bg-[#2a2a2a] border border-[#3a3a3a] rounded-xl p-4 transition-all duration-200 hover:scale-[1.02] cursor-pointer group">
+                    <a href="https://bsvassociation.org/" target="_blank" rel="noopener noreferrer" className="block">
+                      <div className="flex flex-col items-center text-center">
+                        <div className="w-12 h-12 bg-gradient-to-br from-[#0EA5E9] to-[#3B82F6] rounded-xl flex items-center justify-center mb-3">
+                          <span className="text-white font-bold text-xl">⛩</span>
+                        </div>
+                        <h3 className="text-white font-medium text-sm mb-1 group-hover:text-[#0EA5E9] transition-colors">BSV Association</h3>
+                        <p className="text-gray-400 text-xs">Global Standards</p>
+                      </div>
+                    </a>
+                  </div>
+                  
+                  {/* Ninja Punk Girls - Smaller size */}
+                  {filteredApps.filter(app => app.id === 'ninjapunkgirls').map((app) => (
+                    <div key={app.id} className="transform scale-90">
+                      <AppTile app={app} />
+                    </div>
+                  ))}
+                </div>
+              </div>
               
               {/* Third Party Apps */}
               {filteredApps.filter(app => app.isThirdParty).length > 0 && (
