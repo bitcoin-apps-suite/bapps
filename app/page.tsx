@@ -513,14 +513,15 @@ const apps = [
     color: '#6366F1',
     description: 'Bitcoin blockchain domain name system',
     category: 'Bitcoin Infrastructure',
-    status: 'coming' as const,
-    version: null,
-    size: null,
-    lastUpdated: null,
+    status: 'installed' as const,
+    version: '1.0.0',
+    size: '48 MB',
+    lastUpdated: '2025-01-15',
+    url: 'https://bitcoin-dns.vercel.app',
     price: 0.32,
-    change24h: 0,
-    marketCap: '$TBA',
-    volume24h: '$0'
+    change24h: 8.2,
+    marketCap: '$1.2M',
+    volume24h: '$24K'
   },
   {
     id: 'bitcoin-draw',
