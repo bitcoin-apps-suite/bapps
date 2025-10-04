@@ -525,6 +525,26 @@ const apps = [
     volume24h: '$24K'
   },
   {
+    id: 'bitcoin-3d',
+    name: 'b/3D',
+    fullName: 'Bitcoin 3D',
+    ticker: '$b3D',
+    icon: '3D',
+    color: '#8B5CF6',
+    description: '3D modeling and visualization platform on Bitcoin blockchain',
+    category: 'Bitcoin Art',
+    status: 'installed' as const,
+    isSuite: true,
+    version: '1.0.0',
+    size: '85 MB',
+    lastUpdated: '2025-01-15',
+    url: 'https://bitcoin-3d.vercel.app',
+    price: 0.38,
+    change24h: 12.5,
+    marketCap: '$1.8M',
+    volume24h: '$45K'
+  },
+  {
     id: 'bitcoin-draw',
     name: 'b/Draw',
     fullName: 'Bitcoin Draw',
