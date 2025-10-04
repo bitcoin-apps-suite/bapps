@@ -3099,9 +3099,9 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col h-screen bg-black text-white overflow-hidden">
+    <div className="flex flex-col min-h-screen bg-black text-white">
       {/* Main container with sidebar and content */}
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex flex-1">
         {/* Desktop Sidebar - completely hidden on mobile */}
         <div className="hidden lg:flex lg:flex-shrink-0">
           <Sidebar 
@@ -3133,7 +3133,7 @@ export default function Home() {
           />
         </div>
         
-        <main className="flex-1 flex flex-col w-full">
+        <main className="flex-1 flex flex-col w-full max-w-full overflow-x-hidden">
           {/* Header - Organized into 3 sections */}
         <header className="bg-black border-b border-[#2a2a2a] px-4 lg:px-8 py-4 lg:py-6">
           {/* Mobile Header */}
@@ -3351,11 +3351,11 @@ export default function Home() {
         </div>
 
         {/* Apps Grid/List */}
-        <div className="flex-1 overflow-auto p-3 lg:p-8">
+        <div className="flex-1 overflow-x-hidden overflow-y-auto p-3 lg:p-8 w-full max-w-full">
           {/* Hero Section - VIVID RAINBOW LIKE SCREENSHOT! */}
           <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-red-600 from-0% via-orange-500 via-14% via-yellow-500 via-28% via-green-500 via-42% via-cyan-500 via-57% via-blue-600 via-71% via-purple-600 via-85% to-magenta-600 to-100% p-[2px]">
-            <div className="relative bg-black rounded-xl p-8 lg:p-12 text-center">
-              <h1 className="text-5xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight">
+            <div className="relative bg-black rounded-xl p-4 sm:p-6 lg:p-12 text-center">
+              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight break-words">
                 <span className="bg-gradient-to-r from-orange-400 via-yellow-400 via-green-400 via-cyan-400 via-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Think ₿ifferent: b
                 </span>
@@ -3411,7 +3411,7 @@ export default function Home() {
                       </div>
                     </div>
                   </div>
-                  <div className={`grid ${getFeaturedGridCols(filteredApps.filter(app => app.isSuite).length)} gap-4 lg:gap-4`}>
+                  <div className={`grid ${getFeaturedGridCols(filteredApps.filter(app => app.isSuite).length)} gap-2 sm:gap-3 lg:gap-4 w-full max-w-full`}>
                     {/* Bitcoin Apps Suite Grid */}
                     {filteredApps.filter(app => app.isSuite).map((app) => (
                       <AppTile key={app.id} app={app} />
@@ -3427,7 +3427,7 @@ export default function Home() {
                     <h2 className="text-xl font-semibold text-white mb-1">Other Bitcoin Apps</h2>
                     <p className="text-sm text-gray-400">Additional apps and services from Bitcoin Corp. LTD.</p>
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 lg:gap-6 w-full max-w-full">
                     {filteredApps.filter(app => !app.isThirdParty && !app.isSuite && app.id !== 'ninjapunkgirls').map((app) => (
                       <AppTile key={app.id} app={app} />
                     ))}
@@ -3471,7 +3471,7 @@ export default function Home() {
                     <h2 className="text-xl font-semibold text-white mb-1">Third Party Apps</h2>
                     <p className="text-sm text-gray-400">Community-submitted applications</p>
                   </div>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 lg:gap-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 lg:gap-6 w-full max-w-full">
                     {filteredApps.filter(app => app.isThirdParty).map((app) => (
                       <AppTile key={app.id} app={app} />
                     ))}
