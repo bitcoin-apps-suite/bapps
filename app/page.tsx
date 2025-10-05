@@ -3545,12 +3545,24 @@ export default function Home() {
                       )}
                     </div>
                     <div className="flex-1">
-                      <div className="flex items-center gap-2">
+                      {/* Desktop layout - inline */}
+                      <div className="hidden sm:flex items-center gap-2">
                         <h3 className="font-medium">{app.fullName}</h3>
                         {app.ticker && (
                           <span className="text-[#0094FF] text-sm font-mono" title={app.ticker}>{app.ticker.replace('$b', '$₿')}</span>
                         )}
                       </div>
+                      
+                      {/* Mobile layout - stacked */}
+                      <div className="sm:hidden">
+                        <h3 className="font-medium">{app.fullName}</h3>
+                        {app.ticker && (
+                          <div className="mt-1">
+                            <span className="text-[#0094FF] text-sm font-mono" title={app.ticker}>{app.ticker.replace('$b', '$₿')}</span>
+                          </div>
+                        )}
+                      </div>
+                      
                       <p className="text-sm text-gray-400">{app.description}</p>
                     </div>
                   </div>
@@ -3646,12 +3658,24 @@ export default function Home() {
                             )}
                           </div>
                           <div className="flex-1">
-                            <div className="flex items-center gap-2">
+                            {/* Desktop layout - inline */}
+                            <div className="hidden sm:flex items-center gap-2">
                               <h3 className="font-medium">{app.fullName}</h3>
                               {app.ticker && (
                                 <span className="text-[#0094FF] text-sm font-mono" title={app.ticker}>{app.ticker.replace('$b', '$₿')}</span>
                               )}
                             </div>
+                            
+                            {/* Mobile layout - stacked */}
+                            <div className="sm:hidden">
+                              <h3 className="font-medium">{app.fullName}</h3>
+                              {app.ticker && (
+                                <div className="mt-1">
+                                  <span className="text-[#0094FF] text-sm font-mono" title={app.ticker}>{app.ticker.replace('$b', '$₿')}</span>
+                                </div>
+                              )}
+                            </div>
+                            
                             <p className="text-sm text-gray-400">{app.description}</p>
                           </div>
                         </div>

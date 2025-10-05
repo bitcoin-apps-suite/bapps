@@ -139,7 +139,8 @@ export default function AppTile({ app }: AppTileProps) {
         
         {/* App Info */}
         <div>
-          <div className="flex items-center justify-between gap-1.5">
+          {/* Desktop layout - inline */}
+          <div className="hidden sm:flex items-center justify-between gap-1.5">
             <div className="flex items-center gap-1.5">
               <h3 className="text-white font-medium text-sm truncate">{app.name}</h3>
               {app.isCanonical && (
@@ -152,6 +153,24 @@ export default function AppTile({ app }: AppTileProps) {
               </span>
             )}
           </div>
+          
+          {/* Mobile layout - stacked */}
+          <div className="sm:hidden">
+            <div className="flex items-center gap-1.5">
+              <h3 className="text-white font-medium text-sm truncate">{app.name}</h3>
+              {app.isCanonical && (
+                <div className="w-1 h-1 bg-[#0094FF] rounded-full"></div>
+              )}
+            </div>
+            {app.ticker && (
+              <div className="mt-1">
+                <span className="text-[#0094FF] text-xs font-mono font-medium" title={app.ticker}>
+                  {app.ticker.replace('$b', '$₿')}
+                </span>
+              </div>
+            )}
+          </div>
+          
           <p className="text-gray-400 text-xs mt-0.5 truncate">{app.description}</p>
           
           {/* Price Info */}
