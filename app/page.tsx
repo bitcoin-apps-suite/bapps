@@ -541,6 +541,7 @@ const apps = [
         </div>
       </div>
     ),
+    image: '/bitcoin-3d-2.jpg',
     color: '#EC4899',
     description: '3D modeling and visualization platform on Bitcoin blockchain',
     category: 'Bitcoin Art',
