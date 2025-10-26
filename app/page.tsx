@@ -109,29 +109,6 @@ const apps = [
     volume24h: '$54K'
   },
   {
-    id: 'bitcoin-music',
-    name: 'b/Music',
-    fullName: 'Bitcoin Music',
-    ticker: '$bMusic',
-    icon: 'Mu',
-    image: '/bitcoin-music-icon.jpg',
-    color: '#EC4899',
-    description: 'Decentralized music streaming on Bitcoin',
-    category: 'Featured Apps',
-    status: 'installed' as const,
-    isPoc: true,
-    isCanonical: true,
-    isSuite: true,
-    version: '1.0.0',
-    size: '87 MB',
-    lastUpdated: '2024-12-20',
-    url: 'https://bitcoin-music.vercel.app',
-    price: 0.37,
-    change24h: 12.8,
-    marketCap: '$1.4M',
-    volume24h: '$68K'
-  },
-  {
     id: 'bitcoin-calendar',
     name: 'b/Calendar',
     fullName: 'Bitcoin Calendar',
@@ -153,6 +130,29 @@ const apps = [
     change24h: 6.4,
     marketCap: '$980K',
     volume24h: '$45K'
+  },
+  {
+    id: 'bitcoin-music',
+    name: 'b/Music',
+    fullName: 'Bitcoin Music',
+    ticker: '$bMusic',
+    icon: 'Mu',
+    image: '/bitcoin-music-icon.jpg',
+    color: '#EC4899',
+    description: 'Decentralized music streaming on Bitcoin',
+    category: 'Featured Apps',
+    status: 'installed' as const,
+    isPoc: true,
+    isCanonical: true,
+    isSuite: true,
+    version: '1.0.0',
+    size: '87 MB',
+    lastUpdated: '2024-12-20',
+    url: 'https://bitcoin-music.vercel.app',
+    price: 0.37,
+    change24h: 12.8,
+    marketCap: '$1.4M',
+    volume24h: '$68K'
   },
   {
     id: 'bitcoin-search',
@@ -3590,9 +3590,9 @@ export default function Home() {
         {/* Apps Grid/List */}
         <div className="flex-1 overflow-x-hidden overflow-y-auto p-3 lg:p-8 w-full max-w-full">
           {/* Hero Section - VIVID RAINBOW LIKE SCREENSHOT! */}
-          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-red-600 from-0% via-orange-500 via-14% via-yellow-500 via-28% via-green-500 via-42% via-cyan-500 via-57% via-blue-600 via-71% via-purple-600 via-85% to-magenta-600 to-100% p-[2px] shadow-lg">
-            <div className="relative bg-black rounded-xl p-4 sm:p-6 lg:p-12 text-center border border-white/10 shadow-inner">
-              <h1 className="text-3xl sm:text-4xl lg:text-7xl font-thin mb-2 leading-tight tracking-tight break-words">
+          <div className="mb-4 lg:mb-6 relative overflow-hidden rounded-xl bg-gradient-to-r from-red-600 from-0% via-orange-500 via-14% via-yellow-500 via-28% via-green-500 via-42% via-cyan-500 via-57% via-blue-600 via-71% via-purple-600 via-85% to-magenta-600 to-100% p-[2px] shadow-lg mx-2 lg:mx-4">
+            <div className="relative bg-black rounded-xl p-4 sm:p-6 lg:p-8 text-center border border-white/10 shadow-inner">
+              <h1 className="text-3xl sm:text-4xl lg:text-6xl font-thin mb-2 leading-tight tracking-tight break-words overflow-hidden">
                 <span className="bg-gradient-to-r from-orange-400 via-yellow-400 via-green-400 via-cyan-400 via-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                   Think ₿ifferent: b
                 </span>
