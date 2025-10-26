@@ -1,13 +1,8 @@
 'use client'
 
-import { AlertTriangle } from 'lucide-react'
-
 export default function ProofOfConceptBar() {
   return (
     <div className="poc-bar sticky top-0 z-50">
-      <AlertTriangle className="w-4 h-4 text-white" />
-      <span className="poc-text">PROOF OF CONCEPT - This is a demonstration of Bitcoin Apps Store</span>
-      <AlertTriangle className="w-4 h-4 text-white" />
       <style jsx>{`
         .poc-bar {
           background: linear-gradient(90deg, 
