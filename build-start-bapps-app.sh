@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Build Start Bitcoin Apps App for Bitcoin Apps Suite
+# Build Start Bitcoin Office App for Bitcoin Office
 # This script creates a macOS application with custom icon to start the dev server
 
-echo "Building Start Bitcoin Apps app..."
+echo "Building Start Bitcoin Office app..."
 
 # Create app structure
-APP_NAME="Start Bitcoin Apps"
+APP_NAME="Start Bitcoin Office"
 APP_DIR="$HOME/Desktop/$APP_NAME.app"
 CONTENTS_DIR="$APP_DIR/Contents"
 MACOS_DIR="$CONTENTS_DIR/MacOS"
@@ -24,7 +24,7 @@ mkdir -p "$RESOURCES_DIR"
 cat > "$MACOS_DIR/start-bitcoin-apps" << 'EOF'
 #!/bin/bash
 
-# Start Bitcoin Apps Suite on Port 1000
+# Start Bitcoin Office on Port 1000
 
 PROJECT_PATH="/Users/b0ase/Projects/bitcoin-apps-suite"
 
@@ -37,13 +37,13 @@ show_notification() {
 PORT_PID=$(lsof -ti:1000 2>/dev/null)
 
 if [ ! -z "$PORT_PID" ]; then
-    show_notification "Bitcoin Apps Suite" "Port 1000 is already in use! Kill it first." "Basso"
+    show_notification "Bitcoin Office" "Port 1000 is already in use! Kill it first." "Basso"
     exit 1
 fi
 
 # Check if project directory exists
 if [ ! -d "$PROJECT_PATH" ]; then
-    show_notification "Bitcoin Apps Suite" "Project not found at $PROJECT_PATH" "Basso"
+    show_notification "Bitcoin Office" "Project not found at $PROJECT_PATH" "Basso"
     exit 1
 fi
 
@@ -56,21 +56,21 @@ tell application "Terminal"
     activate
     do script "cd '$PROJECT_PATH' && npm run dev"
     delay 2
-    set custom title of window 1 to "Bitcoin Apps Suite - Port 1000"
+    set custom title of window 1 to "Bitcoin Office - Port 1000"
 end tell
 END
 
-show_notification "Bitcoin Apps Suite" "Starting development server on port 1000..." "Glass"
+show_notification "Bitcoin Office" "Starting development server on port 1000..." "Glass"
 
 # Wait a moment then open browser
 sleep 3
 
 # Check if server started successfully
 if lsof -ti:1000 >/dev/null 2>&1; then
-    show_notification "Bitcoin Apps Suite" "Server running! Opening browser..." "Hero"
+    show_notification "Bitcoin Office" "Server running! Opening browser..." "Hero"
     open "http://localhost:1000"
 else
-    show_notification "Bitcoin Apps Suite" "Server may still be starting. Check Terminal." "Purr"
+    show_notification "Bitcoin Office" "Server may still be starting. Check Terminal." "Purr"
 fi
 EOF
 
@@ -88,9 +88,9 @@ cat > "$CONTENTS_DIR/Info.plist" << 'EOF'
     <key>CFBundleIdentifier</key>
     <string>com.bitcoinapps.startserver</string>
     <key>CFBundleName</key>
-    <string>Start Bitcoin Apps</string>
+    <string>Start Bitcoin Office</string>
     <key>CFBundleDisplayName</key>
-    <string>Start Bitcoin Apps</string>
+    <string>Start Bitcoin Office</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleShortVersionString</key>
@@ -151,10 +151,10 @@ echo "✅ App created successfully at: $APP_DIR"
 echo ""
 echo "To add to your Dock:"
 echo "1. Open Finder and go to Desktop"
-echo "2. Drag 'Start Bitcoin Apps.app' to your Dock (next to Kill Port 1000)"
+echo "2. Drag 'Start Bitcoin Office.app' to your Dock (next to Kill Port 1000)"
 echo ""
 echo "The app will:"
 echo "• Check if port 1000 is free"
-echo "• Start the Bitcoin Apps Suite dev server"
+echo "• Start the Bitcoin Office dev server"
 echo "• Open Terminal with the server running"
 echo "• Launch your browser to http://localhost:1000"

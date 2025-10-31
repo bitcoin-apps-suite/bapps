@@ -7,28 +7,28 @@ import ProofOfConceptBar from '@/components/ProofOfConceptBar'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Bitcoin Apps Suite',
+  title: 'Bitcoin Office ($bOffice)',
   description: 'Decentralized applications powered by Bitcoin blockchain technology',
   keywords: 'bitcoin, blockchain, decentralized apps, cryptocurrency, web3',
-  authors: [{ name: 'Bitcoin Apps Suite' }],
-  creator: 'Bitcoin Apps Suite',
-  publisher: 'Bitcoin Apps Suite',
+  authors: [{ name: 'Bitcoin Office' }],
+  creator: 'Bitcoin Office',
+  publisher: 'Bitcoin Office',
   icons: {
     icon: '/bitcoin-apps-logo.jpg',
     shortcut: '/bitcoin-apps-logo.jpg',
     apple: '/bitcoin-apps-logo.jpg',
   },
   openGraph: {
-    title: 'Bitcoin Apps Suite',
+    title: 'Bitcoin Office ($bOffice)',
     description: 'Decentralized applications powered by Bitcoin blockchain technology',
     url: 'https://bitcoin-apps-suite.vercel.app',
-    siteName: 'Bitcoin Apps Suite',
+    siteName: 'Bitcoin Office',
     images: [
       {
         url: '/bitcoin-apps-logo.jpg',
         width: 1200,
         height: 630,
-        alt: 'Bitcoin Apps Suite',
+        alt: 'Bitcoin Office',
       },
     ],
     locale: 'en_US',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Bitcoin Apps Suite',
+    title: 'Bitcoin Office ($bOffice)',
     description: 'Decentralized applications powered by Bitcoin blockchain technology',
     images: ['/bitcoin-apps-logo.jpg'],
   },

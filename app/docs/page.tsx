@@ -83,7 +83,7 @@ export default function DocsPage() {
                 />
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-xl font-semibold">Bitcoin Apps Suite</h1>
+                <h1 className="text-xl font-semibold">Bitcoin Office ($bOffice)</h1>
                 <p className="text-xs text-gray-400">Developer Documentation</p>
               </div>
             </Link>
@@ -260,14 +260,14 @@ export default function DocsPage() {
               <section>
                 <h1 className="text-4xl font-bold mb-6">Developer Documentation</h1>
                 <p className="text-lg text-gray-300 mb-8">
-                  Welcome to the Bitcoin Apps Suite developer documentation. Learn how to contribute to our ecosystem
+                  Welcome to the Bitcoin Office developer documentation. Learn how to contribute to our ecosystem
                   and earn <span className="text-[#0094FF] font-bold">$BAPPS</span> tokens for successfully merged pull requests.
                 </p>
 
                 <div className="bg-[#252525] rounded-lg p-6 mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">What is Bitcoin Apps Suite?</h2>
+                  <h2 className="text-2xl font-semibold mb-4">What is Bitcoin Office?</h2>
                   <p className="text-gray-300 mb-4">
-                    Bitcoin Apps Suite is an open-source ecosystem of decentralized applications built on Bitcoin blockchain
+                    Bitcoin Office is an open-source ecosystem of decentralized applications built on Bitcoin blockchain
                     technology. We're creating a "Blockchain Cloud" where every app has its own token, creating a sustainable
                     economic model for developers and users.
                   </p>
@@ -382,7 +382,7 @@ export default function DocsPage() {
                   <div className="bg-yellow-900/20 border border-yellow-700/50 rounded-lg p-6">
                     <h3 className="text-yellow-500 font-semibold mb-2">Important Note</h3>
                     <p className="text-gray-300">
-                      Token allocation is at the sole discretion of the Bitcoin Apps Suite team. The amount of tokens
+                      Token allocation is at the sole discretion of the Bitcoin Office team. The amount of tokens
                       awarded depends on various factors including code quality, feature importance, bug severity,
                       and overall impact on the ecosystem. There are no guarantees of token distribution for any
                       particular contribution.
@@ -710,7 +710,7 @@ export default function DocsPage() {
                   <h3 className="text-yellow-500 font-semibold mb-2">Disclaimer</h3>
                   <p className="text-gray-300 text-sm">
                     These ranges are indicative only. Actual token allocation is at the sole discretion of the
-                    Bitcoin Apps Suite team. There are no guarantees of specific amounts for any contribution.
+                    Bitcoin Office team. There are no guarantees of specific amounts for any contribution.
                     Token allocation may change based on ecosystem needs and token availability.
                   </p>
                 </div>

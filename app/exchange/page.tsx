@@ -22,7 +22,7 @@ interface Token {
 const tokens: Token[] = [
   {
     id: 'bapps',
-    name: 'Bitcoin Apps Suite',
+    name: 'Bitcoin Office',
     symbol: '$BAPPS',
     displaySymbol: '$BAPPS',
     price: 1.28,

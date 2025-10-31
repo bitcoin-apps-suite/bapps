@@ -136,7 +136,7 @@ export default function CoverPage() {
       {/* Footer */}
       <div className="bg-[#1a1a1a] border-t border-[#3a3a3a] px-8 py-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-          <div>© 2024 Bitcoin Apps Suite. All rights reserved.</div>
+          <div>© 2024 Bitcoin Office. All rights reserved.</div>
           <div className="flex items-center space-x-6 mt-4 md:mt-0">
             <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
             <a href="/terms" className="hover:text-white transition-colors">Terms</a>

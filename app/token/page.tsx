@@ -106,7 +106,7 @@ export default function TokenPage() {
                 <h2 className="text-3xl font-bold mb-6">Our Philosophy</h2>
                 <div className="space-y-4 text-gray-300">
                   <p>
-                    Bitcoin Apps Suite is an <strong className="text-white">open-source ecosystem</strong> building 
+                    Bitcoin Office is an <strong className="text-white">open-source ecosystem</strong> building 
                     the future of decentralized applications on Bitcoin. We believe in fostering an open culture where 
                     innovation, collaboration, and value creation are rewarded.
                   </p>

@@ -28,7 +28,7 @@ Key Features:
 • Smart contract integration for document signing and verification
 • Decentralized backup across the Bitcoin network`,
       category: 'Bitcoin Office',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '2.4.1',
       size: '142 MB',
       rating: 4.8,
@@ -89,7 +89,7 @@ Key Features:
 • Export to CSV, XLSX, and on-chain formats
 • DeFi integration for yield calculations`,
       category: 'Bitcoin Office',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '1.8.3',
       size: '156 MB',
       rating: 4.7,
@@ -148,7 +148,7 @@ Key Features:
 • Zero-knowledge encryption - only you can decrypt your files
 • Collaborative folders with permission management`,
       category: 'Bitcoin Office',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '3.2.0',
       size: '178 MB',
       rating: 4.9,
@@ -207,7 +207,7 @@ Key Features:
 • Smart contract integration for automated responses
 • Wallet-to-wallet direct messaging`,
       category: 'Bitcoin Office',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '2.1.4',
       size: '134 MB',
       rating: 4.6,
@@ -266,7 +266,7 @@ Key Features:
 • Time-locked reminders
 • Multi-signature event approval`,
       category: 'Bitcoin Office',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '1.5.2',
       size: '98 MB',
       rating: 4.5,
@@ -325,7 +325,7 @@ Key Features:
 • Smart contract royalty splits
 • Proof of listening rewards`,
       category: 'Entertainment',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '2.0.1',
       size: '186 MB',
       rating: 4.7,
@@ -384,7 +384,7 @@ Key Features:
 • DAO job postings
 • Milestone-based project management`,
       category: 'Professional',
-      developer: 'Bitcoin Apps Suite',
+      developer: 'Bitcoin Office',
       version: '1.3.0',
       size: '112 MB',
       rating: 4.4,

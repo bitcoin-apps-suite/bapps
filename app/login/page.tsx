@@ -86,13 +86,13 @@ export default function LoginPage() {
           <div className="relative w-24 h-24 mx-auto mb-4">
             <Image
               src="/bitcoin-apps-logo.jpg"
-              alt="Bitcoin Apps Suite"
+              alt="Bitcoin Office"
               fill
               className="object-cover rounded-2xl"
               sizes="96px"
             />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">Bitcoin Apps Suite</h1>
+          <h1 className="text-3xl font-bold text-white mb-2">Bitcoin Office ($bOffice)</h1>
           <p className="text-gray-400">Sign in to access your decentralized apps</p>
         </div>
 

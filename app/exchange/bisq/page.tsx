@@ -272,7 +272,7 @@ export default function BisqExchangePage() {
                 <div>
                   <label className="block text-sm text-gray-400 mb-2">Token</label>
                   <select className="w-full bg-[#0a0a0a] border border-[#3a3a3a] rounded-lg px-4 py-3">
-                    <option>BAPPS - Bitcoin Apps Suite</option>
+                    <option>BAPPS - Bitcoin Office</option>
                     <option>BWRITER - Bitcoin Writer</option>
                     <option>BSHEETS - Bitcoin Sheets</option>
                   </select>

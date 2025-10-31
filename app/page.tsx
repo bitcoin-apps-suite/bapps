@@ -3608,14 +3608,14 @@ export default function Home() {
           
           {viewMode === 'grid' ? (
             <div className="space-y-8">
-              {/* Core Bitcoin Apps Suite - Highlighted Section */}
+              {/* Core Bitcoin Office - Highlighted Section */}
               {filteredApps.filter(app => app.isSuite).length > 0 && (
                 <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/20 to-orange-900/20 p-6 rounded-xl border border-purple-500/30">
                   <div className="mb-4">
                     {/* Mobile Layout - Stack vertically */}
                     <div className="lg:hidden">
                       <h2 className="text-xl font-bold text-white mb-1">
-                        Bitcoin Apps Suite
+                        Bitcoin Office ($bOffice)
                       </h2>
                       <p className="text-sm text-gray-300 mb-3">Essential productivity suite featuring 12 core apps</p>
                       {/* Mobile Badge */}
@@ -3632,7 +3632,7 @@ export default function Home() {
                     <div className="hidden lg:flex items-start justify-between">
                       <div>
                         <h2 className="text-2xl font-bold text-white mb-1">
-                          Bitcoin Apps Suite
+                          Bitcoin Office ($bOffice)
                         </h2>
                         <p className="text-sm text-gray-300">Essential productivity suite - Writer, Spreadsheets, Drive, Email, Calendar, Music, Jobs, Search, Art, Education, Video & Paint</p>
                       </div>
@@ -3649,7 +3649,7 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 lg:gap-6 w-full max-w-full">
-                    {/* Bitcoin Apps Suite Grid */}
+                    {/* Bitcoin Office Grid */}
                     {filteredApps.filter(app => app.isSuite).map((app) => (
                       <AppTile key={app.id} app={app} />
                     ))}
@@ -3718,14 +3718,14 @@ export default function Home() {
             </div>
           ) : (
             <div className="space-y-8">
-              {/* Official Bitcoin Apps Suite - List View */}
+              {/* Official Bitcoin Office - List View */}
               {filteredApps.filter(app => !app.isThirdParty).length > 0 && (
                 <div>
                   <div className="mb-4 flex items-start justify-between">
                     <div>
                       <h2 className="text-xl font-semibold text-white mb-1">
                         <a href="/suite" className="hover:text-[#0094FF] transition-colors">
-                          Bitcoin Apps Suite →
+                          Bitcoin Office →
                         </a>
                       </h2>
                       <p className="text-sm text-gray-400">Official canonical apps from Bitcoin Corp. LTD.</p>

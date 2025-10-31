@@ -195,7 +195,7 @@ export default function SuitePage() {
                 />
               </div>
               <div>
-                <h2 className="text-xl font-light">Bitcoin Apps Suite</h2>
+                <h2 className="text-xl font-light">Bitcoin Office ($bOffice)</h2>
                 <p className="text-xs text-gray-500">Core Productivity Suite</p>
               </div>
             </div>

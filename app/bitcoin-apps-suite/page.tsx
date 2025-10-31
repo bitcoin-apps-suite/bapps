@@ -10,7 +10,7 @@ export default function BitcoinAppsSuitePage() {
 
   const slides = [
     {
-      title: "Bitcoin Apps Suite",
+      title: "Bitcoin Office ($bOffice)",
       subtitle: "The Future of Decentralized Applications",
       content: "A comprehensive ecosystem of Bitcoin-powered applications that revolutionize how we interact with digital tools and services.",
       image: "/bitcoin-apps-logo.jpg"
@@ -73,15 +73,15 @@ export default function BitcoinAppsSuitePage() {
         <section className="bitcoin-apps-suite-hero">
           <Image
             src="/bitcoin-apps-logo.jpg"
-            alt="Bitcoin Apps Suite"
+            alt="Bitcoin Office"
             width={80}
             height={80}
             className="bitcoin-apps-suite-logo"
           />
           <h1>
             <span style={{color: '#ffffff'}}>The</span>{' '}
-            <span className="gradient-text">Bitcoin Apps</span>{' '}
-            <span style={{color: '#ffffff'}}>Suite</span>
+            <span className="gradient-text">Bitcoin Office</span>{' '}
+            <span style={{color: '#ffffff'}}>($bOffice)</span>
           </h1>
           <p className="bitcoin-apps-suite-tagline">
             Professional tools meet decentralized technology
@@ -94,7 +94,7 @@ export default function BitcoinAppsSuitePage() {
           <h2>Our Vision</h2>
           <div className="philosophy-content">
             <p>
-              Bitcoin Apps Suite represents the <strong>next generation of professional tools</strong> built on Bitcoin's 
+              Bitcoin Office represents the <strong>next generation of professional tools</strong> built on Bitcoin's 
               foundation. Our mission is to create an ecosystem where productivity applications leverage blockchain 
               technology for enhanced security, transparency, and user ownership.
             </p>
@@ -270,7 +270,7 @@ export default function BitcoinAppsSuitePage() {
                 </div>
               </div>
               <p style={{textAlign: 'center', marginTop: '20px', fontSize: '14px', color: 'rgba(255, 255, 255, 0.6)'}}>
-                The Bitcoin Apps Suite creates a sustainable ecosystem where professional tools 
+                The Bitcoin Office creates a sustainable ecosystem where professional tools 
                 generate value while remaining true to open-source principles.
               </p>
             </div>
@@ -279,7 +279,7 @@ export default function BitcoinAppsSuitePage() {
 
         {/* How to Get Started Section */}
         <section className="get-started-section">
-          <h2>Get Started with Bitcoin Apps Suite</h2>
+          <h2>Get Started with Bitcoin Office</h2>
           <div className="getting-started-steps">
             <div className="step">
               <div className="step-number">1</div>

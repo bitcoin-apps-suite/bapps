@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Build Restart Bitcoin Apps - Combined Kill + Start App
-# This script creates a single macOS application that kills port 1000 and starts Bitcoin Apps Suite
+# Build Restart Bitcoin Office - Combined Kill + Start App
+# This script creates a single macOS application that kills port 1000 and starts Bitcoin Office
 
-echo "Building Restart Bitcoin Apps app..."
+echo "Building Restart Bitcoin Office app..."
 
 # Create app structure
-APP_NAME="Restart Bitcoin Apps"
+APP_NAME="Restart Bitcoin Office"
 APP_DIR="$HOME/Desktop/$APP_NAME.app"
 CONTENTS_DIR="$APP_DIR/Contents"
 MACOS_DIR="$CONTENTS_DIR/MacOS"
@@ -24,7 +24,7 @@ mkdir -p "$RESOURCES_DIR"
 cat > "$MACOS_DIR/restart-bitcoin-apps" << 'EOF'
 #!/bin/bash
 
-# Restart Bitcoin Apps Suite on Port 1000
+# Restart Bitcoin Office on Port 1000
 # Kills any process on port 1000, then starts the dev server
 
 PROJECT_PATH="/Users/b0ase/Projects/bitcoin-apps-suite"
@@ -35,25 +35,25 @@ show_notification() {
 }
 
 # Kill any process on port 1000
-show_notification "Bitcoin Apps Suite" "Killing port 1000..." "Purr"
+show_notification "Bitcoin Office" "Killing port 1000..." "Purr"
 PORT_PID=$(lsof -ti:1000 2>/dev/null)
 
 if [ ! -z "$PORT_PID" ]; then
     kill -9 $PORT_PID 2>/dev/null
     if [ $? -eq 0 ]; then
-        show_notification "Bitcoin Apps Suite" "Port 1000 cleared!" "Hero"
+        show_notification "Bitcoin Office" "Port 1000 cleared!" "Hero"
     else
-        show_notification "Bitcoin Apps Suite" "Failed to clear port 1000" "Basso"
+        show_notification "Bitcoin Office" "Failed to clear port 1000" "Basso"
     fi
     # Wait a moment for the port to be fully released
     sleep 2
 else
-    show_notification "Bitcoin Apps Suite" "Port 1000 was already free" "Glass"
+    show_notification "Bitcoin Office" "Port 1000 was already free" "Glass"
 fi
 
 # Check if project directory exists
 if [ ! -d "$PROJECT_PATH" ]; then
-    show_notification "Bitcoin Apps Suite" "Project not found at $PROJECT_PATH" "Basso"
+    show_notification "Bitcoin Office" "Project not found at $PROJECT_PATH" "Basso"
     exit 1
 fi
 
@@ -66,21 +66,21 @@ tell application "Terminal"
     activate
     do script "cd '$PROJECT_PATH' && npm run dev"
     delay 2
-    set custom title of window 1 to "Bitcoin Apps Suite - Port 1000"
+    set custom title of window 1 to "Bitcoin Office - Port 1000"
 end tell
 END
 
-show_notification "Bitcoin Apps Suite" "Starting development server..." "Glass"
+show_notification "Bitcoin Office" "Starting development server..." "Glass"
 
 # Wait a moment then check if server started and open browser
 sleep 4
 
 # Check if server started successfully
 if lsof -ti:1000 >/dev/null 2>&1; then
-    show_notification "Bitcoin Apps Suite" "Server running! Opening browser..." "Hero"
+    show_notification "Bitcoin Office" "Server running! Opening browser..." "Hero"
     open "http://localhost:1000"
 else
-    show_notification "Bitcoin Apps Suite" "Server may still be starting. Check Terminal." "Purr"
+    show_notification "Bitcoin Office" "Server may still be starting. Check Terminal." "Purr"
 fi
 EOF
 
@@ -98,9 +98,9 @@ cat > "$CONTENTS_DIR/Info.plist" << 'EOF'
     <key>CFBundleIdentifier</key>
     <string>com.bitcoinapps.restart</string>
     <key>CFBundleName</key>
-    <string>Restart Bitcoin Apps</string>
+    <string>Restart Bitcoin Office</string>
     <key>CFBundleDisplayName</key>
-    <string>Restart Bitcoin Apps</string>
+    <string>Restart Bitcoin Office</string>
     <key>CFBundleVersion</key>
     <string>1.0</string>
     <key>CFBundleShortVersionString</key>
@@ -167,11 +167,11 @@ echo "🗑️  Removed old separate apps (Kill Port 1000 & Start Bitcoin Apps)"
 echo ""
 echo "To add to your Dock:"
 echo "1. Open Finder and go to Desktop"
-echo "2. Drag 'Restart Bitcoin Apps.app' to your Dock"
+echo "2. Drag 'Restart Bitcoin Office.app' to your Dock"
 echo ""
 echo "This single app will:"
 echo "• Kill any process on port 1000"
-echo "• Start the Bitcoin Apps Suite dev server"
+echo "• Start the Bitcoin Office dev server"
 echo "• Open Terminal with the server running"
 echo "• Launch your browser to http://localhost:1000"
 echo ""
